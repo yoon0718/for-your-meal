@@ -1,0 +1,8 @@
+section {
+  border: 6px solid black;
+}
+
+.close {
+  float: inline-end;
+  margin-right: 20vh;
+}
