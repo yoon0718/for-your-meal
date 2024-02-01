@@ -13,7 +13,7 @@ public class InitializeDao {
         String create_recording = """
             CREATE TABLE IF NOT EXISTS `recording` (
             `filename` VARCHAR(255) NOT NULL,
-            `result` VARCHAR(255) NOT NULL);
+            `result` VARCHAR(255));
             """;
         jt.execute(create_recording);
     }

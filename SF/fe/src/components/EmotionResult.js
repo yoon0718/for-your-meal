@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function EmotionResult() {
     const emotion_dic = {
         '0' : '행복한',
-        '1' : '화가난',
+        '1' : '화가 난',
         '2' : '불쾌한',
         '3' : '두려운',
         '4' : '평상시의',
@@ -18,21 +18,40 @@ function EmotionResult() {
     const [food_recipe,setRecipe] = useState(false);
     const [food_tip,setTip] = useState(false);
     useEffect(() => {
+        const filename = sessionStorage.getItem("filename")
         const result = sessionStorage.getItem("result")
-        axios.post("http://localhost/emotionresult",result)
-        .then(res => {
-            setEmotion(emotion_dic[res.data["감정"]])
-            setImage(res.data["이미지경로"])
-            setName(res.data['메뉴명'])
-            setIngredient(res.data['재료정보'])
-            setRecipe(res.data['만드는법'])
-            setTip(res.data['저감조리법tip'])
-        })
+        if (result != null) {
+            axios.post("http://localhost/emotionresult",{filename:filename, result:result})
+            .then(res => {
+                setEmotion(emotion_dic[result])
+                setImage(res.data["이미지경로"])
+                setName(res.data['메뉴명'])
+                setIngredient(res.data['재료정보'])
+                setRecipe(res.data['만드는법'])
+                setTip(res.data['저감조리법tip'])
+            })
+        }
+        else {
+            alert("비정상적인 접근이 감지되었습니다.")
+            window.location.href = "/"
+        }
     },[])
     useEffect(() => {
         const reset_btn = document.querySelector('.btn')
         reset_btn.addEventListener("click",() => {
             window.location.reload();
+        })
+        const home_btn = document.querySelector('.home')
+        const filename = sessionStorage.getItem("filename")
+        const result = sessionStorage.getItem("result")
+        home_btn.addEventListener("click", () => {
+            axios.post('http://localhost/emotionresult', {filename:filename, result:result}, {
+                params: { home: true }
+            })
+            .then(res => {
+                sessionStorage.clear()
+                window.location.href = '/'
+            })
         })
     },[])
 
@@ -47,6 +66,9 @@ function EmotionResult() {
         <div>저감조리법 tip : {food_tip}</div>
         <div>
             <button className="btn">다시 선택</button>
+        </div>
+        <div>
+            <button className='home' type='submit'>홈으로</button>
         </div>
        </div>
 

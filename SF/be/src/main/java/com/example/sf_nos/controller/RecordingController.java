@@ -25,7 +25,7 @@ public class RecordingController {
         String uuid = UUID.randomUUID().toString();
         String filename = uuid + ".wav";
         recordingDao.save_recording(filename);
-        audioFile.transferTo(new File("C:/Users/user/Desktop/SF/be/audio/" + filename));
+        audioFile.transferTo(new File("C:/Users/TaeHwan Lim/Desktop/SF/be/audio/" + filename));
         return ResponseEntity.ok(filename);
     }
     
