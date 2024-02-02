@@ -15,7 +15,7 @@ import com.example.sf_nos.dao.EmotionDao;
 @CrossOrigin(origins="http://localhost:3000")
 public class EmotionContorller {
 
-    private static final String directory = "C:/Users/TaeHwan Lim/Desktop/SF/be/audio/";
+    private static final String directory = "C:/Users/user/Desktop/SF/be/audio/";
     @Autowired
     EmotionDao emotionDao;
     
@@ -24,7 +24,7 @@ public class EmotionContorller {
         String file_path = directory + filename;
         File recording = new File(file_path);
         // 모델을 돌린다
-        String result = "1";
+        String result = Integer.toString((int)(Math.random() * 5));
         emotionDao.save_result(result, filename);
         return ResponseEntity.ok(result);
         
