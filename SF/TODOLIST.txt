@@ -16,3 +16,10 @@
 -- 완료 --
 냉장고(DB)에 들어있는 재료 중에서 하나를 랜덤 선택 후
 그 재료를 사용해 만들 수 있는 요리 하나를 랜덤 선택
+
+CREATE TABLE IF NOT EXISTS `expiration` (`ingredient` VARCHAR(255) NOT NULL, `date` VARCHAR(255));
+
+CREATE TABLE IF NOT EXISTS `frige` (`ingredient` VARCHAR(255) NOT NULL, `date` VARCHAR(255));
+
+INSERT INTO frige (ingredient, date) VALUES ('김치','2024-02-03');
+INSERT INTO frige (ingredient, date) VALUES ('두부','2024-02-03');
