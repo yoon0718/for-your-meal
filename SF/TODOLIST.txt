@@ -1,5 +1,8 @@
 주제 1
 컴퓨터 바꿀 때 경로 바꾸기
+emotion controller
+emotion result controller
+recording controller
 
 자바에서 tensorflow 실험하기
 모델 받아서 predict 돌려보기
@@ -23,3 +26,10 @@ CREATE TABLE IF NOT EXISTS `frige` (`ingredient` VARCHAR(255) NOT NULL, `date` V
 
 INSERT INTO frige (ingredient, date) VALUES ('김치','2024-02-03');
 INSERT INTO frige (ingredient, date) VALUES ('두부','2024-02-03');
+
+anger 19266
+disgust 9435
+fear 7650
+happiness 13644
+neutral 15036
+sadness 23124
