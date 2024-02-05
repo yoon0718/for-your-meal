@@ -16,7 +16,7 @@ function AudioRecorder() {
       };
 
       recorder.onstop = async () => {
-        const blob = new Blob(chunksRef.current, { type: 'audio/wav' });
+        const blob = new Blob(chunksRef.current, { type: 'audio/mp3' });
 
         const formData = new FormData();
         formData.append('audioFile', blob, 'recording.wav');

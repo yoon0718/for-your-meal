@@ -23,9 +23,9 @@ public class RecordingController {
     @PostMapping("/recording")
     public ResponseEntity<String> RecordUpload(@RequestPart("audioFile") MultipartFile audioFile) throws IllegalStateException, IOException {
         String uuid = UUID.randomUUID().toString();
-        String filename = uuid + ".wav";
+        String filename = uuid + ".mp3";
         recordingDao.save_recording(filename);
-        audioFile.transferTo(new File("C:/Users/user/Desktop/SF/be/audio/" + filename));
+        audioFile.transferTo(new File("C:/Users/user/Desktop/SF/be/audio/" + filename + ".mp3"));
         return ResponseEntity.ok(filename);
     }
     

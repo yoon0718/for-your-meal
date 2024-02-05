@@ -1,4 +1,5 @@
 주제 1
+2/1
 컴퓨터 바꿀 때 경로 바꾸기
 emotion controller
 emotion result controller
@@ -16,6 +17,7 @@ recording controller
 홈페이지로 강제로 이동하게 만들기
 
 주제 2
+2/2
 -- 완료 --
 냉장고(DB)에 들어있는 재료 중에서 하나를 랜덤 선택 후
 그 재료를 사용해 만들 수 있는 요리 하나를 랜덤 선택
@@ -26,6 +28,12 @@ CREATE TABLE IF NOT EXISTS `frige` (`ingredient` VARCHAR(255) NOT NULL, `date` V
 
 INSERT INTO frige (ingredient, date) VALUES ('김치','2024-02-03');
 INSERT INTO frige (ingredient, date) VALUES ('두부','2024-02-03');
+
+2/5
+-- 완료 --
+카테고리 빠른 검색
+-- 완료 --
+카테고리 검색 일단 완료
 
 anger 19266
 disgust 9435
