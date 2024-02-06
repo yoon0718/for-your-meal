@@ -1,0 +1,72 @@
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.wrap {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 헤더 영역 스타일 */
+.header {
+    width: 100vw;
+    height: 9vh;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-left: 45%;
+    width: 12%;
+    height: 10%;
+    font-size: medium;
+}
+
+  .logoMain {
+    font-size: 24px; 
+    font-weight: bold; 
+  }
+  
+  .logoSub {
+    font-size: 16px; 
+    white-space: nowrap;
+  }
+
+.mainLogo{
+    width: 50%;
+    height: 50%;
+    margin-right: 10px;
+}
+
+.mainLogo, .logotitle {
+    cursor: pointer; /* 마우스 오버 시 커서 모양 변경 */
+  }
+
+/* --------------------------------- 슬라이더 영역 --------------------------------- */
+
+.Exp-slider {
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+}
+
+.Exp-slider1 {
+  width: 48%;
+  height: 85.5vh;
+  background-color: #c7c7c7;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+}
