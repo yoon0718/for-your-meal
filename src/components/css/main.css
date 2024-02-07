@@ -1,0 +1,175 @@
+.Mainsection{
+    display: flex;
+
+}
+.slider2-right {
+    margin-top: 15px; /* 상단 여백 조정 */
+    border-radius: 15px; /* 테두리 둥글게 */
+  }
+  
+.slider2-right {
+    width: 26vw;
+    height: 83vh;
+    background-color: #c7c7c7;
+    margin-right: 15px;
+    margin-top: 15px;
+    
+}
+
+.slider2-right .slider-right1 {
+    height: 41.5vh;
+    background-color: #a3a3a3;
+   
+}
+
+.slider2-right .slider-right2 {
+    margin-top: 15px;
+    background-color: aqua;
+    height: 41.5vh;
+}
+
+
+
+/* 컨텐츠 영역 스타일 */
+.contents {
+    width: 60%;
+    text-align: center;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    
+}
+
+.contents .contentsection {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 가로로 3개의 열 생성 */
+    height: 10vw;
+    font-family: 'yg-jalnan', sans-serif;
+    
+  }
+
+  .contents .contentsection img {
+    width: 100%; 
+    height: 13.5vh; 
+  }
+  
+  .image-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 이미지와 텍스트를 중앙 정렬 */
+    text-decoration: none; /* 링크의 밑줄 등 스타일 제거 */
+  }
+  
+  .image-label {
+    margin-top: 15px; /* 이미지와 레이블 사이의 간격 */
+    color: #000; /* 텍스트 색상 */
+    font-size: 16px; /* 텍스트 크기 */
+  }
+
+  .contents .contentsection2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 모든 요소를 가운데 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Randomview {
+    width: 38vw; /* 너비 조정 */
+    height: 150px; /* 높이 조정 */
+    background-color: #FFED93;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px; 
+    overflow: hidden; 
+    font-family: 'omyu_pretty', sans-serif;
+    font-size: 130%;
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.Randomview-2 {
+    width: 38vw; 
+    height: 150px; 
+    background-color: #FFED93;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px; 
+    overflow: hidden; 
+    font-family: 'omyu_pretty', sans-serif;
+    font-size: 130%;
+    border-radius: 10px;
+    font-size: 30px;
+    opacity: 80%;
+  }
+
+  .selected-roulette-image {
+    width: 110px; 
+    height: auto; 
+    object-fit: cover;
+  }
+
+.Menubar {
+    width: 75%; 
+    padding: 10px 0; 
+    background-color: #ff4f42; 
+    color: #ffffff;
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    font-family: 'yg-jalnan';
+    font-size: medium;
+    opacity: 80%;
+}
+
+.Menubar:active {
+    background-color: #f87c7c; /* 버튼 클릭 시 배경색 변경 */
+}
+
+.contents .contentsection3 {
+    background-image: linear-gradient(to right, rgba(58, 52, 52, 0.7), rgba(119, 115, 115, 0.9)), url('../../img/냉장고내부.png');
+    background-size: cover; 
+    background-position: center; 
+    color: #ffffff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 300px; 
+    font-family: 'omyu_pretty', sans-serif;
+    font-size: 170%;
+    height: 13vw;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.Expirationbtn{
+    font-size: medium;
+    text-align: center;
+    margin-top: 20px;
+    width: 30%;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    background-color: #f5e59c;
+    cursor: pointer;
+  }
+  
+  .Expirationbtn:active {
+    background-color: #ee9715;
+  }

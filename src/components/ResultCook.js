@@ -43,31 +43,6 @@ function ResultCook() {
   }, []);
 
   return (
-    <div className="wrap">
-      <header className="header">
-        <div className="header_container">
-          <h1 className="logo">
-            <img className="mainLogo" src={logo} alt="Logo" onClick={() => navigate('/main')} />
-            <div className='logotitle' onClick={() => navigate('/main')}>
-              <span className="logoMain">M:ILK</span><br/>
-              <span className="logoSub">for your meal</span>
-            </div>
-          </h1>
-        </div>
-      </header>
-
-      <div className="Result-slider">
-        <div className="Result-slider1">
-          {bgImages.map((image, index) => (
-            <img
-              key={image}
-              className={`imgslide ${currentBgSlide === index ? 'active' : ''}`}
-              src={image}
-              alt={`Background ${index + 1}`}
-            />
-          ))}
-        </div>
-
         <main className="contents">
           <div className='RandomFoodresult'>
             <div className="foodresipe">
@@ -85,8 +60,6 @@ function ResultCook() {
             </div>
           </div>
         </main>
-      </div>
-    </div>
   );
 }
 

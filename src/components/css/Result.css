@@ -5,79 +5,11 @@
     display: none;
 }
 
-/* .header_container {
-    cursor: pointer; 
-  } */
-
 * {
     margin: 0;
     padding: 0;
 }
 
-.wrap {
-    width: 100vw;
-    height: 100vh;
-}
-
-/* 헤더 영역 스타일 */
-.header {
-    width: 100vw;
-    height: 9vh;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    width: 10%;
-    height: 10%;
-}
-
-.mainLogo {
-    width: 40%;
-    height: 40%;
-    
-}
-
-.mainLogo, .logotitle {
-    cursor: pointer; /* 마우스 오버 시 커서 모양 변경 */
-  }
-
-/* 슬라이더 영역 스타일 */
-.Result-slider {
-    display: flex;
-    overflow: hidden;
-    text-align: center;
-}
-
-.Result-slider1 {
-    width: 48%;
-    height: 85.5vh;
-    background-color: #c7c7c7;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 15px;
-}
-
-.Result-slider1 .imgslide {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
-}
-
-.imgslide.active {
-    opacity: 1;
-    z-index: 1;
-}
 
 /* -------------------- 카테고리 음식 영역 -------------------- */
 .RandomFoodresult {
