@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import recbtn from '../img/rec.png';
-import './css/VoiceC.css';
+import '../css/VoiceC.css';
+import axios from 'axios';
 
 export default function AudioRecorder() {
   const [recording, setRecording] = useState(false);
@@ -81,7 +82,21 @@ export default function AudioRecorder() {
       recorder.onstop = async () => {
         const mp3Blob = new Blob(chunksRef.current, { type: 'audio/mp3' });
         const wavBlob = await convertToWav(mp3Blob);
-        downloadBlob(wavBlob, 'recording.wav');
+        const formData = new FormData();
+        formData.append('audioFile', wavBlob)
+        try {
+          axios.post('http://localhost/recording', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
+          .then(response => {
+            sessionStorage.setItem("filename",response.data)
+            window.location.href = "/loading"
+          });
+        } catch (error) {
+          console.error('Error uploading audio:', error);
+        }
         setRecording(false);
       };
   
@@ -164,16 +179,6 @@ export default function AudioRecorder() {
     for (let i = 0; i < string.length; i++) {
       view.setUint8(offset + i, string.charCodeAt(i));
     }
-  };
-
-
-  const downloadBlob = (blob, filename) => {
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
   };
 
   return (

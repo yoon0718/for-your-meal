@@ -3,27 +3,28 @@ package com.example.sf_nos.controller;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.sf_nos.dao.ExpirationDao;
 
-@Controller
-@CrossOrigin(origins="http://localhost:3000")
+@RestController
+@CrossOrigin(origins="*")
 public class ExpirationController {
 
     @Autowired
     ExpirationDao expirationDao;
 
-    @PostMapping("/expiration")
+    @GetMapping("/expiration")
     public ResponseEntity<Map<String, List<Map<String,Object>>>> expiration() {
         // 최종적으로 보낼 json
         Map<String, List<Map<String,Object>>> expiration_data = new HashMap<>();
@@ -41,13 +42,13 @@ public class ExpirationController {
                 Map<String, Object> danger = new HashMap<>();
                 danger.put("ingredient", expiration.get(i).get("ingredient"));
                 danger.put("date", expiration.get(i).get("date"));
-                danger.put("유통기한", "지남!!!!!");
+                danger.put("유통기한", "지남");
                 exp.add(danger);
             } else if (difference <= 1) {
                 Map<String, Object> danger = new HashMap<>();
                 danger.put("ingredient", expiration.get(i).get("ingredient"));
                 danger.put("date", expiration.get(i).get("date"));
-                danger.put("유통기한", "임박!!!!!");
+                danger.put("유통기한", "임박");
                 exp.add(danger);
             }
         }
@@ -55,5 +56,13 @@ public class ExpirationController {
         expiration_data.put("임박순",exp);
         expiration_data.put("재료순",frige);
         return ResponseEntity.ok(expiration_data);
+    }
+    @PostMapping("/expiration")
+    public ResponseEntity<String> expiration_post(
+        @RequestBody List<Map<String,Object>> del_data
+    ) {
+        String index = del_data.get(0).get("index").toString();
+        expirationDao.delete_ingredient(index);
+        return ResponseEntity.noContent().build();
     }
 }

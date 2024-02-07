@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/VoiceC.css';
+import '../css/VoiceC.css';
 import homebtn from '../img/home.png';
 
 import AudioRecorder from './AudioRecorder';

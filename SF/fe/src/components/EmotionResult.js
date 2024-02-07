@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 
 function EmotionResult() {
     const emotion_dic = {
-        '0' : '행복한',
-        '1' : '화가 난',
-        '2' : '불쾌한',
-        '3' : '두려운',
+        '0' : '화가 난',
+        '1' : '불쾌한',
+        '2' : '두려운',
+        '3' : '행복한',
         '4' : '평상시의',
         '5' : '슬픈'
     }

@@ -21,11 +21,12 @@ public class RecordingController {
     RecordingDao recordingDao;
     
     @PostMapping("/recording")
-    public ResponseEntity<String> RecordUpload(@RequestPart("audioFile") MultipartFile audioFile) throws IllegalStateException, IOException {
+    public ResponseEntity<String> RecordUpload(
+        @RequestPart("audioFile") MultipartFile audioFile) throws IllegalStateException, IOException {
         String uuid = UUID.randomUUID().toString();
-        String filename = uuid + ".mp3";
+        String filename = uuid + ".wav";
         recordingDao.save_recording(filename);
-        audioFile.transferTo(new File("C:/Users/user/Desktop/SF/be/audio/" + filename + ".mp3"));
+        audioFile.transferTo(new File("C:/SprintF/SF/be/audio/" + filename));
         return ResponseEntity.ok(filename);
     }
     

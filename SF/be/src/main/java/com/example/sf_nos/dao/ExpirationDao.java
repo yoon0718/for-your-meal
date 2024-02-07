@@ -21,4 +21,13 @@ public class ExpirationDao {
         String query = "SELECT * FROM frige ORDER BY date";
         return jt.queryForList(query);
     }
+    public void delete_ingredient(String index) {
+        String query = String.format("DELETE FROM frige WHERE index = '%s'", index);
+        jt.execute(query);
+    }
+
+    public List<Map<String,Object>> exdate() {
+        String query = "SELECT * FROM expiration";
+        return jt.queryForList(query);
+    }
 }
