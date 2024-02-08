@@ -23,14 +23,18 @@ const Content2 = () => {
     setSelectedway(value);
     return value;
   };
+
+  const handleOptionSelection1 = (value) => {
+    setSelectedtype(value);
+    return value;
+  };
+
   const handleOptionSelection3 = (value) => {
     setSelectedingre(value);
     return value;
   };
 
-  const FinalStep = () => {
-    console.log(selectedtype);
-  };
+  const result = [selectedtype, selectedway, selectedingre];
 
   const steps = [
     {
@@ -146,13 +150,13 @@ const Content2 = () => {
     {
       id: 'recipeTypeChoice',
       options: [
-        { value: 'rc-1', label: '국&찌개', trigger: () => setSelectedtype('국&찌개') },
-        { value: 'rc-2', label: '반찬', trigger: () => setSelectedtype('반찬') },
-        { value: 'rc-3', label: '밥', trigger: () => setSelectedtype('밥') },
-        { value: 'rc-4', label: '일품', trigger: () => setSelectedtype('일품') },
-        { value: 'rc-5', label: '후식', trigger: () => setSelectedtype('후식') },
-        { value: 'rc-6', label: '기타', trigger: () => setSelectedtype('기타') },
-        { value: 'skip-rc', label: '아무거나', trigger: () => setSelectedtype('요리 종류 랜덤선택') },
+        { value: 'rc-1', label: '국&찌개', trigger: () => handleOptionSelection1('국&찌개') },
+        { value: 'rc-2', label: '반찬', trigger: () => handleOptionSelection1('반찬') },
+        { value: 'rc-3', label: '밥', trigger: () => handleOptionSelection1('밥') },
+        { value: 'rc-4', label: '일품', trigger: () => handleOptionSelection1('일품') },
+        { value: 'rc-5', label: '후식', trigger: () => handleOptionSelection1('후식') },
+        { value: 'rc-6', label: '기타', trigger: () => handleOptionSelection1('기타') },
+        { value: 'skip-rc', label: '아무거나', trigger: () => handleOptionSelection1('요리 종류 랜덤선택') },
         { value: 'cc-1-a', label: '이전으로 돌아가기', trigger: 'cc-1-a' }
       ]
     },
@@ -296,7 +300,7 @@ const Content2 = () => {
       ]
     },
     {
-      id: '파스타',
+      id: '파스타면',
       message: '양식의 근본은 역시 파스타죠!?',
       trigger: 'nc-2-a'
     },
@@ -710,7 +714,7 @@ const Content2 = () => {
 
     {
       id: 'result',
-      component: <FinalStep />,
+      message: '결과보내기',
       end: true
     }
   ];
@@ -724,16 +728,22 @@ const Content2 = () => {
   return (
     <ThemeProvider theme={Theme}>
       <div style={chatbotStyle}>
-        <Chatbot headerTitle="오늘은 내가 요리사!" height="600px" width="500px" steps={steps} />
+        <Chatbot
+          headerTitle="오늘은 내가 요리사!"
+          height="600px"
+          width="500px"
+          steps={steps}
+          handleEnd={() => {
+            console.log(result);
+          }}
+        />
       </div>
       <p>
         조리 방법 : {selectedway}, 요리 종류 : {selectedtype}, 재료 : {selectedingre}
       </p>
-      <div>
-        <button className="tmpbtn" onClick={FinalStep}>
+      <div>{/* <button className="tmpbtn" onClick={setResult}>
           히히 백엔드로 못가
-        </button>
-      </div>
+        </button> */}</div>
     </ThemeProvider>
   );
 };
