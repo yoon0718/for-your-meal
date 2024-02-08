@@ -59,10 +59,10 @@ public class ExpirationController {
     }
     @PostMapping("/expiration")
     public ResponseEntity<String> expiration_post(
-        @RequestBody List<Map<String,Object>> del_data
+        @RequestBody Map<String,Object> del_data
     ) {
-        String index = del_data.get(0).get("index").toString();
-        expirationDao.delete_ingredient(index);
+        String num = del_data.get("num").toString();
+        expirationDao.delete_ingredient(num);
         return ResponseEntity.noContent().build();
     }
 }

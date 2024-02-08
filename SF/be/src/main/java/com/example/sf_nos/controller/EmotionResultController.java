@@ -15,10 +15,10 @@ import com.example.sf_nos.dao.EmotionDao;
 
 
 @Controller
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="*")
 public class EmotionResultController {
     
-    private static final String directory = "C:/Users/user/Desktop/SF/be/audio/";
+    private static final String directory = "C:/SprintF/SF/be/audio/";
     @Autowired
     EmotionDao emotionDao;
     

@@ -17,10 +17,10 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.sf_nos.dao.CameraDao;
 
 @Controller
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="*")
 public class CameraController {
     
-    private static final String directory = "C:/Users/user/Desktop/SF/be/photo/";
+    private static final String directory = "C:/SprintF/SF/be/photo/";
     @Autowired
     CameraDao cameraDao;
 
@@ -31,7 +31,7 @@ public class CameraController {
         cameraDao.save_photo(photoname);
         
         String file_path = directory + photoname;
-        String pyfile = "C:/Users/user/Desktop/tmp/photo.py";
+        String pyfile = "C:/SprintF/SF/be/python/photo.py";
         photo.transferTo(new File(file_path));
 
         ProcessBuilder processBuilder = new ProcessBuilder("python", pyfile, file_path);

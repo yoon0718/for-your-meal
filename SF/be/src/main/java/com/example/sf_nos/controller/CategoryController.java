@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.sf_nos.dao.CategoryDao;
 
 @Controller
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="*")
 public class CategoryController {
     @Autowired
     CategoryDao categoryDao;

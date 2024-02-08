@@ -22,7 +22,7 @@ public class ExpirationDao {
         return jt.queryForList(query);
     }
     public void delete_ingredient(String index) {
-        String query = String.format("DELETE FROM frige WHERE index = '%s'", index);
+        String query = String.format("DELETE FROM frige WHERE num = %s", index);
         jt.execute(query);
     }
 

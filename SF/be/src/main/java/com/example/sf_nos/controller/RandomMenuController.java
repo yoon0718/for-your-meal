@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.sf_nos.dao.RandomMenuDao;
 
 @Controller
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="*")
 public class RandomMenuController {
     @Autowired
     RandomMenuDao randomMenuDao;

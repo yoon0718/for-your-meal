@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.sf_nos.dao.FastSearchDao;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class FastSearchController {
     @Autowired
     FastSearchDao fastSearchDao;
