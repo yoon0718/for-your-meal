@@ -11,10 +11,12 @@ js랑 css 바꿔야함 classname 알아서 설정해도 괜찮음
 
 냉장고를 부탁해
 
+select로 돌아오는 버튼 없음
+
 0. Main
 메인 화면 오면 세션 클리어됨
 
-1. ResultCook
+1. Commit - ResultCook
 이미지 클릭시 onClick 이벤트 설정해둠 - 세션저장
 메뉴 고르고 상세 메뉴 선택했을때 CSS
 # 여기에 태그 부분엔 뭘 넣을지
