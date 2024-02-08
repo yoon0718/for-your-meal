@@ -1,0 +1,130 @@
+import React, { useState, useEffect } from 'react';
+import recbtn from '../img/rec.png';
+import './css/VoiceC.css';
+
+export default function AudioRecorder() {
+  const [recording, setRecording] = useState(false);
+  // const [audioURL, setAudioURL] = useState('');
+  // const [mediaRecorder, setMediaRecorder] = useState(null);
+  const chunksRef = React.useRef([]);
+  const canvasRef = React.useRef(null);
+  const [displayText, setDisplayText] = useState('');
+  const [textVisible, setTextVisible] = useState(false);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+
+    const drawWaveform = (audioData) => {
+      context.clearRect(0, 0, width, height);
+      context.beginPath();
+      context.moveTo(0, height / 2);
+
+      const bufferLength = audioData.length;
+      const sliceWidth = (width * 2.0) / bufferLength;
+      let x = 0;
+
+      context.strokeStyle = '#ffff'; // 파동의 색상
+      context.lineWidth = 10;
+
+      for (let i = 0; i < bufferLength; i++) {
+        const y = (audioData[i] / 128.0) * (height / 2);
+        context.lineTo(x, y);
+        x += sliceWidth;
+      }
+
+      context.lineTo(width, height / 2);
+      context.stroke();
+    };
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 2048;
+    const bufferLength = analyser.fftSize;
+    const dataArray = new Uint8Array(bufferLength);
+
+    const visualize = () => {
+      requestAnimationFrame(visualize);
+      analyser.getByteTimeDomainData(dataArray);
+      drawWaveform(dataArray);
+    };
+
+    if (recording) {
+      navigator.mediaDevices
+        .getUserMedia({ audio: true })
+        .then((stream) => {
+          const source = audioCtx.createMediaStreamSource(stream);
+          source.connect(analyser);
+          visualize();
+        })
+        .catch((error) => {
+          console.error('Error accessing microphone:', error);
+        });
+    }
+
+    return () => {
+      cancelAnimationFrame(visualize);
+    };
+  }, [recording]);
+
+  const handleStartRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const recorder = new MediaRecorder(stream);
+
+      recorder.ondataavailable = (event) => {
+        chunksRef.current.push(event.data);
+      };
+
+      recorder.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: 'audio/mp3' });
+        // const url = URL.createObjectURL(blob);
+        // setAudioURL(url);
+        downloadBlob(blob, 'recording.mp3'); // WAV 파일로 저장
+        setRecording(false);
+      };
+
+      recorder.start();
+      // setMediaRecorder(recorder);
+      setRecording(true);
+
+      setRecording(true);
+      setDisplayText('오늘 뭐먹지 라고 말해주세요');
+      setTextVisible(true);
+
+      setTimeout(() => {
+        recorder.stop();
+        setDisplayText('');
+        setTextVisible(false);
+      }, 5000);
+    } catch (error) {
+      console.error('Error accessing microphone:', error);
+    }
+  };
+
+  const downloadBlob = (blob, filename) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div>
+      <canvas ref={canvasRef} className="waveform"></canvas>
+      <button onClick={handleStartRecording} disabled={recording}>
+        <img src={recbtn} className="recbtn" alt="Record" />
+      </button>
+      <p
+        className={`ptag ${textVisible ? 'fade-in' : 'fade-out'}`} // 클래스 이름을 fade, fade-in, fade-out으로 설정
+        style={{ transform: textVisible ? 'translateX(0)' : 'translateX(-100px)' }}
+      >
+        {displayText}
+      </p>
+    </div>
+  );
+}
