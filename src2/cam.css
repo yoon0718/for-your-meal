@@ -1,0 +1,29 @@
+/* * {
+  border: 1px solid black;
+} */
+
+.all_box {
+  width: 500px;
+  height: 500px;
+  border: 10px solid red;
+}
+.cam_box {
+  width: 500px;
+  height: 500px;
+  border: 10px solid blue;
+}
+.cam_box_result {
+  width: 500px;
+  height: 500px;
+  border: 10px solid green;
+}
+.import_result {
+  width: 500px;
+  height: 500px;
+  border: 10px solid yellow;
+}
+.text_result {
+  width: 500px;
+  height: 500px;
+  border: 10px solid orange;
+}

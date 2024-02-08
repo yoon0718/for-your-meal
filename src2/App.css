@@ -1,0 +1,12 @@
+.Atable {
+  width: 30vw;
+  left: 10vw;
+  position: relative;
+}
+
+.Btable {
+  width: 35vw;
+  position: relative;
+  left: 40vw;
+  bottom: 55vh;
+}
