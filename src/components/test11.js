@@ -1,6 +1,6 @@
 import React from 'react';
 import './cam.css';
-import Test3 from './test3';
+import Test3 from './SelectBox';
 import Camera from './camera';
 
 export default function Test11() {
@@ -14,8 +14,7 @@ export default function Test11() {
             <div className="text_result"></div>
             <div className="text_result2">
               <Test3></Test3>
-              <button>삽입</button>
-              <p>( ) 이(가) 넣어 졌읍니다.</p>
+              
             </div>
           </div>
         </div>

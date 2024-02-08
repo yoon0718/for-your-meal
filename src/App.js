@@ -14,7 +14,7 @@ import VoiceC from './components/VoiceC';
 import Content2 from './components/Content2';
 import AudioRecorder2 from './components/AudioRecorder';
 import Test11 from './components/test11';
-import Test3 from './components/test3';
+import Test3 from './components/SelectBox';
 
 function App() {
   return (
@@ -25,7 +25,6 @@ function App() {
       <Route path="/test" element={<AudioRecorder2 />}></Route>
       <Route path="/test1" element={<Test11 />}></Route>
       <Route path="/test3" element={<Test3 />}></Route>
-
     </Routes>
   );
 }
