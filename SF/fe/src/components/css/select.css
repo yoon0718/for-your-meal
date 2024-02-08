@@ -7,7 +7,7 @@
 .container {
   position: relative;
   width: 100%;
-  background-image: url('../img/Main.jpg');
+  background-image: url('../../img/Main.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

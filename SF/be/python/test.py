@@ -59,7 +59,7 @@ X = Features.values
 scaler = StandardScaler()
 x = scaler.fit_transform(X)
 x = np.expand_dims(x, axis=2)
-model = load_model('C:/SprintF/SF/be/python/sound_classifier_model.h5')
+model = load_model('C:/Users/user/Desktop/tmp/sound_classifier_model_MFCC_MelSpectogram_second.h5')
 pred_test = model.predict(x)
 
 y = np.array(['0', '1', '2', '3', '4', '5'])

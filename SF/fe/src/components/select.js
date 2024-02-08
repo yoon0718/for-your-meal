@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../css/select.css';
+import './css/select.css';
 import Mic from '../img/mic.png';
 import fridge from '../img/fridge.png';
 

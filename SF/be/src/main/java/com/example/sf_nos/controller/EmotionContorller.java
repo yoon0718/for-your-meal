@@ -17,7 +17,7 @@ import com.example.sf_nos.dao.EmotionDao;
 @CrossOrigin(origins="http://localhost:3000")
 public class EmotionContorller {
 
-    private static final String directory = "C:/SprintF/SF/be/audio/";
+    private static final String directory = "C:/Users/user/Desktop/SF/be/audio/";
     @Autowired
     EmotionDao emotionDao;
     
@@ -25,7 +25,7 @@ public class EmotionContorller {
     public ResponseEntity<String> set_emotion(@RequestBody String filename) throws IOException, InterruptedException {
         String file_path = directory + filename;
         String feature = file_path;
-        String pyfile = "C:/SprintF/SF/be/python/sound_classifier.py";
+        String pyfile = "C:/Users/user/Desktop/tmp/test.py";
         
         ProcessBuilder processBuilder = new ProcessBuilder("python", pyfile, feature);
         processBuilder.redirectErrorStream(true);

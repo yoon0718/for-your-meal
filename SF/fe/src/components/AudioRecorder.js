@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import recbtn from '../img/rec.png';
-import '../css/VoiceC.css';
+import './css/VoiceC.css';
 import axios from 'axios';
 
 export default function AudioRecorder() {
   const [recording, setRecording] = useState(false);
-  // const [audioURL, setAudioURL] = useState('');
-  // const [mediaRecorder, setMediaRecorder] = useState(null);
   const chunksRef = React.useRef([]);
   const canvasRef = React.useRef(null);
   const [displayText, setDisplayText] = useState('');
@@ -83,7 +81,7 @@ export default function AudioRecorder() {
         const mp3Blob = new Blob(chunksRef.current, { type: 'audio/mp3' });
         const wavBlob = await convertToWav(mp3Blob);
         const formData = new FormData();
-        formData.append('audioFile', wavBlob)
+        formData.append('audioFile', wavBlob);
         try {
           axios.post('http://localhost/recording', formData, {
             headers: {

@@ -20,7 +20,7 @@ import com.example.sf_nos.dao.CameraDao;
 @CrossOrigin(origins="http://localhost:3000")
 public class CameraController {
     
-    private static final String directory = "C:/SprintF/SF/be/photo/";
+    private static final String directory = "C:/Users/user/Desktop/SF/be/photo/";
     @Autowired
     CameraDao cameraDao;
 
@@ -31,7 +31,7 @@ public class CameraController {
         cameraDao.save_photo(photoname);
         
         String file_path = directory + photoname;
-        String pyfile = "C:/SprintF/SF/be/python/photo.py";
+        String pyfile = "C:/Users/user/Desktop/tmp/photo.py";
         photo.transferTo(new File(file_path));
 
         ProcessBuilder processBuilder = new ProcessBuilder("python", pyfile, file_path);

@@ -1,0 +1,64 @@
+/* 전역 스타일 초기화 */
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -------------------- 카테고리 음식 영역 -------------------- */
+.RandomFoodresult {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-left: 20px;
+  }
+  
+  .foodrecipe {
+    display: grid;
+    width: 100%;
+  }
+  
+  .resultfood {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'yg-jalnan', sans-serif;
+    font-size: 25px;
+  }
+  
+  .resultfood img {
+    margin-bottom: 30px;
+    width: 100%; 
+    height: 420px; 
+    margin-right: 20px; 
+  }
+  
+  .food-label {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .Foodtag{
+    font-family: 'GmarketSansMedium';
+  }
+  
+  .ingredient, .CookResipe {
+    text-align: right;
+    margin-bottom: 20px; 
+    align-self: flex-start; 
+    flex: 1; 
+    text-align: left; 
+    font-family: 'GmarketSansMedium';
+  }
+
+  .CookResipe{
+    margin-top: 60px;
+  }
+  
