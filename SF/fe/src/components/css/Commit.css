@@ -18,13 +18,24 @@
     justify-content: center;
     font-family: 'yg-jalnan', sans-serif;
   }
-  
+  .commit_contents {
+    width: 60%;
+    text-align: center;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+  }
   .food-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 가로로 3개의 열 생성 */
     grid-template-rows: repeat(2, auto); /* 세로로 2개의 행 생성, 높이는 내용에 따라 자동 조정 */
     gap: 8px 50px; 
-    padding: 0px; 
+    padding: 0px;
+    height: 85.5vh;
+    overflow: auto;
   }
   
   .food-item {

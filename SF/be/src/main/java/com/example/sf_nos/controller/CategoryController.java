@@ -27,7 +27,6 @@ public class CategoryController {
         String ingredients = (String) selection.get("재료");
         List<Map<String,Object>> rec_menu = categoryDao.category(cousinetype, waytocook, ingredients);
         return ResponseEntity.ok(rec_menu);
-       // 서브프로세스
     }
 }
 

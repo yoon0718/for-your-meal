@@ -6,7 +6,7 @@ import AudioRecorder from './AudioRecorder';
 
 function VoiceC() {
   const gohome = () => {
-    window.location.href = '/';
+    window.location.href = '/select';
   };
 
   return (

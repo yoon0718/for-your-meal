@@ -11,10 +11,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.sf_nos.dao.CameraDao;
+import com.example.sf_nos.dao.IngredientDao;
 
 @Controller
 @CrossOrigin(origins="*")
@@ -23,9 +25,13 @@ public class CameraController {
     private static final String directory = "C:/SprintF/SF/be/photo/";
     @Autowired
     CameraDao cameraDao;
+    IngredientDao ingredientDao;
 
     @PostMapping("/camera")
-    public ResponseEntity<String> Camera(@RequestPart("photo") MultipartFile photo) throws IllegalStateException, IOException, InterruptedException {
+    public ResponseEntity<String> Camera(
+        @RequestPart("photo") MultipartFile photo,
+        @RequestBody String ingredient
+        ) throws IllegalStateException, IOException, InterruptedException {
         String uuid = UUID.randomUUID().toString();
         String photoname = uuid + ".jpg";
         cameraDao.save_photo(photoname);
@@ -55,6 +61,7 @@ public class CameraController {
             if (result != null) {
                 System.out.println("Received result from Python: " + result);
                 cameraDao.save_result(photoname, result);
+                ingredientDao.insert_ingredient(ingredient, result);
                 return ResponseEntity.ok(result);
             } else {
                 System.out.println("No result received from Python.");

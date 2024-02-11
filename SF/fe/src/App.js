@@ -17,13 +17,15 @@ import Expirationdate from './components/Expirationdate';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Loading from './components/Loading';
 import ResultVoice from './components/ResultVoice';
+import Initializing from './components/Initializing';
 
 
 function App() {
   return (
       <Routes>
+        <Route path = "/" element={<Initializing/>}/>
         <Route path = "/main/*" element={<Content1/>}/>
-        <Route path="/" element={<Select />}></Route>
+        <Route path="/select" element={<Select />}></Route>
         <Route path="/Ai" element={<VoiceC />}></Route>
         <Route path="/loading" element={<Loading />}></Route>
         <Route path="/test" element={<AudioRecorder2 />}></Route>

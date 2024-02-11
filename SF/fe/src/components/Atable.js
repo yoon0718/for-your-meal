@@ -65,7 +65,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://10.10.21.89/expiration");
+      const response = await fetch("http://localhost/expiration");
       const jsonData = await response.json();
       setData(jsonData["재료순"]);
     } catch (error) {
