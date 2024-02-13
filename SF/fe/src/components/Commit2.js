@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import '../components/css/Commit.css';
+import { useNavigate } from "react-router-dom";
 
 function Commit2() {
+  const navigate = useNavigate();
   const [data, setData] = useState(null)
   const type = sessionStorage.getItem("요리종류");
   const way = sessionStorage.getItem("조리방법");
@@ -10,9 +12,9 @@ function Commit2() {
   const postingdata = {"요리종류":type,"조리방법":way,"재료":ingre}
   const setName = (label) => {
     sessionStorage.setItem("메뉴명", label);
-    window.location.href = '/main/ResultCook';
+    navigate('/main/ResultCook');
   }
-  axios.post("http://localhost/category",postingdata)
+  axios.post("http://10.10.21.89/category",postingdata)
   .then(res => {
     setData(res.data)
   })

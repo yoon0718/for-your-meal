@@ -83,7 +83,7 @@ export default function AudioRecorder() {
         const formData = new FormData();
         formData.append('audioFile', wavBlob);
         try {
-          axios.post('http://localhost/recording', formData, {
+          axios.post('http://10.10.21.89/recording', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

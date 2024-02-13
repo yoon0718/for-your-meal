@@ -26,7 +26,7 @@ function ResultVoice() {
   const handleHome = () => {
     const filename = sessionStorage.getItem("filename")
     const result = sessionStorage.getItem("result")
-    axios.post('http://localhost/emotionresult', { filename: filename, result: result }, {
+    axios.post('http://10.10.21.89/emotionresult', { filename: filename, result: result }, {
       params: { home: true }
     })
       .then(res => {

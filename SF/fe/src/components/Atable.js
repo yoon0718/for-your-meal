@@ -65,7 +65,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost/expiration");
+      const response = await fetch("http://10.10.21.89/expiration");
       const jsonData = await response.json();
       setData(jsonData["재료순"]);
     } catch (error) {
@@ -81,9 +81,9 @@ export default function Atable(props) {
 
   const handleDelete = (row) => {
     console.log(row)
-    axios.post("http://localhost/expiration",row)
+    axios.post("http://10.10.21.89/expiration",row)
     .then(res => {
-      window.location.reload();
+      fetchData();
     })
   };
 

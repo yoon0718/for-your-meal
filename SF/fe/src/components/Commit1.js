@@ -13,7 +13,7 @@ function Commit1() {
 
   useEffect(() => {
     const cousinetype = sessionStorage.getItem('요리종류')
-    axios.post("http://localhost/fastsearch",cousinetype)
+    axios.post("http://10.10.21.89/fastsearch",cousinetype)
     .then(res => {
         setFood1(res.data['menu1'])
         setFood2(res.data['menu2'])
