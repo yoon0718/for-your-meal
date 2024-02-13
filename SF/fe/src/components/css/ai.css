@@ -12,3 +12,6 @@
   display: none;
 }
 
+.rsc-os-option-element, .rsc-input {
+  font-family: omyu_pretty;
+}
