@@ -1223,7 +1223,6 @@ const Content2 = () => {
     <ThemeProvider theme={Theme}>
       <div style={chatbotStyle}>
         <Chatbot
-          headerTitle="오늘은 내가 요리사!"
           height="600px"
           width="500px"
           steps={steps}

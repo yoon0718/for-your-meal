@@ -17,3 +17,7 @@
   display: flex;
   align-items: center;
 }
+
+.result_box p {
+  color: white;
+}
