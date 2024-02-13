@@ -1,32 +1,37 @@
-//npm install --legacy-peer-deps react-simple-chatbot --save
-//npm install --legacy-peer-deps react-audio-voice-recorder
-//npm install --legacy-peer-deps --save react-mic
-//npm install --legacy-peer-deps fluent-ffmpeg
-//npm i --save react-select
-//npm i react-data-table-component
+//npm install react-router-dom     
+//npm install react-simple-chatbot
+//npm install react-data-table-component
+//npm install axios 
+//(오류 뜰시 --force나 --legacy-peer-deps << 넣기)
 
-import React from "react";
-import Select from "./components/select";
-import "./App.css";
-import "./components/select";
-import { Route, Routes } from "react-router-dom";
-import "./components/css/select.css";
-import VoiceC from "./components/VoiceC";
-import Content2 from "./components/Content2";
-import AudioRecorder2 from "./components/AudioRecorder";
-import Test11 from "./components/test11";
-import Test3 from "./components/SelectBox";
+import React from 'react';
+
+import './Font/font.css';
+
+import Content1 from './components/Content1';
+import VoiceC from './components/VoiceC';
+import AudioRecorder2 from './components/AudioRecorder';
+import Select from './components/select';
+import Expirationdate from './components/Expirationdate';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Loading from './components/Loading';
+import ResultVoice from './components/ResultVoice';
+import Initializing from './components/Initializing';
+
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Select />}></Route>
-      <Route path="/Ai" element={<VoiceC />}></Route>
-      <Route path="/main" element={<Content2 />}></Route>
-      <Route path="/test" element={<AudioRecorder2 />}></Route>
-      <Route path="/test1" element={<Test11 />}></Route>
-      <Route path="/test3" element={<Test3 />}></Route>
-    </Routes>
+      <Routes>
+        <Route path = "/" element={<Initializing/>}/>
+        <Route path = "/main/*" element={<Content1/>}/>
+        <Route path="/select" element={<Select />}></Route>
+        <Route path="/Ai" element={<VoiceC />}></Route>
+        <Route path="/loading" element={<Loading />}></Route>
+        <Route path="/test" element={<AudioRecorder2 />}></Route>
+        <Route path="/emoresult" element={<ResultVoice />}></Route>
+        <Route path="/test2" element={<Expirationdate />}></Route>
+      </Routes>
   );
 }
 

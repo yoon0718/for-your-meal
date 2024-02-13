@@ -1,61 +1,38 @@
-/* * {
-  border: 1px solid gray;
-} */
 .App {
-  /* margin: 0 auto;
-  min-width: 600px;
-  max-width: 600px;
-  min-height: 1000px;
-  max-height: 1000px; */
+  text-align: center;
 }
-.logo_box {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
-.logo {
-  align-items: center;
-  height: 17vh;
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
-.wrapper {
-}
-.padding {
-}
-.top {
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.timer {
-  margin-right: 3vw;
-  font-size: 3vh;
-  font-weight: bold;
-  text-align: right;
-  float: right;
+.App-link {
+  color: #61dafb;
 }
 
-.slick-slide {
-  border-top: 5px solid black;
-  border-bottom: 5px solid black;
-  width: 100%;
-  box-sizing: border-box;
-}
-.custom-slide img {
-  width: 100%; /* 이미지를 부모 요소에 맞게 가득 채우기 */
-  height: auto; /* 이미지의 높이를 자동으로 조정 */
-  object-fit: cover; /* 이미지 비율을 유지하면서 부모 요소에 맞게 잘라내기 */
-  transform: scale(1); /* 초기 크기 */
-  transition: transform 0.3s ease; /* 애니메이션 효과를 위한 트랜지션 속성 추가 */
-  height: 24vh;
-}
-
-/* .custom-slide:hover img {
-  transform: scale(1.1); 
-} */
-
-.content2 img {
-  width: 20vw;
-  /* height: auto; */
-  margin-top: 1vh;
-  margin-left: 10vw;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
