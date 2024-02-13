@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Chatbot from 'react-simple-chatbot';
 import './css/ai.css';
+import { useNavigate } from 'react-router-dom';
 
 const Theme = {
   background: '#f5f8fb',
@@ -15,6 +16,7 @@ const Theme = {
   userFontColor: '#4a4a4a'
 };
 const Content2 = () => {
+  const navigate = useNavigate();
   const [selectedtype, setSelectedtype] = useState('선택안함');
   const [selectedway, setSelectedway] = useState('선택안함');
   const [selectedingre, setSelectedingre] = useState('선택안함');
@@ -52,7 +54,7 @@ const Content2 = () => {
     sessionStorage.setItem("요리종류",result.요리종류)
     sessionStorage.setItem("조리방법",result.조리방법)
     sessionStorage.setItem("재료",result.재료)
-    window.location.href = "/main/commit2"
+    navigate("/main/commit2");
   }
 
   const result = {"요리종류" : selectedtype, "조리방법" : selectedway, "재료" : selectedingre};

@@ -47,7 +47,7 @@ const [selectedRouletteImage, setSelectedRouletteImage] = useState(roulette1);
 
 const setType = (label) => {
   sessionStorage.setItem("요리종류", label);
-  window.location.href = '/main/commit1';
+  navigate('/main/commit1');
 }
 
 const startRoulette = () => {
