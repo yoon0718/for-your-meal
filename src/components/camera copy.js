@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 function Camera() {
   useEffect(() => {
-    const video = document.querySelector(".video");
-    const canvas = document.querySelector(".canvas");
-    const captureButton = document.querySelector(".captureButton");
+    const video = document.querySelector('.video');
+    const canvas = document.querySelector('.canvas');
+    const captureButton = document.querySelector('.captureButton');
 
     const date = new Date();
     const year = date
@@ -24,18 +24,16 @@ function Camera() {
           video.srcObject = stream;
         })
         .catch(function(err) {
-          console.log("Something went wrong!", err);
+          console.log('Something went wrong!', err);
         });
     }
 
     captureButton.onclick = function() {
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
-      canvas
-        .getContext("2d")
-        .drawImage(video, 0, 0, canvas.width, canvas.height);
-      const imageDataURL = canvas.toDataURL("image/png");
-      const link = document.createElement("a");
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+      const imageDataURL = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
       link.href = imageDataURL;
       link.download = `${year}${month}${day}${hours}${minutes}${seconds}.png`;
       link.click();
