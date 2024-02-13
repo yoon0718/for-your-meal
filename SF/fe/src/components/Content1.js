@@ -29,6 +29,7 @@ import Expirationdate from './Expirationdate';
 import Main from './Main';
 import Commit2 from './Commit2';
 import IngredientTest from './IngredientTest';
+import Add from './Add';
 
 const bgImages = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10, bg11, bg12, bg13];
 
@@ -73,6 +74,7 @@ function Content1() {
         <Route path = "Expirationdate" element={<Expirationdate/>}/>
         <Route path = "commit2" element={<Commit2/>}/>
         <Route path = "addingre" element={<IngredientTest/>}/>
+        <Route path = "add" element={<Add/>}/>
       </Routes>
       </div>
 

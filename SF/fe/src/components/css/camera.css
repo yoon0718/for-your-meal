@@ -1,0 +1,17 @@
+.camera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas {
+    display: none;
+}
+.captureButton {
+    margin-left: 20px;
+    cursor: pointer;
+}
+.camimg {
+    width: 100px;
+    height: 100px;
+}
