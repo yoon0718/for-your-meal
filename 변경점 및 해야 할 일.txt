@@ -57,11 +57,14 @@ footer를 살려서 현재 선택된게 뭔지 보이게함
 폰트를 메인에 맞게 통일 시켰는데 선택지의 폰트와 footer의 placeholder의 폰트 안바뀜; 바꾸는 법 찾아야함
 처음 시작시 여기를 클릭해주세요! 를 누르면 선택자도 똑같이 말하는게 맞는건가?
 
+commit1
+여기도 use navigate로
 commit2
 새창 띄는거 같으니까 router 위치 조정
 commit2는 스크롤이 생길 수도 있는 구조라서 overflow를 줬고
 그에 따라 main에서 가져온 contents의 css를 그대로 적용할 시 위치가 조금 이상해서
 commit_contents라는 클래스를 따로 만들고 margin_top만 따로 적용함
+여기서 결과창으로 가는것도 router로
 
 camera(백엔드)
 -- 일단 만들어둠 --
@@ -77,3 +80,25 @@ random 메뉴
 
 expiration_date
 냉장고에 아무것도 안들어있을 시 출력 설정하기
+
+//// 
+atable, btable, audiorecorder, commit1, commit2, ingredienttest, initializing, loading, resultcook, resultrandom, resultvoice의 localhost를 10.10.21.89로 바꿈
+
+router 안 먹던 애들 바꿈
+
+content2 -- 완료?
+
+CameraController
+CameraDao
+Add
+Box
+Camera
+css - cam.css
+css - camera.css
+ResultCam
+SelectBox
+Add.css
+selectbox.css
+test2.css
+추가
+

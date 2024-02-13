@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './css/camera.css'
 import camimg from '../img/camera.png'
+import axios from 'axios';
 
 function Camera() {
   useEffect(() => {
@@ -25,19 +26,27 @@ function Camera() {
       canvas.style.display = "flex";
       video.style.display = "none";
       canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-      const imageDataURL = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = imageDataURL;
-      link.download = `capture.png`;
-      link.click();
+      canvas.toBlob(function(blob) { 
+        const formData = new FormData();
+        formData.append('photo', blob);
+        axios.post("http://10.10.21.89/camera",formData)
+        .then(res => {
+          console.log(res.data)
+        })
+      })
     };
   },[]);
 
   return (
-    <div className="camera">
-      <video autoplay="true" className="video" width="426px" height="320px"></video>
-      <canvas className="canvas"></canvas>
-      <div className="captureButton"><img src={camimg} alt='camera' className='camimg'></img></div>
+    <div className="cam_box_result">
+      <div className="camera_header">
+        식재료를 찍어보세요!
+      </div>
+      <div className='camera_content'>
+        <video autoplay="true" className="video" width="426px" height="320px"></video>
+        <canvas className="canvas"></canvas>
+        <div className="captureButton"><img src={camimg} alt='camera' className='camimg'></img></div>
+      </div>
     </div>
   );
 }

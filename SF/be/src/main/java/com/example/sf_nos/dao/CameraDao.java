@@ -14,7 +14,7 @@ public class CameraDao {
     }
 
     public void save_result(String photoname, String result) {
-        String query = String.format("UPDATE photo SET result = '%s' WHERE filename = '%s'", photoname, result);
+        String query = String.format("UPDATE photo SET result = '%s' WHERE photoname = '%s'", result, photoname);
         jt.execute(query);
     }
 }

@@ -1,0 +1,22 @@
+.result_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 82%;
+  margin: 0 auto;
+}
+
+.result_box img {
+  height:100%;
+}
+
+.text_header {
+  border-bottom: 2px solid black;
+  width:100%;
+  text-align: center;
+  background-color: antiquewhite;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-bottom: 5px;
+}

@@ -29,17 +29,18 @@ public class CameraController {
 
     @PostMapping("/camera")
     public ResponseEntity<String> Camera(
-        @RequestPart("photo") MultipartFile photo,
-        @RequestBody String ingredient
+        @RequestPart("photo") MultipartFile photo
+        // @RequestBody String ingredient
         ) throws IllegalStateException, IOException, InterruptedException {
         String uuid = UUID.randomUUID().toString();
         String photoname = uuid + ".jpg";
+
+        photo.transferTo(new File(directory + photoname));
         cameraDao.save_photo(photoname);
         
         String file_path = directory + photoname;
         String pyfile = "C:/SprintF/SF/be/python/photo.py";
-        photo.transferTo(new File(file_path));
-
+        
         ProcessBuilder processBuilder = new ProcessBuilder("python", pyfile, file_path);
         processBuilder.redirectErrorStream(true);
 
@@ -61,7 +62,7 @@ public class CameraController {
             if (result != null) {
                 System.out.println("Received result from Python: " + result);
                 cameraDao.save_result(photoname, result);
-                ingredientDao.insert_ingredient(ingredient, result);
+                // ingredientDao.insert_ingredient(ingredient, result);
                 return ResponseEntity.ok(result);
             } else {
                 System.out.println("No result received from Python.");
