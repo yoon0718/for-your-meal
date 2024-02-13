@@ -4,6 +4,7 @@ import '../components/css/Commit.css';
 import axios from 'axios';
 
 function Commit1() {
+  const navigate = useNavigate();
   const [food1, setFood1] = useState(false);
   const [food2, setFood2] = useState(false);
   const [food3, setFood3] = useState(false);
@@ -13,7 +14,7 @@ function Commit1() {
 
   useEffect(() => {
     const cousinetype = sessionStorage.getItem('요리종류')
-    axios.post("http://10.10.21.89/fastsearch",cousinetype)
+    axios.post("http://localhost/fastsearch",cousinetype)
     .then(res => {
         setFood1(res.data['menu1'])
         setFood2(res.data['menu2'])
@@ -35,7 +36,7 @@ function Commit1() {
   
   const setName = (label) => {
     sessionStorage.setItem("메뉴명", label);
-    window.location.href = '/main/ResultCook';
+    navigate('/main/ResultCook');
   }
 
   return (

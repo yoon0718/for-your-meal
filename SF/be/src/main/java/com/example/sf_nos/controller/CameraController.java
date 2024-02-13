@@ -30,7 +30,6 @@ public class CameraController {
     @PostMapping("/camera")
     public ResponseEntity<String> Camera(
         @RequestPart("photo") MultipartFile photo
-        // @RequestBody String ingredient
         ) throws IllegalStateException, IOException, InterruptedException {
         String uuid = UUID.randomUUID().toString();
         String photoname = uuid + ".jpg";
@@ -62,7 +61,11 @@ public class CameraController {
             if (result != null) {
                 System.out.println("Received result from Python: " + result);
                 cameraDao.save_result(photoname, result);
-                // ingredientDao.insert_ingredient(ingredient, result);
+                // 아래 부분은 후에 모델을 재학습 시킬 생각이라면 주석처리 할 것
+                cameraDao.del_photo(photoname);
+                File file = new File(directory + photoname);
+                file.delete();
+
                 return ResponseEntity.ok(result);
             } else {
                 System.out.println("No result received from Python.");

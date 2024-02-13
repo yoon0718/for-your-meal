@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Creatable from "react-select/creatable";
 import "./css/selectbox.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const codeOptions = [
   {
@@ -187,6 +189,7 @@ const colourStyles = {
 };
 
 const SelectBox = () => {
+  const navigate = useNavigate();
   const [selectCode, setSelectCode] = useState("ALL");
   const [selectedOption, setSelectedOption] = useState(null);
   const [options, setOptions] = useState(codeOptions);
@@ -205,9 +208,15 @@ const SelectBox = () => {
   };
 
   const handleInsertClick = () => {
+    
     if (selectedOption) {
-      // Perform the insertion logic here
-      console.log(selectedOption.value+ "이(가) 선택되었습니다.");
+      const data = {"ingredient":selectedOption.value}
+        axios.post("http://localhost/ingredient",data)
+        .then(res => {
+          alert("식재료가 냉장고에 넣어졌습니다")
+          setSelectedOption(null);
+          navigate("/main/add", { replace: true });
+        })
     }
   };
 

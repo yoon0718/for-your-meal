@@ -6,9 +6,6 @@ import axios from 'axios';
 function Camera() {
   useEffect(() => {
     const video = document.querySelector('.video');
-    const canvas = document.querySelector('.canvas');
-    const captureButton = document.querySelector('.captureButton');
-
     if (navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices
         .getUserMedia({ video: true })
@@ -19,24 +16,34 @@ function Camera() {
           console.log('Something went wrong!', err);
         });
     }
-
-    captureButton.onclick = function() {
-      canvas.width = video.width;
-      canvas.height = video.height;
-      canvas.style.display = "flex";
-      video.style.display = "none";
-      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-      canvas.toBlob(function(blob) { 
-        const formData = new FormData();
-        formData.append('photo', blob);
-        axios.post("http://10.10.21.89/camera",formData)
-        .then(res => {
-          console.log(res.data)
-        })
-      })
-    };
   },[]);
-
+    useEffect(() => {
+      const video = document.querySelector('.video');
+      const canvas = document.querySelector('.canvas');
+      const captureButton = document.querySelector('.captureButton');
+      if (sessionStorage.getItem("선택된재료") == null) {
+        captureButton.onclick = function() {
+          sessionStorage.setItem("리셋","X")
+          canvas.width = video.width;
+          canvas.height = video.height;
+          canvas.style.display = "flex";
+          video.style.display = "none";
+          canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+          canvas.toBlob(function(blob) { 
+            const formData = new FormData();
+            formData.append('photo', blob);
+            axios.post("http://localhost/camera",formData)
+            .then(res => {
+              sessionStorage.setItem("선택된재료",res.data)
+            })
+          })
+        };
+      }
+      if (sessionStorage.getItem("리셋") === "O") {
+        canvas.style.display = "none";
+        video.style.display = "flex";
+      }
+    })
   return (
     <div className="cam_box_result">
       <div className="camera_header">

@@ -10,7 +10,7 @@ function ResultRandom() {
   const [food, setFood] = useState(null);
   
   useEffect(() => {
-    axios.post("http://10.10.21.89/randommenu")
+    axios.post("http://localhost/randommenu")
     .then(res => {
       setFood(res.data)
     })

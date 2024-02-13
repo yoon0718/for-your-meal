@@ -24,12 +24,17 @@ public class IngredientController {
         @RequestBody Map<String,Object> data
     ) {
         String ingredient = data.get("ingredient").toString();
+        if (data.get("date") != null) {
+            String expiration_date = data.get("date").toString();
+            ingredientDao.insert_ingredient(ingredient, expiration_date);
+        } else {
         int expiration = ingredientDao.find_date(ingredient);
         LocalDate today = LocalDate.now();
         LocalDate date = today.plusDays(expiration);
         DateTimeFormatter change_format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String expiration_date = date.format(change_format);
         ingredientDao.insert_ingredient(ingredient, expiration_date);
+        }   
         return ResponseEntity.noContent().build();
     }
 }

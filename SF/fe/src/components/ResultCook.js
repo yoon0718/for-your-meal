@@ -10,7 +10,7 @@ function ResultCook() {
   
   useEffect(() => {
     const menu_name = sessionStorage.getItem("메뉴명")
-    axios.post("http://10.10.21.89/fastresult",{"메뉴명":menu_name})
+    axios.post("http://localhost/fastresult",{"메뉴명":menu_name})
     .then(res => {
       setFood(res.data)
     })

@@ -14,7 +14,7 @@ function Commit2() {
     sessionStorage.setItem("메뉴명", label);
     navigate('/main/ResultCook');
   }
-  axios.post("http://10.10.21.89/category",postingdata)
+  axios.post("http://localhost/category",postingdata)
   .then(res => {
     setData(res.data)
   })

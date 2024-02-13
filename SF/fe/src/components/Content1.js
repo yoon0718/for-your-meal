@@ -68,13 +68,13 @@ function Content1() {
       </div>
       <Routes>
         <Route path = "/" element={<Main/>}/>
-        <Route path = "commit1" element={<Commit1/>}/>
-        <Route path = "ResultCook" element={<ResultCook/>}/>
-        <Route path = "ResultRandom" element={<ResultRandom/>}/>
-        <Route path = "Expirationdate" element={<Expirationdate/>}/>
-        <Route path = "commit2" element={<Commit2/>}/>
-        <Route path = "addingre" element={<IngredientTest/>}/>
-        <Route path = "add" element={<Add/>}/>
+        <Route path = "/commit1" element={<Commit1/>}/>
+        <Route path = "/ResultCook" element={<ResultCook/>}/>
+        <Route path = "/ResultRandom" element={<ResultRandom/>}/>
+        <Route path = "/Expirationdate" element={<Expirationdate/>}/>
+        <Route path = "/commit2" element={<Commit2/>}/>
+        <Route path = "/addingre" element={<IngredientTest/>}/>
+        <Route path = "/add/*" element={<Add/>}/>
       </Routes>
       </div>
 

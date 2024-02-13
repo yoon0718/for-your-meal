@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
 
-export default function Atable(props) {
+export default function Btable(props) {
   const columns = [
     {
       name: "재료",
@@ -83,7 +83,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://10.10.21.89/expiration");
+      const response = await axios.get("http://localhost/expiration");
       const jsonData = response.data;
       setData(jsonData["임박순"]);
     } catch (error) {
@@ -95,14 +95,9 @@ export default function Atable(props) {
     fetchData();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://10.10.21.89/expiration/`);
-      fetchData();
-    } catch (error) {
-      console.log("Error deleting data:", error);
-    }
-  };
+  useEffect(() => {
+    fetchData();
+  }, [props.refreshData]); // refreshData 값이 변경될 때마다 fetchData를 호출합니다.
 
   const [data, setData] = useState([]);
 

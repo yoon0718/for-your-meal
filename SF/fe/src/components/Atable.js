@@ -65,7 +65,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://10.10.21.89/expiration");
+      const response = await fetch("http://localhost/expiration");
       const jsonData = await response.json();
       setData(jsonData["재료순"]);
     } catch (error) {
@@ -80,11 +80,11 @@ export default function Atable(props) {
   const [data, setData] = useState([]);
 
   const handleDelete = (row) => {
-    console.log(row)
-    axios.post("http://10.10.21.89/expiration",row)
-    .then(res => {
-      fetchData();
-    })
+    axios.post("http://localhost/expiration", row)
+      .then(res => {
+        props.onRefreshData(); // 삭제 후 fetchData를 다시 실행하기 위해 onRefreshData 콜백을 호출합니다.
+        fetchData();
+      })
   };
 
   return (

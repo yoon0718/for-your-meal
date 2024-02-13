@@ -9,7 +9,7 @@ export default function Add() {
     <div className="add_wrap">
       <div className="abody">
         <div className="all_box">
-          <Camera></Camera>
+          <Camera/>
           <div className="import_result">
             <div className="text_result">
               <div className="text_header">결과 보기</div>

@@ -17,4 +17,9 @@ public class CameraDao {
         String query = String.format("UPDATE photo SET result = '%s' WHERE photoname = '%s'", result, photoname);
         jt.execute(query);
     }
+
+    public void del_photo(String photoname) {
+        String query = String.format("DELETE FROM photo WHERE photoname = '%s'",photoname);
+        jt.execute(query);
+    }
 }
