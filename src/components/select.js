@@ -43,8 +43,8 @@ function Select() {
         <div className="signup-signup">
           <div className="sign-up-form">
             <h2 className="title">
-              <span className="highlight2">지</span>금 기분엔<br></br>
-              <span className="highlight2">이</span>런 음식<br></br>
+              <span className="highlight2">지</span>금<br></br>
+              <span className="highlight2">이</span>런음식<br></br>
               <span className="highlight2">어</span>떤가요?<br></br>
             </h2>
             <p className="social-text">

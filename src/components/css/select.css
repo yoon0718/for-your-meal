@@ -206,7 +206,10 @@ form {
   font-weight: 600;
   background-color: black;
   border-radius: 15px;
-  padding: 12px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
   opacity: 0.7;
   text-align: center;
 }
