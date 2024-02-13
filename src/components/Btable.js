@@ -9,22 +9,22 @@ export default function Atable(props) {
       name: "재료",
       selector: (row) => row.ingredient,
       sortable: true,
-      width: "130px",
+      width: "33%",
       center: true
     },
     {
       name: "소비기한",
       selector: (row) => row.date,
       sortable: true,
-      width: "150px",
-      right: true
+      width: "34%",
+      center: true
     },
     {
       name: "유통기한",
       selector: (row) => row.유통기한,
       sortable: true,
-      width: "150px",
-      right: true,
+      width: "33%",
+      center: true,
       cell: (row) => (
         <div
           style={{
@@ -38,24 +38,6 @@ export default function Atable(props) {
         >
           {row.유통기한}
         </div>
-      )
-    },
-    {
-      name: "",
-      button: true,
-      cell: (row) => (
-        <button
-          onClick={() => handleDelete(row)}
-          style={{
-            background: "none",
-            border: "none",
-            padding: 0,
-            margin: 0,
-            cursor: "pointer"
-          }}
-        >
-          삭제
-        </button>
       )
     }
   ];
@@ -101,7 +83,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://10.10.21.89/expiration");
+      const response = await axios.get("http://localhost/expiration");
       const jsonData = response.data;
       setData(jsonData["임박순"]);
     } catch (error) {
@@ -115,7 +97,7 @@ export default function Atable(props) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://10.10.21.89/expiration/`);
+      await axios.delete(`http://localhost/expiration/`);
       fetchData();
     } catch (error) {
       console.log("Error deleting data:", error);
@@ -123,6 +105,20 @@ export default function Atable(props) {
   };
 
   const [data, setData] = useState([]);
+
+  const NoDataComponent = () => (
+    <div style={{
+      width: '100%',
+      textAlign: 'center',
+      padding: '10px',
+      fontSize: '18px',
+      backgroundColor: '#FFED93' ,  
+      fontFamily: 'EASTARJET-Medium' 
+    }}>
+      아직 유통기한이 임박한 재료가 없습니다.
+    </div>
+  );
+  
 
   return (
     <div className="Btable" style={{ textAlign: "center" }}>
@@ -134,6 +130,7 @@ export default function Atable(props) {
         highlightOnHover
         customStyles={customStyles}
         conditionalRowStyles={conditionalRowStyles}
+        noDataComponent={<NoDataComponent />}
       />
     </div>
   );

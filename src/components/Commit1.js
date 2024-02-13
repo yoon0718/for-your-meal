@@ -1,32 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../components/css/Commit.css';
-
-import Food1 from '../img/food/찌개예시1.jpg';
-import Food2 from '../img/food/찌개예시2.jpg';
-import Food3 from '../img/food/찌개예시3.jpg';
-import Food4 from '../img/food/찌개예시4.jpg';
-import Food5 from '../img/food/찌개예시5.png';
-import Food6 from '../img/food/찌개예시6.jpg';
-
-
-const contentImages = [
-  { src: Food1, label: "찌개 예시 1", path: "/" },
-  { src: Food2, label: "찌개 예시 2", path: "/" },
-  { src: Food3, label: "찌개 예시 3", path: "/" },
-  { src: Food4, label: "찌개 예시 4", path: "/" },
-  { src: Food5, label: "찌개 예시 5", path: "/" },
-  { src: Food6, label: "찌개 예시 6", path: "/" },
-];
+import axios from 'axios';
 
 function Commit1() {
+  const [food1, setFood1] = useState(false);
+  const [food2, setFood2] = useState(false);
+  const [food3, setFood3] = useState(false);
+  const [food4, setFood4] = useState(false);
+  const [food5, setFood5] = useState(false);
+  const [food6, setFood6] = useState(false);
+
+  useEffect(() => {
+    const cousinetype = sessionStorage.getItem('요리종류')
+    axios.post("http://localhost/fastsearch",cousinetype)
+    .then(res => {
+        setFood1(res.data['menu1'])
+        setFood2(res.data['menu2'])
+        setFood3(res.data['menu3'])
+        setFood4(res.data['menu4'])
+        setFood5(res.data['menu5'])
+        setFood6(res.data['menu6'])
+    })
+},[])
+
+  const contentImages = [
+    { src: food1['이미지경로'], label: food1['메뉴명'] },
+    { src: food2['이미지경로'], label: food2['메뉴명'] },
+    { src: food3['이미지경로'], label: food3['메뉴명'] },
+    { src: food4['이미지경로'], label: food4['메뉴명'] },
+    { src: food5['이미지경로'], label: food5['메뉴명'] },
+    { src: food6['이미지경로'], label: food6['메뉴명'] },
+  ];
+  
+  const setName = (label) => {
+    sessionStorage.setItem("메뉴명", label);
+    window.location.href = '/main/ResultCook';
+  }
 
   return (
     <main className="contents">
       <div className='CategoryFood'>
         <div className="food-container">
           {contentImages.map((image, index) => (
-            <div key={index} className="food-item">
+            <div key={index} className="food-item" onClick={() => setName(image.label)}>
               <img src={image.src} alt={`Food ${index + 1}`} />
               <div className="food-label">{image.label}</div>
             </div>

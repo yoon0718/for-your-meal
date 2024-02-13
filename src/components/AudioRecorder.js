@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import recbtn from '../img/rec.png';
 import './css/VoiceC.css';
+import axios from 'axios';
 
 export default function AudioRecorder() {
   const [recording, setRecording] = useState(false);
-  // const [audioURL, setAudioURL] = useState('');
-  // const [mediaRecorder, setMediaRecorder] = useState(null);
   const chunksRef = React.useRef([]);
   const canvasRef = React.useRef(null);
   const [displayText, setDisplayText] = useState('');
@@ -81,7 +80,21 @@ export default function AudioRecorder() {
       recorder.onstop = async () => {
         const mp3Blob = new Blob(chunksRef.current, { type: 'audio/mp3' });
         const wavBlob = await convertToWav(mp3Blob);
-        downloadBlob(wavBlob, 'recording.wav');
+        const formData = new FormData();
+        formData.append('audioFile', wavBlob);
+        try {
+          axios.post('http://localhost/recording', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
+          .then(response => {
+            sessionStorage.setItem("filename",response.data)
+            window.location.href = "/loading"
+          });
+        } catch (error) {
+          console.error('Error uploading audio:', error);
+        }
         setRecording(false);
       };
   
@@ -90,7 +103,7 @@ export default function AudioRecorder() {
       setRecording(true);
 
       setRecording(true);
-      setDisplayText('오늘 뭐먹지 라고 말해주세요');
+      setDisplayText('');
       setTextVisible(true);
 
       setTimeout(() => {
@@ -166,28 +179,37 @@ export default function AudioRecorder() {
     }
   };
 
-
-  const downloadBlob = (blob, filename) => {
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
   return (
     <div>
       <canvas ref={canvasRef} className="waveform"></canvas>
       <button onClick={handleStartRecording} disabled={recording}>
         <img src={recbtn} className="recbtn" alt="Record" />
       </button>
+      {textVisible && (
       <p
         className={`ptag ${textVisible ? 'fade-in' : 'fade-out'}`} // 클래스 이름을 fade, fade-in, fade-out으로 설정
         style={{ transform: textVisible ? 'translateX(0)' : 'translateX(-100px)' }}
       >
+        <span class="back">
+            <span>"오</span>
+            <span>늘</span>
+            <span></span>
+            <span>뭐</span>
+            <span></span>
+            <span>먹</span>
+            <span>지?"</span>
+            <span></span>
+            <span>라</span>
+            <span>고</span>
+            <span></span>
+            <span>말</span>
+            <span>해</span>
+            <span>봐</span>
+            <span>요</span>
+          </span>
         {displayText}
       </p>
+      )}
     </div>
   );
 }

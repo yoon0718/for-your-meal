@@ -10,22 +10,19 @@
 .slider2-right {
     width: 26vw;
     height: 83vh;
-    background-color: #c7c7c7;
     margin-right: 15px;
     margin-top: 15px;
     
 }
 
 .slider2-right .slider-right1 {
-    height: 41.5vh;
-    background-color: #a3a3a3;
-   
+    height: 61.5vh;
 }
 
 .slider2-right .slider-right2 {
     margin-top: 15px;
     background-color: aqua;
-    height: 41.5vh;
+    height: 21.5vh;
 }
 
 
@@ -33,6 +30,7 @@
 /* 컨텐츠 영역 스타일 */
 .contents {
     width: 60%;
+    height: 85vh;
     text-align: center;
     overflow: hidden;
     margin-right: 15px;
@@ -76,12 +74,13 @@
     width: 100%; /* 전체 너비 사용 */
     justify-content: center;
     align-items: center;
+    height: 35%;
 }
 
 
 .Randomview {
     width: 38vw; /* 너비 조정 */
-    height: 150px; /* 높이 조정 */
+    height: 190px; /* 높이 조정 */
     background-color: #FFED93;
     margin-top: 10px;
     margin-bottom: 8px;
@@ -92,14 +91,14 @@
     padding: 0 10px; 
     overflow: hidden; 
     font-family: 'omyu_pretty', sans-serif;
-    font-size: 130%;
+    font-size: 150%;
     border-radius: 10px;
     opacity: 80%;
 }
 
 .Randomview-2 {
     width: 38vw; 
-    height: 150px; 
+    height: 190px; 
     background-color: #FFED93;
     margin-top: 10px;
     margin-bottom: 8px;
@@ -133,7 +132,9 @@
     transition: background-color 0.3s; 
     font-family: 'yg-jalnan';
     font-size: medium;
-    opacity: 80%;
+    opacity: 100%;
+    margin-top: 20px; /* 버튼과 텍스트 사이의 간격 조정 */
+    text-align: center; /* 버튼을 중앙 정렬 */
 }
 
 .Menubar:active {
@@ -156,6 +157,7 @@
     height: 13vw;
     margin-top: 10px;
     width: 100%;
+    height: 35%;
 }
 
 .Expirationbtn{
