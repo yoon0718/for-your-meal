@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import './css/select.css';
-import Mic from '../img/mic.png';
-import fridge from '../img/fridge.png';
+import "./css/select.css";
+import Mic from "../img/mic.png";
+import fridge from "../img/fridge.png";
 
 function Select() {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
@@ -15,32 +15,41 @@ function Select() {
     setIsSignUpMode(false);
   };
   const PlzClick = () => {
-    window.location.href = '/main';
+    window.location.href = "/main";
   };
   const AiClick = () => {
-    window.location.href = '/Ai';
+    window.location.href = "/Ai";
   };
 
   return (
-    <div className={`container ${isSignUpMode ? 'sign-up-mode' : ''}`}>
+    <div className={`container ${isSignUpMode ? "sign-up-mode" : ""}`}>
       <div className="forms-container">
         <div className="signin-signup">
           <div className="sign-in-form">
             <h2 className="title">
-              냉장고를 <br></br> 부탁해
+              <span className="highlight">오</span>늘은<br></br>
+              <span className="highlight">내</span>가<br></br>
+              <span className="highlight">요</span>리사
+              <br />
             </h2>
-            <p className="social-text">본격 냉장고 털이범 되기 프로젝트</p>
+            <p className="social-text">
+              냉장고 식재료를 사용해서 요리한번 어떠세요?
+            </p>
             <button className="btn plz" onClick={PlzClick}>
-              부탁하러 가기
+              시작
             </button>
           </div>
         </div>
         <div className="signup-signup">
           <div className="sign-up-form">
             <h2 className="title">
-              음성으로 <br></br>음식추천
+              <span className="highlight2">지</span>금 기분엔<br></br>
+              <span className="highlight2">이</span>런 음식<br></br>
+              <span className="highlight2">어</span>떤가요?<br></br>
             </h2>
-            <p className="social-text">지금 나의 기분에 맞는 음식을 찾아보앙~</p>
+            <p className="social-text">
+              당신의 기분에 맞춰서 음식을 추천해 드립니다.
+            </p>
             <button className="btn" onClick={AiClick}>
               말하러 가기
             </button>
@@ -50,24 +59,36 @@ function Select() {
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>다른기능 사용해보기</h3>
+            <h3 className="recommendation-text">
+              목소리로 <br></br>
+              <span className="text_space"></span>
+              음식 <br></br>
+              <span className="text_space"></span>
+              추천받으러 가기
+            </h3>
 
             <button className="btn trans" onClick={handleSignUpClick}>
-              변신
+              음성 인식
             </button>
           </div>
-          <img src={fridge} alt="" className="image" />
+          <img src={Mic} alt="" className="image" />
         </div>
 
         <div className="panel right-panel">
           <div className="content">
-            <h3>다른기능 사용해보기</h3>
+            <h3 className="recommendation-text">
+              레시피로 <br></br>
+              <span className="text_space"></span>
+              음식 <br></br>
+              <span className="text_space"></span>
+              추천받으러 가기
+            </h3>
 
             <button className="btn trans" onClick={handleSignInClick}>
-              변신
+              레시피 추천
             </button>
           </div>
-          <img src={Mic} alt="" className="image" />
+          <img src={fridge} alt="" className="image" />
         </div>
       </div>
     </div>

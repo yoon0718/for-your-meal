@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import loading from "../img/loading3.gif";
+import loading from "../img/loading5.gif";
 import "./css/test2.css";
 
 export default function Test2() {
@@ -11,7 +11,7 @@ export default function Test2() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 2000); // 2초 후에 상태 변경
+    }, 9000); // 2초 후에 상태 변경
 
     return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 제거
   }, []);
