@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
+import './css/Loading.css';
+
 
 function Loading() {
     useEffect(() => {
@@ -17,9 +19,9 @@ function Loading() {
     })
 
     return(
-       <div>
-       당신의 감정을 분석중이에요! 잠시만 기다려주세요!
-      </div>
+        <div className="loading-container">
+        
+        </div>  
         )
 }
 export default Loading;
