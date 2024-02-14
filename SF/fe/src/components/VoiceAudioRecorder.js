@@ -3,7 +3,7 @@ import recbtn from '../img/rec.png';
 import './css/VoiceC.css';
 import axios from 'axios';
 
-export default function AudioRecorder() {
+export default function VoiceAudioRecorder() {
   const [recording, setRecording] = useState(false);
   const chunksRef = React.useRef([]);
   const canvasRef = React.useRef(null);
@@ -180,11 +180,9 @@ export default function AudioRecorder() {
   };
 
   return (
-    <div>
+    <div className="audiobox">
+      <img src={recbtn} className="recbtn" alt="Record" onClick={handleStartRecording} disabled={recording}/>
       <canvas ref={canvasRef} className="waveform"></canvas>
-      <button onClick={handleStartRecording} disabled={recording}>
-        <img src={recbtn} className="recbtn" alt="Record" />
-      </button>
       {textVisible && (
       <p
         className={`ptag ${textVisible ? 'fade-in' : 'fade-out'}`} // 클래스 이름을 fade, fade-in, fade-out으로 설정

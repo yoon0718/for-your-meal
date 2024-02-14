@@ -25,8 +25,8 @@
 
 /* 컨텐츠 영역 스타일 */
 .contents {
-  width: 60%;
-  height: 85vh;
+  width: 65%;
+  height: 85.3vh;
   text-align: center;
   overflow: hidden;
   margin-right: 15px;
@@ -37,6 +37,7 @@
   z-index: 0;
   position: relative;
   bottom: 3.6vh;
+  border-radius: 10px;
 }
 
 .contents .contentsection {
@@ -45,7 +46,7 @@
   margin-bottom: 1vh;
   padding: 10px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 가로로 3개의 열 생성 */
   height: 10vw;
@@ -138,6 +139,7 @@
   opacity: 100%;
   margin-top: 20px; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center; /* 버튼을 중앙 정렬 */
+  transition: transform 0.5s ease;
 }
 
 .Menubar:active {
@@ -159,7 +161,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  transition: transform 0.5s ease;
   font-family: "omyu_pretty", sans-serif;
   font-size: 170%;
 
@@ -200,4 +202,15 @@
   align-items: center;
   justify-content: center;
   font-family: "yg-jalnan", sans-serif;
+  transition: transform 0.5s ease;
+}
+.slider-right2:hover {
+  transform: scale(0.96);
+}
+
+.contentsection3:hover {
+  transform: scale(0.98);
+}
+.Menubar:hover {
+  transform: scale(0.95);
 }

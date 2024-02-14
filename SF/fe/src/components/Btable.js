@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
-export default function Btable(props) {
+
+export default function Atable(props) {
   const columns = [
     {
       name: "재료",
@@ -54,30 +55,31 @@ export default function Btable(props) {
   ];
 
   const customStyles = {
-    titlecell: {
-      style: {
-        backgroundColor: "#d4ba18"
-      }
+    titlecell:{
+        style:{
+          backgroundColor: '#ffffff'  
+        }
     },
 
     headCells: {
-      style: {
-        backgroundColor: "#F64646",
-        color: "#ffffff",
-        fontSize: "16px",
-        fontWeight: "bold",
-        fontFamily: "EASTARJET-Medium"
-      }
+        style: {
+            backgroundColor: '#ffffff', 
+            color: '#000000', 
+            fontSize: '16px', 
+            fontWeight: 'bold', 
+            fontFamily: 'EASTARJET-Medium', 
+          },
     },
     cells: {
-      style: {
-        backgroundColor: "#FFED93", // 일반 셀의 배경색
-        color: "#333333", // 일반 셀의 폰트 색상
-        fontSize: "14px", // 일반 셀의 폰트 크기
-        fontFamily: "EASTARJET-Medium" // 폰트 종류
-      }
+        style: {
+            backgroundColor: '#ffffff', // 일반 셀의 배경색
+            color: '#333333', // 일반 셀의 폰트 색상
+            fontSize: '14px', // 일반 셀의 폰트 크기
+            fontFamily: 'EASTARJET-Medium', // 폰트 종류
+     },
     }
   };
+  
 
   const fetchData = async () => {
     try {
@@ -93,15 +95,34 @@ export default function Btable(props) {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    fetchData();
-  }, [props.refreshData]); // refreshData 값이 변경될 때마다 fetchData를 호출합니다.
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost/expiration/`);
+      fetchData();
+    } catch (error) {
+      console.log("Error deleting data:", error);
+    }
+  };
 
   const [data, setData] = useState([]);
 
+  const NoDataComponent = () => (
+    <div style={{
+      width: '100%',
+      textAlign: 'center',
+      padding: '10px',
+      fontSize: '18px',
+      backgroundColor: '#ffffff' ,  
+      fontFamily: 'EASTARJET-Medium', 
+    }}>
+      아직 유통기한이 임박한 재료가 없습니다.
+    </div>
+  );
+  
+
   return (
     <div className="Btable" style={{ textAlign: "center" }}>
-      <p className="Btablefont">유통기한 임박 재료</p>
+        <p className="Btablefont">유통기한 임박 재료</p>
       <DataTable
         columns={columns}
         data={data}
@@ -109,6 +130,7 @@ export default function Btable(props) {
         highlightOnHover
         customStyles={customStyles}
         conditionalRowStyles={conditionalRowStyles}
+        noDataComponent={<NoDataComponent />}
       />
     </div>
   );

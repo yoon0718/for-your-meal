@@ -1,3 +1,5 @@
+// ------메인레시피 홈페이지 부분의 컨텐츠 부분입니다.------
+
 import item1 from "../img/국&찌개.png";
 import item2 from "../img/반찬.png";
 import item3 from "../img/기타.png";
@@ -10,8 +12,8 @@ import refrigerator from "../img/냉장고내부.png";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import "./css/main.css";
-import Content2 from "./Content2";
+import "./css/MainContent.css";
+import Content2 from "./MainChatbot";
 
 import roulette1 from "../img/11/bibimbap.png";
 import roulette2 from "../img/11/biryani.png";
@@ -50,12 +52,14 @@ const rouletteImages = [
   roulette12
 ];
 
-function Main() {
+function MainContent() {
   const navigate = useNavigate();
   const [selectedMenu, setSelectedMenu] = useState("");
   const [rouletteActive, setRouletteActive] = useState(false);
   const [selectedRouletteImage, setSelectedRouletteImage] = useState(roulette1);
-
+  const AddBtn = () => {
+    navigate("/main/Add");
+  };
   const setType = (label) => {
     sessionStorage.setItem("요리종류", label);
     navigate("/main/commit1");
@@ -208,10 +212,12 @@ function Main() {
         <div className="slider-right1">
           <Content2 />
         </div>
-        <div className="slider-right2">냉장고에 식재료 넣기</div>
+        <div className="slider-right2" onClick={AddBtn}>
+          냉장고에 식재료 넣기
+        </div>
       </div>
     </div>
   );
 }
 
-export default Main;
+export default MainContent;

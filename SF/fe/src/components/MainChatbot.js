@@ -1,3 +1,5 @@
+// ----------메인레시피 부분 오른쪽 슬라이더의 챗봇 부분입니다.----------
+
 import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Chatbot from 'react-simple-chatbot';
@@ -16,7 +18,7 @@ const Theme = {
   userFontColor: '#4a4a4a',
   
 };
-const Content2 = () => {
+const MainChatbot = () => {
   const navigate = useNavigate();
   const [selectedtype, setSelectedtype] = useState('선택안함');
   const [selectedway, setSelectedway] = useState('선택안함');
@@ -769,4 +771,4 @@ const Content2 = () => {
   );
 };
 
-export default Content2;
+export default MainChatbot;

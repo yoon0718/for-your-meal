@@ -5,6 +5,7 @@ import SelectBox from "./SelectBox";
 import ResultCam from "./ResultCam";
 
 export default function Add() {
+
   return (
     <div className="add_wrap">
       <div className="abody">

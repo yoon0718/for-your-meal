@@ -44,13 +44,14 @@ function Camera() {
         video.style.display = "flex";
       }
     })
+
   return (
     <div className="cam_box_result">
       <div className="camera_header">
         식재료를 찍어보세요!
       </div>
       <div className='camera_content'>
-        <video autoplay="true" className="video" width="426px" height="320px"></video>
+        <video autoplay="true" className="video" width='640px' height='480px'></video>
         <canvas className="canvas"></canvas>
         <div className="captureButton"><img src={camimg} alt='camera' className='camimg'></img></div>
       </div>

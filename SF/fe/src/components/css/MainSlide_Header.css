@@ -1,6 +1,6 @@
 /* 전역 스타일 초기화 */
 .backgroundwrap {
-  background-image: url("../../img/back2.jpeg");
+  background-image: url("../../img/back2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

@@ -1,9 +1,11 @@
+// --------메인레시피컨텐츠 중 레시피의 맨 위 컨텐츠 결과 부분입니다.--------
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../components/css/Commit.css";
+import "../components/css/MainCommit.css";
 import axios from "axios";
 
-function Commit1() {
+function MainCommit1() {
   const navigate = useNavigate();
   const [food1, setFood1] = useState(false);
   const [food2, setFood2] = useState(false);
@@ -58,4 +60,4 @@ function Commit1() {
   );
 }
 
-export default Commit1;
+export default MainCommit1;

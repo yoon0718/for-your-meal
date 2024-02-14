@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
-import "../components/css/Commit.css";
+import "../components/css/MainCommit.css";
 import { useNavigate } from "react-router-dom";
 
-function Commit2() {
+function ChatbotCommit() {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
   const type = sessionStorage.getItem("요리종류");
@@ -49,4 +49,4 @@ function Commit2() {
   }
 }
 
-export default Commit2;
+export default ChatbotCommit;

@@ -1,6 +1,8 @@
+// ------레시피 메인 부분의 헤더와 슬라이더 부분입니다.------
+
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import "./css/Content1.css";
+import "./css/MainSlide_Header.css";
 
 import bg1 from "../img/food/1.jpg";
 import bg2 from "../img/food/2.jpg";
@@ -37,13 +39,13 @@ import bg32 from "../img/food/32.jpg";
 
 import logo from "../img/logo2.png";
 
-import Commit1 from "./Commit1";
+import Commit1 from "./MainCommit1";
 import ResultCook from "./ResultCook";
-import ResultRandom from "./ResultRandom";
-import Expirationdate from "./Expirationdate";
-import Main from "./Main";
-import Commit2 from "./Commit2";
+import ResultRandom from "./MainResultRandom";
+import Expirationdate from "./MainExpirationdate";
+import Main from "./MainContent";
 import Add from "./Add";
+import ChatbotCommit from "./ChatbotCommit";
 
 const bgImages = [
   bg1,
@@ -80,7 +82,7 @@ const bgImages = [
   bg32
 ];
 
-function Content1() {
+function MainSlide_Header() {
   const navigate = useNavigate();
   const [currentBgSlide, setCurrentBgSlide] = useState(0);
 
@@ -144,12 +146,12 @@ function Content1() {
           <Route path="ResultCook" element={<ResultCook />} />
           <Route path="ResultRandom" element={<ResultRandom />} />
           <Route path="Expirationdate" element={<Expirationdate />} />
-          <Route path="commit2" element={<Commit2 />} />
           <Route path="add" element={<Add />} />
+          <Route path="Commit2" element={<ChatbotCommit />} />
         </Routes>
       </div>
     </div>
   );
 }
 
-export default Content1;
+export default MainSlide_Header;
