@@ -43,7 +43,7 @@ import ResultRandom from "./ResultRandom";
 import Expirationdate from "./Expirationdate";
 import Main from "./Main";
 import Commit2 from "./Commit2";
-import IngredientTest from "./IngredientTest";
+import Add from "./Add";
 
 const bgImages = [
   bg1,
@@ -117,7 +117,7 @@ function Content1() {
             <button
               className="selectButton"
               onClick={goToSelect}
-              style={{ position: "absolute", left: "20px", top: "20px" }}
+              style={{ position: "absolute", left: "20px", top: "16px" }}
             >
               홈으로 이동하기
             </button>
@@ -145,7 +145,7 @@ function Content1() {
           <Route path="ResultRandom" element={<ResultRandom />} />
           <Route path="Expirationdate" element={<Expirationdate />} />
           <Route path="commit2" element={<Commit2 />} />
-          <Route path="addingre" element={<IngredientTest />} />
+          <Route path="add" element={<Add />} />
         </Routes>
       </div>
     </div>

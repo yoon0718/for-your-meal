@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Creatable from "react-select/creatable";
 import "./css/selectbox.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const codeOptions = [
   {
@@ -168,7 +170,9 @@ const colourStyles = {
     backgroundColor: "lightblue",
     outline: "black",
     color: "black",
-    width: "100%"
+    width: "100%",
+    fontFamily: "omyu_pretty",
+    fontSize: "30px"
   }),
   option: (style, { isFocused }) => {
     return {
@@ -185,6 +189,7 @@ const colourStyles = {
 };
 
 const SelectBox = () => {
+  const navigate = useNavigate();
   const [selectCode, setSelectCode] = useState("ALL");
   const [selectedOption, setSelectedOption] = useState(null);
   const [options, setOptions] = useState(codeOptions);
@@ -203,28 +208,37 @@ const SelectBox = () => {
   };
 
   const handleInsertClick = () => {
+    
     if (selectedOption) {
-      // Perform the insertion logic here
-      console.log(selectedOption.value + "이(가) 넣어 졌읍니다.");
+      const data = {"ingredient":selectedOption.value}
+        axios.post("http://localhost/ingredient",data)
+        .then(res => {
+          alert("식재료가 냉장고에 넣어졌습니다")
+          setSelectedOption(null);
+          navigate("/main/add", { replace: true });
+        })
     }
   };
 
   return (
     <div className="Select_box">
-      <Creatable
-        defaultValue={codeOptions[0]}
-        options={codeOptions}
-        styles={colourStyles}
-        theme={(theme) => ({
-          ...theme,
-          borderRadius: 8
-        })}
-        onChange={handleSelectChange}
-      />
-      {selectedOption && (
-        <p>식재료 ({selectedOption.value}) 이 넣어졌습니다.</p>
-      )}
-      <button onClick={handleInsertClick}>이 재료가 맞습니까?</button>
+      <div className="Select_box_header">유통기한을 못찾겠나요?</div>
+        <div className="Select_box_content">
+          <Creatable
+            defaultValue={codeOptions[0]}
+            options={codeOptions}
+            styles={colourStyles}
+            theme={(theme) => ({
+              ...theme,
+              borderRadius: 8
+            })}
+            onChange={handleSelectChange}
+          />
+        {selectedOption && (
+          <p className="Select_box_msg">식재료 {selectedOption.value} 이(가) 선택되었습니다.</p>
+        )}
+        <button className="Select_box_btn" onClick={handleInsertClick}>냉장고에 넣기</button>
+      </div>
     </div>
   );
 };

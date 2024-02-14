@@ -1,6 +1,6 @@
 .rsc {
-  height:61.5vh;
-  overflow:auto;
+  height: 61.5vh;
+  overflow: auto;
 }
 
 .rsc-footer {
@@ -12,3 +12,7 @@
   display: none;
 }
 
+.rsc-os-option-element,
+.rsc-input {
+  font-family: omyu_pretty;
+}

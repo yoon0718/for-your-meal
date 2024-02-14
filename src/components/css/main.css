@@ -34,9 +34,15 @@
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
+  z-index: 0;
+  position: relative;
+  bottom: 3.6vh;
 }
 
 .contents .contentsection {
+  z-index: 9;
+
+  margin-bottom: 1vh;
   padding: 10px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -153,11 +159,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+
   font-family: "omyu_pretty", sans-serif;
   font-size: 170%;
-  height: 13vw;
-  margin-top: 10px;
+
+  margin-top: 20px;
   width: 100%;
   height: 35%;
 }
@@ -176,4 +182,22 @@
 
 .Expirationbtn:active {
   background-color: #ee9715;
+}
+
+.slider-right2 {
+  background-image: linear-gradient(
+      to right,
+      rgba(58, 52, 52, 0.7),
+      rgba(119, 115, 115, 0.9)
+    ),
+    url("../../img/fooood.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "yg-jalnan", sans-serif;
 }

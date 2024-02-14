@@ -208,7 +208,7 @@ function Main() {
         <div className="slider-right1">
           <Content2 />
         </div>
-        <div className="slider-right2"></div>
+        <div className="slider-right2">냉장고에 식재료 넣기</div>
       </div>
     </div>
   );
