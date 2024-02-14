@@ -1,0 +1,18 @@
+.rsc {
+  height: 61.5vh;
+  overflow: auto;
+}
+
+.rsc-footer {
+  height: 1px;
+  /* display: none; */
+}
+
+.rsc-submit-button {
+  display: none;
+}
+
+.rsc-os-option-element,
+.rsc-input {
+  font-family: omyu_pretty;
+}
