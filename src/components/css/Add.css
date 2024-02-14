@@ -1,0 +1,92 @@
+/* * {
+  border: 1px solid black;
+} */
+.add_wrap {
+  width:65vw;
+  margin:15px;
+  height:85.5vh;
+}
+.abody {
+  display: flex;
+  flex-direction: row;
+  height: 85.5vh;
+}
+
+.all_box {
+  width: 80%;
+  height: 100%;
+ 
+}
+.cam_box {
+  width: 20%;
+  height: 100%;
+  margin-left: 30px;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+.cam_box_result {
+  height:60%;
+}
+.import_result {
+  display: flex;
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+
+}
+.text_result {
+  width: 50%;
+  border: solid 2px black;
+  border-radius: 10px;
+  display: flex;
+  margin-right: 5px;
+  flex-direction: column;
+  align-items: center;
+  font-family: omyu_pretty;
+  font-size: 30px;
+}
+.text_result2 {
+  width: 50%;
+  height: 37.5vh;
+  border: solid 2px black;
+  border-radius: 10px;
+  margin-left:5px;
+  display: flex;
+  justify-content: center;
+  overflow:auto;
+}
+
+.camera {
+  width: 10vw;
+}
+
+.cam_box_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:64px;
+  width:100%;
+  text-align: center;
+  font-family: omyu_pretty;
+  font-size: 30px;
+  border-bottom: 2px solid black;
+  background-color: antiquewhite;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.cam_box_content {
+  width: 95%;
+  height:85%;
+  margin:10px;
+  font-size: 25px;
+  font-family: omyu_pretty;
+  overflow: auto;
+  background-color: white;
+  opacity: 90%;
+}
+
+.video{
+  position: relative;
+  height: 90%;
+}

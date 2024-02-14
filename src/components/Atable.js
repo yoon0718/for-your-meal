@@ -56,8 +56,8 @@ export default function Atable(props) {
   const customStyles = {
     headCells: {
         style: {
-            backgroundColor: '#F64646', 
-            color: '#ffffff', 
+            backgroundColor: '#ffffff', 
+            color: '#000000', 
             fontSize: '16px', 
             fontWeight: 'bold', 
             fontFamily: 'EASTARJET-Medium', 
@@ -65,10 +65,11 @@ export default function Atable(props) {
     },
     cells: {
         style: {
-            backgroundColor: '#FFED93', // 일반 셀의 배경색
+            backgroundColor: '#ffffff', // 일반 셀의 배경색
             color: '#333333', // 일반 셀의 폰트 색상
             fontSize: '14px', // 일반 셀의 폰트 크기
             fontFamily: 'EASTARJET-Medium', // 폰트 종류
+            
           },
     }
   };
@@ -103,7 +104,7 @@ export default function Atable(props) {
       textAlign: 'center',
       padding: '10px',
       fontSize: '18px',
-      backgroundColor: '#FFED93' ,  
+      backgroundColor: '#ffffff' ,  
       fontFamily: 'EASTARJET-Medium' 
     }}>
       아직 냉장고에 보관된 재료가 없습니다.
