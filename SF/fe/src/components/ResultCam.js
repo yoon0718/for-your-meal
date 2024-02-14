@@ -43,19 +43,47 @@ export default function ResultCam() {
   }
 
   const handleOKClick = () => {
-    const post_data = {"ingredient" : data, "date" : selectedDate}
-    axios.post("http://localhost/ingredient",post_data)
-    .then(res => {
-      alert("식재료가 냉장고에 넣어졌습니다")
-      setData(null);
-      setShowCalendar(false);
-      setShowInputBox(false);
-      setSelectedDate("");
-      sessionStorage.clear()
-      sessionStorage.setItem("리셋","O")
-      navigate("/main/add", { replace: true });
-    })
+    if (selectedDate === "") {
+      alert("유통기한을 정확히 선택해주세요")
+    } else {
+      const post_data = {"ingredient" : data, "date" : selectedDate}
+      axios.post("http://localhost/ingredient",post_data)
+      .then(res => {
+        alert("식재료가 냉장고에 넣어졌습니다")
+        setData(null);
+        setShowCalendar(false);
+        setShowInputBox(false);
+        setSelectedDate("");
+        sessionStorage.clear()
+        sessionStorage.setItem("리셋","O")
+        navigate("/main/add", { replace: true });
+      })
+    }
   }
+
+  const handleOKClick2 = () => {
+    const ingre_name = document.querySelector(".result_box_input").value
+    if (ingre_name === "") {
+      alert("식재료를 정확히 입력해주세요")
+    } else if (selectedDate === "") {
+      alert("유통기한을 정확히 선택해주세요")
+    } else {
+      const post_data = {"ingredient" : ingre_name, "date" : selectedDate}
+      axios.post("http://localhost/ingredient",post_data)
+      .then(res => {
+        alert("식재료가 냉장고에 넣어졌습니다")
+        setData(null);
+        setShowCalendar(false);
+        setShowInputBox(false);
+        setSelectedDate("");
+        sessionStorage.clear()
+        sessionStorage.setItem("리셋","O")
+        navigate("/main/add", { replace: true });
+      })
+    }
+
+  }
+
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
   };
@@ -72,10 +100,12 @@ export default function ResultCam() {
     return (
       <div className="result_box">
         <p>유통기한을 입력해주세요</p>
-        <input type="date" min={formattedDate} onChange={handleDateChange} />
-        {selectedDate && <p>선택한 날짜: {selectedDate}</p>}
-        <button onClick={handleOKClick}>확인</button>
-        <button onClick={handleCancelClick}>다시 사진찍기</button>
+        <input className="result_box_cal" type="date" min={formattedDate} onChange={handleDateChange} />
+        {/* {selectedDate && <p>선택한 날짜: {selectedDate}</p>} */}
+        <div className="result_box_button">
+          <button onClick={handleOKClick}>확인</button>
+          <button onClick={handleCancelClick}>취소</button>
+        </div>
       </div>
     );
   }
@@ -84,11 +114,13 @@ export default function ResultCam() {
     return (
       <div className="result_box">
         <p>식재료 이름과 유통기한을 입력해주세요</p>
-        <input type="text" placeholder="식재료를 입력하세요" />
-        <input type="date" min={formattedDate} onChange={handleDateChange} />
-        {selectedDate && <p>선택한 날짜: {selectedDate}</p>}
-        <button onClick={handleOKClick}>확인</button>
-        <button onClick={handleCancelClick}>다시 사진찍기</button>
+        <input className="result_box_input" type="text" placeholder="식재료를 입력하세요" />
+        <input className="result_box_cal" type="date" min={formattedDate} onChange={handleDateChange} />
+        {/* {selectedDate && <p>선택한 날짜: {selectedDate}</p>} */}
+        <div className="result_box_button">
+          <button onClick={handleOKClick2}>확인</button>
+          <button onClick={handleCancelClick}>취소</button>
+        </div>
       </div>
     );
   }
@@ -97,8 +129,10 @@ export default function ResultCam() {
     <div className="result_box">
       <p>선택된 재료 : {data}</p>
       <p>식재료 이름이 맞습니까?</p>
-      <button onClick={handleYesClick}>Yes</button>
-      <button onClick={handleNoClick}>No</button>
+      <div className="result_box_button">
+        <button onClick={handleYesClick}>Yes</button>
+        <button onClick={handleNoClick}>No</button>
+      </div>
     </div>
   );
 }

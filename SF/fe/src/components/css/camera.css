@@ -25,7 +25,7 @@
 }
 .camera_content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height:90%;
@@ -34,7 +34,7 @@
     display: none;
 }
 .captureButton {
-    margin-left: 20px;
+    margin-top: 10px;
     cursor: pointer;
 }
 .camimg {
