@@ -13,7 +13,8 @@ const Theme = {
   botBubbleColor: '#9c826f',
   botFontColor: '#fff',
   userBubbleColor: '#fff',
-  userFontColor: '#4a4a4a'
+  userFontColor: '#4a4a4a',
+  
 };
 const Content2 = () => {
   const navigate = useNavigate();
@@ -745,7 +746,7 @@ const Content2 = () => {
   const chatbotStyle = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   };
 
   return (

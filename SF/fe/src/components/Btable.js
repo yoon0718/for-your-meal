@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
-
 export default function Btable(props) {
   const columns = [
     {
@@ -55,31 +54,30 @@ export default function Btable(props) {
   ];
 
   const customStyles = {
-    titlecell:{
-        style:{
-          backgroundColor: '#d4ba18'  
-        }
+    titlecell: {
+      style: {
+        backgroundColor: "#d4ba18"
+      }
     },
 
     headCells: {
-        style: {
-            backgroundColor: '#F64646', 
-            color: '#ffffff', 
-            fontSize: '16px', 
-            fontWeight: 'bold', 
-            fontFamily: 'EASTARJET-Medium', 
-          },
+      style: {
+        backgroundColor: "#F64646",
+        color: "#ffffff",
+        fontSize: "16px",
+        fontWeight: "bold",
+        fontFamily: "EASTARJET-Medium"
+      }
     },
     cells: {
-        style: {
-            backgroundColor: '#FFED93', // 일반 셀의 배경색
-            color: '#333333', // 일반 셀의 폰트 색상
-            fontSize: '14px', // 일반 셀의 폰트 크기
-            fontFamily: 'EASTARJET-Medium', // 폰트 종류
-     },
+      style: {
+        backgroundColor: "#FFED93", // 일반 셀의 배경색
+        color: "#333333", // 일반 셀의 폰트 색상
+        fontSize: "14px", // 일반 셀의 폰트 크기
+        fontFamily: "EASTARJET-Medium" // 폰트 종류
+      }
     }
   };
-  
 
   const fetchData = async () => {
     try {
@@ -103,7 +101,7 @@ export default function Btable(props) {
 
   return (
     <div className="Btable" style={{ textAlign: "center" }}>
-        <p className="Btablefont">유통기한 임박 재료</p>
+      <p className="Btablefont">유통기한 임박 재료</p>
       <DataTable
         columns={columns}
         data={data}

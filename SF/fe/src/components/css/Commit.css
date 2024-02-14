@@ -1,6 +1,5 @@
 /* 전역 스타일 초기화 */
 
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -13,13 +12,14 @@
 
 /* -------------------- 카테고리 음식 영역 -------------------- */
 .CategoryFood {
-    width: 100%;
+    width: 100vw;
     display: flex;
-    justify-content: center;
     font-family: 'yg-jalnan', sans-serif;
+    margin: 0;
+    padding: 0;
   }
   .commit_contents {
-    width: 60%;
+    width: 100vw;
     text-align: center;
     overflow: hidden;
     margin-right: 15px;
@@ -30,11 +30,11 @@
   }
   .food-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 가로로 3개의 열 생성 */
-    grid-template-rows: repeat(2, auto); /* 세로로 2개의 행 생성, 높이는 내용에 따라 자동 조정 */
-    gap: 8px 50px; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 40%); 
+    gap: 10px 40px; 
     padding: 0px;
-    height: 85.5vh;
+    height: 100vh;
     overflow: auto;
   }
   
@@ -45,19 +45,19 @@
   }
   
   .food-item img {
-    margin-bottom: 10px;
-    width: 110%; /* 이미지의 너비를 부모 요소에 맞춤 */
-    height: 230px; /* 이미지 비율 유지 */
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    width: 280px; 
+    height: 210px; 
+    object-fit: cover; 
+    transition: transform 0.5s ease; 
+    margin-bottom: -23px !important;
+    cursor: pointer;  
   }
   
   .food-item img:hover {
-    transform: scale(1.1); /* 이미지에 마우스를 올렸을 때 크기를 110%로 확대 */
+    transform: scale(1.1); 
   }
 
   .food-label {
-    margin-top: 2px; /* 이미지와 텍스트 사이의 간격 */
     text-align: center;
   }
   

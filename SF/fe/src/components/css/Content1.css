@@ -1,102 +1,126 @@
 /* 전역 스타일 초기화 */
-
-
-
-::-webkit-scrollbar {
-    display: none;
+.backgroundwrap {
+  background-image: url("../../img/back2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
 
 .wrap {
   display: flex;
   justify-content: flex-start;
-  align-items: start; 
-  width: 100%;
-  height: auto; 
-  flex-wrap: wrap; 
+  align-items: start;
+  width: 100vw;
+  height: auto;
+  flex-wrap: wrap;
   margin-left: 30px;
 }
 
-
 /* 헤더 영역 스타일 */
 .header {
-    width: 100vw;
-    height: 9vh;
+  width: 100vw;
+  height: 9vh;
 }
-
+.header_container {
+  width: 96.4vw;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.logotitle {
+  margin-top: 12px;
+}
 .logo {
-    display: flex;
-    justify-content: center;
-    margin-left: 45%;
-    width: 10%;
-    height: 10%;
-    font-size: medium;
+  display: flex;
+  justify-content: center;
+  margin-left: 45%;
+  width: 10%;
+  height: 10%;
+  font-size: medium;
 }
 
-  .logoMain {
-    font-size: 24px; 
-    font-weight: bold; 
-    font-family: 'SOYOMapleBoldTTF';
-  }
-  
-  .logoSub {
-    font-size: 16px; 
-    white-space: nowrap;
-    font-family: 'SOYOMapleBoldTTF';
-  }
-
-.mainLogo{
-    width: 50%;
-    height: 50%;
-    margin-right: 10px;
+.logoMain {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "SOYOMapleBoldTTF";
 }
 
-.mainLogo, .logotitle {
-    cursor: pointer; /* 마우스 오버 시 커서 모양 변경 */
-  }
+.logoSub {
+  font-size: 16px;
+  white-space: nowrap;
+  font-family: "SOYOMapleBoldTTF";
+}
+
+.mainLogo {
+  width: 50%;
+  height: 50%;
+  margin-right: 10px;
+}
+
+.mainLogo,
+.logotitle {
+  cursor: pointer; /* 마우스 오버 시 커서 모양 변경 */
+}
+
+.selectButton {
+  width: 8%;
+  padding: 10px 0;
+  background-color: #ff4f42;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "yg-jalnan";
+  font-size: 12px;
+  opacity: 80%;
+  margin-left: 88%;
+  position: absolute;
+}
 
 /* 슬라이더 영역 스타일 */
 .slider {
-    display: flex;
-    overflow: hidden;
-    text-align: center;
-    margin-right: 20px; /* 오른쪽 여백 추가 */
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  margin-right: 20px; /* 오른쪽 여백 추가 */
 }
 
-  .slider1 {
-    position: sticky;
-    margin-top: 15px;
-    width: 30vw;
-    height: 85.5vh;
-    background-color: #c7c7c7;
-    margin-bottom: 15px;
-    overflow: hidden;
-    border-radius: 7px;
-  }
-
-  .slider1 .imgslide {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
- 
-  }
-
-  .imgslide.active {
-    display: block;
-    opacity: 1;
-    z-index: 1; 
+.slider1 {
+  position: sticky;
+  margin-top: 15px;
+  width: 30vw;
+  height: 85.5vh;
+  background-color: #c7c7c7;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 7px;
 }
 
+.slider1 .imgslide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
 
+.imgslide.active {
+  display: block;
+  opacity: 1;
+  z-index: 1;
+}

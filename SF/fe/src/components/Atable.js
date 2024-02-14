@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
-
 export default function Atable(props) {
   const columns = [
     {
@@ -19,13 +18,11 @@ export default function Atable(props) {
       sortable: true,
       width: "34%",
       center: true
-    //   right: true
+      //   right: true
     },
     {
       name: "삭제",
-      cell: (row) => (
-        <button onClick={() => handleDelete(row)}>삭제</button>
-      ),
+      cell: (row) => <button onClick={() => handleDelete(row)}>삭제</button>,
       width: "33%",
       center: true
     }
@@ -45,21 +42,21 @@ export default function Atable(props) {
 
   const customStyles = {
     headCells: {
-        style: {
-            backgroundColor: '#F64646', 
-            color: '#ffffff', 
-            fontSize: '16px', 
-            fontWeight: 'bold', 
-            fontFamily: 'EASTARJET-Medium', 
-          },
+      style: {
+        backgroundColor: "#F64646",
+        color: "#ffffff",
+        fontSize: "16px",
+        fontWeight: "bold",
+        fontFamily: "EASTARJET-Medium"
+      }
     },
     cells: {
-        style: {
-            backgroundColor: '#FFED93', // 일반 셀의 배경색
-            color: '#333333', // 일반 셀의 폰트 색상
-            fontSize: '14px', // 일반 셀의 폰트 크기
-            fontFamily: 'EASTARJET-Medium', // 폰트 종류
-          },
+      style: {
+        backgroundColor: "#FFED93", // 일반 셀의 배경색
+        color: "#333333", // 일반 셀의 폰트 색상
+        fontSize: "14px", // 일반 셀의 폰트 크기
+        fontFamily: "EASTARJET-Medium" // 폰트 종류
+      }
     }
   };
 
@@ -80,16 +77,15 @@ export default function Atable(props) {
   const [data, setData] = useState([]);
 
   const handleDelete = (row) => {
-    axios.post("http://localhost/expiration", row)
-      .then(res => {
-        props.onRefreshData(); // 삭제 후 fetchData를 다시 실행하기 위해 onRefreshData 콜백을 호출합니다.
-        fetchData();
-      })
+    axios.post("http://localhost/expiration", row).then((res) => {
+      props.onRefreshData(); // 삭제 후 fetchData를 다시 실행하기 위해 onRefreshData 콜백을 호출합니다.
+      fetchData();
+    });
   };
 
   return (
     <div className="Atable" style={{ textAlign: "center" }}>
-        <p className="Atablefont">현재 냉장고에 보관된 재료는?</p>
+      <p className="Atablefont">현재 냉장고에 보관된 재료는?</p>
       <DataTable
         columns={columns}
         data={data}
@@ -101,5 +97,4 @@ export default function Atable(props) {
       />
     </div>
   );
-  
 }

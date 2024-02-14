@@ -103,7 +103,7 @@ export default function AudioRecorder() {
       setRecording(true);
 
       setRecording(true);
-      setDisplayText('오늘 뭐먹지 라고 말해주세요');
+      setDisplayText('');
       setTextVisible(true);
 
       setTimeout(() => {
@@ -185,12 +185,31 @@ export default function AudioRecorder() {
       <button onClick={handleStartRecording} disabled={recording}>
         <img src={recbtn} className="recbtn" alt="Record" />
       </button>
+      {textVisible && (
       <p
         className={`ptag ${textVisible ? 'fade-in' : 'fade-out'}`} // 클래스 이름을 fade, fade-in, fade-out으로 설정
         style={{ transform: textVisible ? 'translateX(0)' : 'translateX(-100px)' }}
       >
+        <span class="back">
+            <span>"오</span>
+            <span>늘</span>
+            <span></span>
+            <span>뭐</span>
+            <span></span>
+            <span>먹</span>
+            <span>지?"</span>
+            <span></span>
+            <span>라</span>
+            <span>고</span>
+            <span></span>
+            <span>말</span>
+            <span>해</span>
+            <span>봐</span>
+            <span>요</span>
+          </span>
         {displayText}
       </p>
+      )}
     </div>
   );
 }

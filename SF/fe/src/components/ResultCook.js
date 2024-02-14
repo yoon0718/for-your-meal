@@ -30,7 +30,7 @@ function ResultCook() {
                 <div className="food-label">{image.label}</div>
               </div>
             ))}
-            <div className='Foodtag'>#여기엔 태그</div>
+            {/* <div className='Foodtag'>#여기엔 태그</div> */}
           </div>
           <div className="recipeDetails">
             {contentImages.map((image, index) => (

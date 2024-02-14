@@ -25,13 +25,13 @@ public class RandomMenuDao {
     }
     // 선택 된 재료가 포함된 메뉴의 개수 파악
     public int count_menu(String ingredient) {
-        String query = String.format("SELECT COUNT(*) cnt FROM recipe WHERE 재료 LIKE '%%%s%%'",ingredient);
+        String query = String.format("SELECT COUNT(*) cnt FROM recipe WHERE FIND_IN_SET('%s', REPLACE(재료, ' ', ',')) > 0",ingredient);
         int menu_count = Integer.parseInt(jt.queryForList(query).get(0).get("cnt").toString());
         return menu_count;
     }
     // 메뉴 중 하나 랜덤으로 선택
     public Map<String,Object> selected_menu(String ingredient, int random_menu_num) {
-        String query = String.format("SELECT * FROM recipe WHERE 재료 LIKE '%%%s%%' LIMIT 1 OFFSET %s",ingredient, random_menu_num);
+        String query = String.format("SELECT * FROM recipe WHERE FIND_IN_SET('%s', REPLACE(재료, ' ', ',')) > 0 LIMIT 1 OFFSET %s;",ingredient, random_menu_num);
         return jt.queryForList(query).get(0);
     }
 }
