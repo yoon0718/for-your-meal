@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Theme = {
   background: '#f5f8fb',
-  fontFamily: 'omyu_pretty',
   headerBgColor: '#756050',
+  width: '100%',
   headerFontColor: '#fff',
-  headerFontSize: '2.85vh',
+  headerFontSize: '2.5vh',
   botBubbleColor: '#9c826f',
   botFontColor: '#fff',
   userBubbleColor: '#fff',
@@ -28,8 +28,17 @@ const MainChatbot = () => {
     const footer = document.querySelector('.rsc-input')
     footer.placeholder = footercontent;
   })
+
+  useEffect(() => {
+    const container = document.querySelector('.rsc-container')
+    const selectinput = document.querySelector('.rsc-input')
+    container.style.width = '100%';
+    container.style.height = '100%';
+    selectinput.style.fontSize = '2vh';
+  })
+
   const bubbleStyle = {
-    fontSize: "2.85vh" // 원하는 폰트 크기로 설정해주세요
+    fontSize: "2vh"
   };
 
   const handleOptionSelection2 = (value) => {
@@ -761,8 +770,6 @@ const MainChatbot = () => {
         <Chatbot
           headerTitle="오늘은 내가 요리사!"
           bubbleStyle={bubbleStyle}
-          height="100%"
-          width="100%"
           steps={steps}
           handleEnd={() => {
             saveresult();

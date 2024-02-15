@@ -169,21 +169,13 @@ function MainContent() {
         <section className="contentsection2">
           {!rouletteActive && !selectedMenu ? (
             <div className="Randomview">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center"
-                }}
-              >
-                뭘 먹어야 할까? 랜덤 메뉴 추천기가 정해드려요!
-                <br />
-                <br />
-                '메뉴를 추천해줘!'를 눌러보세요.
-                <button className="Menubar" onClick={startRoulette}>
-                  메뉴를 추천해줘!
-                </button>
-              </div>
+              뭘 먹어야 할까? 랜덤 메뉴 추천기가 정해드려요!
+              <br />
+              <br />
+              '메뉴를 추천해줘!'를 눌러보세요.
+              <button className="Menubar" onClick={startRoulette}>
+                메뉴를 추천해줘!
+              </button>
             </div>
           ) : rouletteActive ? (
             <div className="Randomview-2">

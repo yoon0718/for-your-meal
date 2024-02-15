@@ -61,36 +61,24 @@ function VoiceResultCook() {
 
       
   <div className={`color-change-5x`}>
-      <main className="Voicecontents">
-        <div className='VoiceRandomFoodresult'>
-          <div className="Voicefoodresipe">
-
-            <div className="Voiceresultfood">
-              <img src={food_image} alt={`Food ${food_name}`} />
-              <div className="Voicefood-label">{food_name}</div>
-            </div>
-
-          </div>
-          <div className="VoicerecipeDetails">
-            <div className='VoiceText'>
-              <div className='Voiceingredient1'>당신은 오늘 {emotion} 상태이시군요!</div>
-              <div className='Voiceingredient2'><p className='VoiceCookBold'>요리 재료</p> <br /> {food_ingredient}</div>
-              <div className='VoiceCookResipe1'><p className='VoiceCookBold'>조리 방법 및 레시피</p><br />{food_recipe.split('||').map((line, index) => <p key={index}>{line}</p>)}<br />저감조리법 tip : {food_tip}</div>
-            </div>
-            <div>
-              <button className="Voicebtn" onClick={handleReset}>다시 선택</button>
-              <button className='Voicehome' type='submit' onClick={handleHome}>홈으로</button>
-            </div>
-            <div>
-              
-              {/* <a href="http://localhost:3000/main">
-              <img className="voicemainbtn" src={logoimg} alt="Main Page" style={{cursor: 'pointer'}} />
-            </a> */}
-            </div>
-          </div>
-        </div>
-      </main>
+    <main className="Voicecontents">
+      <div className="Voicefoodresipe">
+        <img src={food_image} alt={`Food ${food_name}`} />
+        <div className="Voicefood-label">{food_name}</div>
       </div>
+      <div className="VoicerecipeDetails">
+        <div className='VoiceText'>
+          <div className='Voiceingredient1'>당신은 오늘 {emotion} 상태이시군요!</div>
+          <div className='Voiceingredient2'><p className='VoiceCookBold'>요리 재료</p> <br /> {food_ingredient}</div>
+          <div className='VoiceCookResipe1'><p className='VoiceCookBold'>조리 방법 및 레시피</p><br />{food_recipe.split('||').map((line, index) => <p key={index}>{line}</p>)}<br />저감조리법 tip : {food_tip}</div>
+        </div>
+        <div className='VoiceButtons'>
+          <button className="Voicebtn" onClick={handleReset}>다시 선택</button>
+          <button className='Voicehome' type='submit' onClick={handleHome}>홈으로</button>
+        </div>
+      </div>
+    </main>
+  </div>
     );
   } else {
     return (
