@@ -1,76 +1,63 @@
 /* 전역 스타일 초기화 */
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
 /* -------------------- 카테고리 음식 영역 -------------------- */
 .CategoryFood {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    font-family: 'yg-jalnan', sans-serif;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 5px;
-  }
-  
-  .food-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(2, 40%); 
-    gap: 10px 30px; 
-    padding: 0px;
-    height: 100vh;
-    overflow: auto;
-  }
-  
-  .food-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .food-item img {
-    width: 280px; 
-    height: 220px; 
-    object-fit: cover; 
-    transition: transform 0.5s ease; 
-    margin-bottom: -23px !important;
-    margin-top: 20px;
-    cursor: pointer;  
-  }
-  
-  .food-item img:hover {
-    transform: scale(1.1); 
-  }
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+}
 
-  .food-label {
-    text-align: center;
-  }
-  
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: repeat(2, 50%);
+  column-gap: 2%;
+  row-gap: 2%;
+  height:95%;
+  width:95%;
+  padding: 2%;
+  overflow: auto;
+}
 
+.food-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  background-color: rgba(255, 255, 255, 0.85);
+}
 
-  /* ------------------------------------------------아래쪽 ChatbotCommit입니다------------------------------------------------ */
+.food-item-img {
+  width:90%;
+  height:80%;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+.food-item-img img {
+  width:100%;
+  height:100%;
+}
 
-  .commit_contents {
-    width: 65%;
-    height: 85vh;
-    text-align: center;
-    overflow: hidden;
-    margin-right: 15px;
-    margin-top: 42px;
-    justify-content: center;
-    align-items: start;
-    flex-wrap: wrap;
-    z-index: 0;
-    position: relative;
-    bottom: 3.6vh;
-  }
+.food-item-img:hover {
+  transform: scale(1.1);
+}
 
+.food-label {
+  width:90%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ------------------------------------------------아래쪽 ChatbotCommit입니다------------------------------------------------ */

@@ -41,22 +41,22 @@ function MainCommit1() {
   };
 
   return (
-    <main className="contents">
-      <div className="CategoryFood">
-        <div className="food-container">
-          {contentImages.map((image, index) => (
-            <div
-              key={index}
-              className="food-item"
-              onClick={() => setName(image.label)}
-            >
+    <div className="CategoryFood">
+      <div className="food-container">
+        {contentImages.map((image, index) => (
+          <div
+            key={index}
+            className="food-item"
+            onClick={() => setName(image.label)}
+          >
+            <div className="food-item-img">
               <img src={image.src} alt={`Food ${index + 1}`} />
-              <div className="food-label">{image.label}</div>
             </div>
-          ))}
-        </div>
+            <div className="food-label">{image.label}</div>
+          </div>
+        ))}
       </div>
-    </main>
+    </div>
   );
 }
 
