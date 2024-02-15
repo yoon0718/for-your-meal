@@ -96,7 +96,7 @@ function MainSlide_Header() {
   const goToSelect = () => {
     navigate("/select"); // 여기서 '/select'는 select 페이지의 경로입니다. 실제 경로에 맞게 조정해주세요.
   };
-
+  
   return (
     <div className="backgroundwrap">
       <div className="wrap">
@@ -119,36 +119,38 @@ function MainSlide_Header() {
             <button
               className="selectButton"
               onClick={goToSelect}
-              style={{ position: "absolute", left: "20px", top: "16px" }}
             >
               홈으로 이동하기
             </button>
           </div>
         </header>
-
-        <div className="slider">
-          <div className="slider1">
-            {bgImages.map((image, index) => (
-              <img
-                key={image}
-                className={`imgslide ${
-                  currentBgSlide === index ? "active" : ""
-                }`}
-                src={image}
-                alt={`Background ${index + 1}`}
-              />
-            ))}
+        <content className="main_content">
+          <div className="slider">
+            <div className="slider1">
+              {bgImages.map((image, index) => (
+                <img
+                  key={image}
+                  className={`imgslide ${
+                    currentBgSlide === index ? "active" : ""
+                  }`}
+                  src={image}
+                  alt={`Background ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="commit1" element={<Commit1 />} />
-          <Route path="ResultCook" element={<ResultCook />} />
-          <Route path="ResultRandom" element={<ResultRandom />} />
-          <Route path="Expirationdate" element={<Expirationdate />} />
-          <Route path="add" element={<Add />} />
-          <Route path="Commit2" element={<ChatbotCommit />} />
-        </Routes>
+          <div className="main_main">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="commit1" element={<Commit1 />} />
+              <Route path="ResultCook" element={<ResultCook />} />
+              <Route path="ResultRandom" element={<ResultRandom />} />
+              <Route path="Expirationdate" element={<Expirationdate />} />
+              <Route path="add" element={<Add />} />
+              <Route path="Commit2" element={<ChatbotCommit />} />
+            </Routes>
+          </div>
+        </content>
       </div>
     </div>
   );

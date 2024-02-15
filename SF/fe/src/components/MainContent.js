@@ -201,10 +201,6 @@ function MainContent() {
         <section className="contentsection3">
           <div>
             냉장고에 있는 오래된 음식 알림 받으러 가기
-            <br />
-            <button className="Expirationbtn" onClick={goToExpirationdate}>
-              Go!
-            </button>
           </div>
         </section>
       </main>

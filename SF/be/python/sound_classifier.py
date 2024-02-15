@@ -34,7 +34,7 @@ def extract_features(data, sampling_rate):
 def get_features(path):
 
     data, sample_rate = librosa.load(path, duration=2.5, offset=0.6)
-
+    sample_rate = 44100
     res1 = extract_features(data, sample_rate)
     result = np.array(res1)
     noise_data = noise(data)

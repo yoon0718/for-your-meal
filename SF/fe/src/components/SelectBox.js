@@ -34,14 +34,6 @@ const codeOptions = [
     label: "감자"
   },
   {
-    value: "입채류",
-    label: "입채류"
-  },
-  {
-    value: "근채류",
-    label: "근채류"
-  },
-  {
     value: "가지",
     label: "가지"
   },
@@ -82,12 +74,8 @@ const codeOptions = [
     label: "레몬"
   },
   {
-    value: "골드키위",
-    label: "골드키위"
-  },
-  {
-    value: "그린키위",
-    label: "그린키위"
+    value: "키위",
+    label: "키위"
   },
   {
     value: "시금치",
@@ -104,10 +92,6 @@ const codeOptions = [
   {
     value: "참깨",
     label: "참깨"
-  },
-  {
-    value: "구운 참깨",
-    label: "구운 참깨"
   },
   {
     value: "고춧가루",
@@ -134,8 +118,8 @@ const codeOptions = [
     label: "브로콜리"
   },
   {
-    value: "컬리플라워",
-    label: "컬리플라워"
+    value: "콜리플라워",
+    label: "콜리플라워"
   },
   {
     value: "당근",
@@ -171,8 +155,8 @@ const colourStyles = {
     outline: "black",
     color: "black",
     width: "100%",
-    fontFamily: "omyu_pretty",
-    fontSize: "30px"
+    fontSize: "4vh",
+    marginBottom: "1%"
   }),
   option: (style, { isFocused }) => {
     return {
@@ -185,6 +169,11 @@ const colourStyles = {
   singleValue: (base) => ({
     ...base,
     color: "black"
+  }),
+  menu: (provided) => ({
+    ...provided,
+    maxHeight: "15vh",
+    overflowY: "scroll"
   })
 };
 

@@ -1,46 +1,57 @@
 .Select_box {
   width: 100%;
+  height:100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
 }
 
+/* 유통기한  */
 .Select_box_header {
-  border-bottom: 2px solid black;
   width:100%;
+  height:15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #c7b7a3;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  font-family: omyu_pretty;
-  font-size: 30px;
-  margin-bottom: 5px;
+  font-size: 3.5vh;
 }
 .Select_box_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height:90%;
+  height:85%;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.css-b62m3t-container {
+  width:80%;
+}
+.css-1qrxvr1-singleValue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .Select_box_msg {
-  font-family: omyu_pretty;
-  font-size: 25px;
-}
-.Select_box_content > div {
-  margin-bottom:5px;
+  font-size: 3vh;
 }
 .Select_box_btn {
-  font-family: omyu_pretty;
-  font-size: 25px;
+  font-size: 3.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: lightblue;
   border:none;
-  width:40%;
+  width:70%;
   height:20%;
   border-radius: 10px;
   cursor: pointer;
-  margin-top:10px;
+  margin-top:1%;
 }
 
 .Select_box_btn:hover {

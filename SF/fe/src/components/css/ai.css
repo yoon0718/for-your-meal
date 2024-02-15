@@ -1,10 +1,10 @@
 .rsc {
-  height: 61.5vh;
+  height: 100%;
   overflow: auto;
 }
 
 .rsc-footer {
-  height: 1px;
+  height: 10%;
   /* display: none; */
 }
 
@@ -16,4 +16,5 @@
 .rsc-input {
   font-family: omyu_pretty;
   cursor: pointer;
+  font-size: 2.85vh;
 }
