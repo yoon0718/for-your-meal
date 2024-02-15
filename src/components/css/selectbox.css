@@ -7,41 +7,45 @@
 
 .Select_box_header {
   border-bottom: 2px solid black;
-  width:100%;
+  width: 100%;
   text-align: center;
-  background-color: antiquewhite;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  font-family: omyu_pretty;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 5px;
+  padding: 10px;
 }
+
+.Select_box_header p {
+  margin-top: 10px;
+}
+
 .Select_box_content {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
-  height:90%;
+  height: 90%;
 }
 .Select_box_msg {
   font-family: omyu_pretty;
   font-size: 25px;
 }
 .Select_box_content > div {
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
 .Select_box_btn {
-  font-family: omyu_pretty;
-  font-size: 25px;
-  background-color: lightblue;
-  border:none;
-  width:40%;
-  height:20%;
+  font-size: 20px;
+  background-color: #a77979;
+  border: none;
+  width: 40%;
+  height: 20%;
   border-radius: 10px;
   cursor: pointer;
-  margin-top:5px;
+  margin-top: 10px;
 }
 
 .Select_box_btn:hover {
-  background-color:lightcyan;
+  background-color: #704f4f;
 }

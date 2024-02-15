@@ -1,10 +1,11 @@
 /* * {
-  border: 1px solid black;
+  border: solid 1px white;
 } */
+
 .add_wrap {
-  width:65vw;
-  margin:15px;
-  height:85.5vh;
+  width: 65vw;
+  margin: 15px;
+  height: 86.7vh;
 }
 .abody {
   display: flex;
@@ -13,28 +14,32 @@
 }
 
 .all_box {
+  position: relative;
   width: 80%;
   height: 100%;
- 
 }
 .cam_box {
-  width: 20%;
-  height: 100%;
+  position: relative;
+  margin-top: 30%;
+  right: 5%;
+  width: 100%;
+  height: 20%;
   margin-left: 30px;
   border: solid 2px black;
   border-radius: 10px;
 }
-
+.cam_box_result {
+  position: relative;
+  height: 20%;
+  top: 20px;
+}
 .import_result {
   display: flex;
   position: relative;
-  width: 100%;
-  height: 30%;
-
+  flex-direction: column;
 }
 .text_result {
   width: 50%;
-  height: 100%;
   border: solid 2px black;
   border-radius: 10px;
   display: flex;
@@ -46,38 +51,74 @@
 }
 .text_result2 {
   width: 50%;
-  height: 100%;
+  height: 37.5vh;
   border: solid 2px black;
   border-radius: 10px;
-  margin-left:5px;
+  margin-left: 5px;
   display: flex;
   justify-content: center;
-  overflow:auto;
+  overflow: auto;
 }
 
 .camera {
   width: 10vw;
 }
+.video {
+  position: relative;
+  height: 90%;
+}
+/* 카메라 */
+.camera_header {
+  background-color: #561c24;
+}
+.camera_content {
+  background-color: rgba(255, 255, 255, 0.85);
+}
 
+/* 설명 */
+
+.cam_box {
+  position: relative;
+  bottom: 32%;
+  right: 33px;
+}
 .cam_box_header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height:64px;
-  width:100%;
+  height: 30%;
+  width: 90%;
   text-align: center;
-  font-family: omyu_pretty;
-  font-size: 30px;
+  font-size: 20px;
   border-bottom: 2px solid black;
-  background-color: antiquewhite;
+  background-color: #e78895;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 
 .cam_box_content {
-  height:85%;
-  margin:10px;
-  font-size: 28px;
-  font-family: omyu_pretty;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100px;
+  font-size: 20px;
   overflow: auto;
+  background-color: #fff7f1;
+  opacity: 90%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* 결과보기  애는 배경을 무조건 흰색으로 해야햄*/
+.text_header {
+  background-color: #c7b7a3;
+}
+
+/* 유통기한  */
+.Select_box_header {
+  background-color: #c7b7a3;
+}
+.Select_box_content {
+  background-color: rgba(255, 255, 255, 0.85);
 }

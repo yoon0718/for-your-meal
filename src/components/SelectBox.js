@@ -34,14 +34,6 @@ const codeOptions = [
     label: "감자"
   },
   {
-    value: "입채류",
-    label: "입채류"
-  },
-  {
-    value: "근채류",
-    label: "근채류"
-  },
-  {
     value: "가지",
     label: "가지"
   },
@@ -134,8 +126,8 @@ const codeOptions = [
     label: "브로콜리"
   },
   {
-    value: "컬리플라워",
-    label: "컬리플라워"
+    value: "콜리플라워",
+    label: "콜리플라워"
   },
   {
     value: "당근",
@@ -167,19 +159,19 @@ const colourStyles = {
   control: (style, { isFocused }) => ({
     ...style,
 
-    backgroundColor: "lightblue",
     outline: "black",
     color: "black",
     width: "100%",
-    fontFamily: "omyu_pretty",
+    height: "20px",
     fontSize: "30px"
   }),
   option: (style, { isFocused }) => {
     return {
       ...style,
-      backgroundColor: isFocused ? "#DDCEF5" : null,
+      backgroundColor: isFocused ? "#a77979" : null,
       color: "#333333",
-      width: "100%"
+      width: "100%",
+      height: "25px"
     };
   },
   singleValue: (base) => ({
@@ -208,36 +200,40 @@ const SelectBox = () => {
   };
 
   const handleInsertClick = () => {
-    
     if (selectedOption) {
-      const data = {"ingredient":selectedOption.value}
-        axios.post("http://localhost/ingredient",data)
-        .then(res => {
-          alert("식재료가 냉장고에 넣어졌습니다")
-          setSelectedOption(null);
-          navigate("/main/add", { replace: true });
-        })
+      const data = { ingredient: selectedOption.value };
+      axios.post("http://localhost/ingredient", data).then((res) => {
+        alert("식재료가 냉장고에 넣어졌습니다");
+        setSelectedOption(null);
+        navigate("/main/add", { replace: true });
+      });
     }
   };
 
   return (
     <div className="Select_box">
-      <div className="Select_box_header">유통기한을 못찾겠나요?</div>
-        <div className="Select_box_content">
-          <Creatable
-            defaultValue={codeOptions[0]}
-            options={codeOptions}
-            styles={colourStyles}
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 8
-            })}
-            onChange={handleSelectChange}
-          />
+      <div className="Select_box_header">
+        <p>유통기한을 못찾겠나요?</p>
+      </div>
+      <div className="Select_box_content">
+        <Creatable
+          defaultValue={codeOptions[0]}
+          options={codeOptions}
+          styles={colourStyles}
+          theme={(theme) => ({
+            ...theme,
+            borderRadius: 8
+          })}
+          onChange={handleSelectChange}
+        />
         {selectedOption && (
-          <p className="Select_box_msg">식재료 {selectedOption.value} 이(가) 선택되었습니다.</p>
+          <p className="Select_box_msg">
+            식재료 {selectedOption.value} 이(가) 선택되었습니다.
+          </p>
         )}
-        <button className="Select_box_btn" onClick={handleInsertClick}>냉장고에 넣기</button>
+        <button className="Select_box_btn" onClick={handleInsertClick}>
+          냉장고에 넣기
+        </button>
       </div>
     </div>
   );

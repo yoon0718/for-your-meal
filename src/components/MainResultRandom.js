@@ -1,3 +1,5 @@
+// ------MainContent부분의 랜덤 메뉴 추천해줘 부분 입니다.------
+
 import React, { useState, useEffect } from 'react';
 
 import './css/Result.css';
@@ -6,7 +8,7 @@ import axios from 'axios';
 
 
 
-function ResultRandom() {
+function MainResultRandom() {
   const [food, setFood] = useState(null);
   
   useEffect(() => {
@@ -65,4 +67,4 @@ function ResultRandom() {
   }
 }
 
-export default ResultRandom;
+export default MainResultRandom;

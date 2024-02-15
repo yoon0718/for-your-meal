@@ -1,11 +1,23 @@
 import axios from "axios";
 import { useState } from "react";
-import "../components/css/Commit.css";
+import "../components/css/MainCommit2.css";
 import { useNavigate } from "react-router-dom";
+import Pagination from "react-js-pagination";
 
-function Commit2() {
+function ChatbotCommit() {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
+  //페이지네이션 기능
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(6);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+  const lastItemIndex = currentPage * itemsPerPage;
+  const firstItemIndex = lastItemIndex - itemsPerPage;
+  const currentItems = data?.slice(firstItemIndex, lastItemIndex);
+
   const type = sessionStorage.getItem("요리종류");
   const way = sessionStorage.getItem("조리방법");
   const ingre = sessionStorage.getItem("재료");
@@ -22,7 +34,7 @@ function Commit2() {
       <main className="commit_contents">
         <div className="CategoryFood">
           <div className="food-container">
-            {data.map((menu, index) => (
+            {currentItems?.map((menu, index) => (
               <div
                 key={index}
                 className="food-item"
@@ -36,6 +48,21 @@ function Commit2() {
             ))}
           </div>
         </div>
+        {data && (
+          <div className="pagination-container">
+            {" "}
+            {/* 클래스 추가 */}
+            <Pagination
+              activePage={currentPage}
+              itemsCountPerPage={itemsPerPage}
+              totalItemsCount={data.length}
+              pageRangeDisplayed={5}
+              prevPageText="‹"
+              nextPageText="›"
+              onChange={handlePageChange}
+            />
+          </div>
+        )}
       </main>
     );
   } else {
@@ -49,4 +76,4 @@ function Commit2() {
   }
 }
 
-export default Commit2;
+export default ChatbotCommit;

@@ -1,7 +1,9 @@
+// ------------음성인식 녹화 부분입니다.------------
+
 import React, { useState } from 'react';
 import './css/VoiceC.css';
 import homebtn from '../img/home.png';
-import AudioRecorder from './AudioRecorder';
+import AudioRecorder from './VoiceAudioRecorder';
 
 function VoiceC() {
   const [isRecording, setIsRecording] = useState(false); // 녹화 상태를 관리하는 state

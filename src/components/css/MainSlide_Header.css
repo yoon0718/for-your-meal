@@ -1,6 +1,6 @@
 /* 전역 스타일 초기화 */
 .backgroundwrap {
-  background-image: url("../../img/back2.jpeg");
+  background-image: url("../../img/back2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -35,7 +35,7 @@
 }
 .header_container {
   width: 96.4vw;
-  background-color: #ffffff;
+  background-color: #c7b7a3;
   border-radius: 10px;
 }
 .logotitle {
@@ -51,14 +51,15 @@
 }
 
 .logoMain {
-  font-size: 24px;
-  font-weight: bold;
-  font-family: "SOYOMapleBoldTTF";
+  font-size: 40px;
+  font-weight: 900;
+  /* font-family: "SOYOMapleBoldTTF"; */
 }
 
 .logoSub {
-  font-size: 16px;
+  font-size: 14px;
   white-space: nowrap;
+  font-weight: 100;
   font-family: "SOYOMapleBoldTTF";
 }
 
@@ -76,7 +77,7 @@
 .selectButton {
   width: 8%;
   padding: 10px 0;
-  background-color: #ff4f42;
+  background-color: #561c24;
   color: #ffffff;
   border: none;
   border-radius: 10px;

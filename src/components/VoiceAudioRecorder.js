@@ -3,7 +3,7 @@ import recbtn from '../img/rec.png';
 import './css/VoiceC.css';
 import axios from 'axios';
 
-export default function AudioRecorder() {
+export default function VoiceAudioRecorder() {
   const [recording, setRecording] = useState(false);
   const chunksRef = React.useRef([]);
   const canvasRef = React.useRef(null);

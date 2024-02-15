@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import './css/VoiceResult.css';
-import axios from 'axios';
-import logoimg from '../img/logo2.png';
+// ------------VoiceC 의 음성 인식 결과 레시피 부분입니다.------------
 
-function ResultVoice() {
+import React, { useState, useEffect } from 'react';
+import './css/VoiceResultCook.css';
+import axios from 'axios';
+
+function VoiceResultCook() {
   const emotion_dic = {
     '0': '화가 난',
     '1': '불쾌한',
@@ -66,7 +67,7 @@ function ResultVoice() {
 
             <div className="Voiceresultfood">
               <img src={food_image} alt={`Food ${food_name}`} />
-              <div className="food-label">{food_name}</div>
+              <div className="Voicefood-label">{food_name}</div>
             </div>
 
           </div>
@@ -78,9 +79,10 @@ function ResultVoice() {
             </div>
             <div>
               <button className="Voicebtn" onClick={handleReset}>다시 선택</button>
+              <button className='Voicehome' type='submit' onClick={handleHome}>홈으로</button>
             </div>
             <div>
-              <button className='Voicehome' type='submit' onClick={handleHome}>홈으로</button>
+              
               {/* <a href="http://localhost:3000/main">
               <img className="voicemainbtn" src={logoimg} alt="Main Page" style={{cursor: 'pointer'}} />
             </a> */}
@@ -101,4 +103,4 @@ function ResultVoice() {
   }
 }
 
-export default ResultVoice;
+export default VoiceResultCook;
