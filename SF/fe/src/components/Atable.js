@@ -19,21 +19,19 @@ export default function Atable(props) {
       sortable: true,
       width: "34%",
       center: true
-    //   right: true
     },
     {
       name: "삭제",
       cell: (row) => (
         <button onClick={() => handleDelete(row)} style={{
-          backgroundColor: '#ff4f42', // '#ff4f42'로 수정
+          backgroundColor: '#ff4f42',
           color: '#ffffff', // '#ffffff'로 수정
           border: 'none', // 문자열 그대로 유지
           borderRadius: '10px', // 문자열 그대로 유지
           cursor: 'pointer', // 문자열 그대로 유지
-          fontFamily: 'yg-jalnan', // 문자열 그대로 유지
-          fontSize: '12px', // 문자열 그대로 유지
+          fontSize: '1.8vh', // 문자열 그대로 유지
           opacity: '100%', // 문자열 그대로 유지
-          padding: '5px 15px'
+          padding: '1vh 1vw'
         }}>삭제</button>
       ),
       width: "33%",
@@ -56,21 +54,18 @@ export default function Atable(props) {
   const customStyles = {
     headCells: {
         style: {
-            fontSize: '16px', 
-            fontWeight: 'bold', 
-            fontFamily: 'EASTARJET-Medium', 
+            fontSize: '2.5vh', 
+            fontWeight: 'bold',
           },
     },
     cells: {
         style: {
-            fontSize: '14px', // 일반 셀의 폰트 크기
-            fontFamily: 'EASTARJET-Medium', // 폰트 종류
-            
+            fontSize: '2vh',
           },
     rows: {
       style: {
         "&:hover": {
-          backgroundColor: "lightgrey !important", // !important를 사용하여 스타일을 강제 적용
+          backgroundColor: "lightgrey",
           color: "orange !important",
           cursor: "pointer"
         }
@@ -81,7 +76,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost/expiration");
+      const response = await fetch("http://10.10.21.89/expiration");
       const jsonData = await response.json();
       setData(jsonData["재료순"]);
     } catch (error) {
@@ -96,21 +91,20 @@ export default function Atable(props) {
   const [data, setData] = useState([]);
 
   const handleDelete = (row) => {
-    console.log(row)
-    axios.post("http://localhost/expiration",row)
-    .then(res => {
-      window.location.reload();
+    axios.post("http://10.10.21.89/expiration", row)
+    .then((res) => {
+      props.onRefreshData();
+      fetchData();
     })
-  };
+  }
 
   const NoDataComponent = () => (
     <div style={{
       width: '100%',
       textAlign: 'center',
-      padding: '10px',
-      fontSize: '18px',
-      backgroundColor: '#ffffff' ,  
-      fontFamily: 'EASTARJET-Medium' 
+      padding: '5%',
+      fontSize: '1.7vw',
+      backgroundColor: '#ffffff'
     }}>
       아직 냉장고에 보관된 재료가 없습니다.
     </div>
@@ -125,6 +119,7 @@ export default function Atable(props) {
         defaultSortFieldId
         pagination
         paginationPerPage={8}
+        paginationComponentOptions={customStyles}
         highlightOnHover
         customStyles={customStyles}
         conditionalRowStyles={conditionalRowStyles}

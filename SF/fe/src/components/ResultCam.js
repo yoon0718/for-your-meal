@@ -47,7 +47,7 @@ export default function ResultCam() {
       alert("유통기한을 정확히 선택해주세요")
     } else {
       const post_data = {"ingredient" : data, "date" : selectedDate}
-      axios.post("http://localhost/ingredient",post_data)
+      axios.post("http://10.10.21.89/ingredient",post_data)
       .then(res => {
         alert("식재료가 냉장고에 넣어졌습니다")
         setData(null);
@@ -69,7 +69,7 @@ export default function ResultCam() {
       alert("유통기한을 정확히 선택해주세요")
     } else {
       const post_data = {"ingredient" : ingre_name, "date" : selectedDate}
-      axios.post("http://localhost/ingredient",post_data)
+      axios.post("http://10.10.21.89/ingredient",post_data)
       .then(res => {
         alert("식재료가 냉장고에 넣어졌습니다")
         setData(null);

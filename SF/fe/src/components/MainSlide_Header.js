@@ -6,7 +6,6 @@ import "./css/MainSlide_Header.css";
 
 import bg1 from "../img/food/1.jpg";
 import bg2 from "../img/food/2.jpg";
-import bg3 from "../img/food/3.jpg";
 import bg4 from "../img/food/4.jpg";
 import bg5 from "../img/food/5.jpg";
 import bg6 from "../img/food/6.jpg";
@@ -50,7 +49,6 @@ import ChatbotCommit from "./ChatbotCommit";
 const bgImages = [
   bg1,
   bg2,
-  bg3,
   bg4,
   bg5,
   bg6,

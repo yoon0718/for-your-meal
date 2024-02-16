@@ -27,7 +27,7 @@ function ResultVoice() {
   const handleHome = () => {
     const filename = sessionStorage.getItem("filename")
     const result = sessionStorage.getItem("result")
-    axios.post('http://localhost/emotionresult', { filename: filename, result: result }, {
+    axios.post('http://10.10.21.89/emotionresult', { filename: filename, result: result }, {
       params: { home: true }
     })
       .then(res => {
@@ -40,7 +40,7 @@ function ResultVoice() {
     const filename = sessionStorage.getItem("filename")
     const result = sessionStorage.getItem("result")
     if (result != null) {
-      axios.post("http://localhost/emotionresult", { filename: filename, result: result })
+      axios.post("http://10.10.21.89/emotionresult", { filename: filename, result: result })
         .then(res => {
           setEmotion(emotion_dic[result])
           setImage(res.data["이미지경로"])
@@ -81,7 +81,7 @@ function ResultVoice() {
             </div>
             <div>
               <button className='Voicehome' type='submit' onClick={handleHome}>홈으로</button>
-              {/* <a href="http://localhost:3000/main">
+              {/* <a href="http://10.10.21.89:3000/main">
               <img className="voicemainbtn" src={logoimg} alt="Main Page" style={{cursor: 'pointer'}} />
             </a> */}
             </div>

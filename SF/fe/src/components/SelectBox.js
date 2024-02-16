@@ -151,17 +151,18 @@ const colourStyles = {
   control: (style, { isFocused }) => ({
     ...style,
 
-    backgroundColor: "lightblue",
-    outline: "black",
+    backgroundColor: "#C7B7A3",
+    outline: "none",
     color: "black",
     width: "100%",
     fontSize: "4vh",
-    marginBottom: "1%"
+    border: isFocused ? "none" : "none",
+    boxShadow: isFocused ? "none" : "none"
   }),
   option: (style, { isFocused }) => {
     return {
       ...style,
-      backgroundColor: isFocused ? "#DDCEF5" : null,
+      backgroundColor: isFocused ? "#FAEED1" : null,
       color: "#333333",
       width: "100%"
     };
@@ -200,7 +201,7 @@ const SelectBox = () => {
     
     if (selectedOption) {
       const data = {"ingredient":selectedOption.value}
-        axios.post("http://localhost/ingredient",data)
+        axios.post("http://10.10.21.89/ingredient",data)
         .then(res => {
           alert("식재료가 냉장고에 넣어졌습니다")
           setSelectedOption(null);

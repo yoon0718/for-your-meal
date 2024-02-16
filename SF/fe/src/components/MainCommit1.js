@@ -16,7 +16,7 @@ function MainCommit1() {
 
   useEffect(() => {
     const cousinetype = sessionStorage.getItem("요리종류");
-    axios.post("http://localhost/fastsearch", cousinetype).then((res) => {
+    axios.post("http://10.10.21.89/fastsearch", cousinetype).then((res) => {
       setFood1(res.data["menu1"]);
       setFood2(res.data["menu2"]);
       setFood3(res.data["menu3"]);
@@ -52,7 +52,7 @@ function MainCommit1() {
             <div className="food-item-img">
               <img src={image.src} alt={`Food ${index + 1}`} />
             </div>
-            <div className="food-label">{image.label}</div>
+            <div className="commit-food-label">{image.label}</div>
           </div>
         ))}
       </div>

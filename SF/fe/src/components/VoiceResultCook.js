@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import './css/VoiceResultCook.css';
 import axios from 'axios';
+import homebtn from '../img/home.png';
 
 function VoiceResultCook() {
   const emotion_dic = {
@@ -25,7 +26,20 @@ function VoiceResultCook() {
     window.location.reload();
   }
 
-  const handleHome = () => {
+
+  const handleVoiceC = () => {
+    const filename = sessionStorage.getItem("filename")
+    const result = sessionStorage.getItem("result")
+    axios.post('http://localhost/emotionresult', { filename: filename, result: result }, {
+      params: { home: true }
+    })
+      .then(res => {
+        sessionStorage.clear()
+        window.location.href = '/Ai'
+      })
+  }
+
+  const gohome = () => {
     const filename = sessionStorage.getItem("filename")
     const result = sessionStorage.getItem("result")
     axios.post('http://localhost/emotionresult', { filename: filename, result: result }, {
@@ -36,6 +50,7 @@ function VoiceResultCook() {
         window.location.href = '/select'
       })
   }
+
 
   useEffect(() => {
     const filename = sessionStorage.getItem("filename")
@@ -61,6 +76,9 @@ function VoiceResultCook() {
 
       
   <div className={`color-change-5x`}>
+    <div className='resulthomebtn'>
+        <img src={homebtn} className="homebtn" onClick={gohome}></img>
+      </div>
     <main className="Voicecontents">
       <div className="Voicefoodresipe">
         <img src={food_image} alt={`Food ${food_name}`} />
@@ -74,7 +92,7 @@ function VoiceResultCook() {
         </div>
         <div className='VoiceButtons'>
           <button className="Voicebtn" onClick={handleReset}>다시 선택</button>
-          <button className='Voicehome' type='submit' onClick={handleHome}>홈으로</button>
+          <button className="VoiceLoadingbtn" onClick={handleVoiceC}>다시 녹음하기</button>
         </div>
       </div>
     </main>

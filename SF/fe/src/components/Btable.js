@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
 
-export default function Atable(props) {
+export default function Btable(props) {
   const columns = [
     {
       name: "재료",
@@ -55,23 +55,15 @@ export default function Atable(props) {
   ];
 
   const customStyles = {
-    titlecell:{
-        style:{
-          backgroundColor: '#ffffff'  
-        }
-    },
-
     headCells: {
         style: {
-            fontSize: '16px', 
+            fontSize: '2.5vh', 
             fontWeight: 'bold', 
-            fontFamily: 'EASTARJET-Medium', 
           },
     },
     cells: {
         style: {
-            fontSize: '14px', // 일반 셀의 폰트 크기
-            fontFamily: 'EASTARJET-Medium', // 폰트 종류
+            fontSize: '2vh',
      },
     rows: {
     style: {
@@ -88,7 +80,7 @@ export default function Atable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost/expiration");
+      const response = await axios.get("http://10.10.21.89/expiration");
       const jsonData = response.data;
       setData(jsonData["임박순"]);
     } catch (error) {
@@ -100,14 +92,9 @@ export default function Atable(props) {
     fetchData();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost/expiration/`);
-      fetchData();
-    } catch (error) {
-      console.log("Error deleting data:", error);
-    }
-  };
+  useEffect(() => {
+    fetchData();
+  }, [props.refreshData]);
 
   const [data, setData] = useState([]);
 
@@ -115,10 +102,9 @@ export default function Atable(props) {
     <div style={{
       width: '100%',
       textAlign: 'center',
-      padding: '10px',
-      fontSize: '18px',
-      backgroundColor: '#ffffff' ,  
-      fontFamily: 'EASTARJET-Medium', 
+      padding: '5%',
+      fontSize: '1.7vw',
+      backgroundColor: '#ffffff'
     }}>
       아직 유통기한이 임박한 재료가 없습니다.
     </div>

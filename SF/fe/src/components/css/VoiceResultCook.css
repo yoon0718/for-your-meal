@@ -68,13 +68,13 @@
   text-align: left;
   font-weight: bold;
   margin-bottom: 1.2vh;
-  font-size: 2.7vh;
+  font-size: 2.9vh;
 }
 
 .VoiceCookBold {
   font-weight: bold;
   text-align: left;
-  font-size: 2.5vh;
+  font-size: 2.7vh;
   margin-bottom: -1.2vh;
 }
 
@@ -83,7 +83,7 @@
   text-align: right;
   margin-bottom: 1.2vh;
   text-align: left;
-  font-size: 2vh;
+  font-size: 2.1vh;
 }
 
 .VoiceButtons {
@@ -106,12 +106,17 @@
   margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
   margin-right: 4.5vw;
+  transition: transform 0.3s ease
 }
 
-.Voicehome {
+.Voicebtn:hover{
+  transform: scale(1.1);
+}
+
+.VoiceLoadingbtn{
   width: 20%;
   padding: 1.5% 0;
-  background-color: #fffcd6;
+  background-color: #d3f1d0;
   color: #000000;
   border: none;
   border-radius: 10px;
@@ -120,8 +125,29 @@
   opacity: 100%;
   margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
+  margin-right: 4.5vw;
+  transition: transform 0.3s ease
 }
 
+.VoiceLoadingbtn:hover{
+  transform: scale(1.1);
+}
+
+.resulthomebtn {
+  width:100%;
+  display: flex;
+  justify-content: right;
+  margin:3vh 13.5vw 0 0;
+  z-index: 1000;
+}
+.resulthomebtn {
+  height: 0vh;
+}
+
+.resulthomebtn:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%);
+}
 
 .color-change-5x {
   position: fixed;

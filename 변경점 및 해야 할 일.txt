@@ -107,3 +107,21 @@ test2.css
 mainslide_header.js 파일도 바꿈
 
 camera쪽 결과 css만 바꾸면 끝날듯?
+
+///
+
+MainCommit1.js - 변경
+MainCommit.css - 변경
+ChatbotCommit.js - 변경
+MainCommit2.css - 삭제
+
+Commit에서 메뉴명이 너무 길때 텍스트 자르는 법 찾기
+
+ResultCook.js - 변경
+Result.css - 변경
+
+MainResultRandom.js - 변경
+MainExpirationDate.js - 변경
+Atable.js - 변경
+Btable.js - 변경
+MainExpirationDate.css - 변경

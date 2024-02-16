@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 function Initializing() {
     useEffect(() => {
-        axios.post("http://localhost/initializing")
+        axios.post("http://10.10.21.89/initializing")
         .then(res => {
             window.location.href = "/select"
         })

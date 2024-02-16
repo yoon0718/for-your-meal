@@ -1,37 +1,26 @@
-// ---------- 메인컨텐츠 부분의 맨 아래 컨텐츠 유통기한 임박 및 냉장고 보관재료 부분입니다.---------
+import React, { useState } from "react";
+import "./css/MainExpirationdate.css";
 
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import './css/MainExpirationdate.css';
+import Atable from "./Atable";
+import Btable from "./Btable";
 
-import Food1 from '../img/food/찌개예시1.jpg';
-import Atable from './Atable';
-import Btable from './Btable';
+function Expirationdate() {
+  const [refreshData, setRefreshData] = useState(false); // fetchData를 호출하기 위한 상태 변수입니다.
 
-const contentImages = [
-  { src: Food1, label: "랜덤 음식"},
-];
+  const handleDataRefresh = () => {
+    setRefreshData((prevState) => !prevState); // 상태를 토글하여 fetchData를 호출합니다.
+  };
 
-
-function MainExpirationdate() {
-    const navigate = useNavigate(); // useNavigate를 호출하여 navigate 함수를 초기화합니다.
-  
-
-  return (    
-      
-        <main className="contents">
-          <div className='ExpFoodresult'>
-              <div className="Expfood-1">
-                <Atable></Atable>
-              </div>
-              <div className="Expfood-2">
-                <Btable></Btable>
-              </div>
-          </div>
-        </main>
-      
-      
+  return (
+    <div className="ExpFoodresult">
+      <div className="Expfood-1">
+        <Atable onRefreshData={handleDataRefresh} refreshData={refreshData} />
+      </div>
+      <div className="Expfood-2">
+        <Btable onRefreshData={handleDataRefresh} refreshData={refreshData} />
+      </div>
+    </div>
   );
 }
 
-export default MainExpirationdate;
+export default Expirationdate;

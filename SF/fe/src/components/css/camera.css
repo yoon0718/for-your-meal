@@ -7,11 +7,13 @@
   height: 78%;
   width: 100%;
   margin-bottom: 2%;
+  position: relative;
 }
 
 /* 카메라 */
 .camera_header {
   display: flex;
+
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -42,16 +44,17 @@
 .captureButton {
   position: absolute;
   cursor: pointer;
-  bottom:10%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
 }
 .camimg {
-  width: 7.5vw;
+  width: 5vw;
+  filter: invert(100%)
 }
 
 .camimg:hover {
-  filter: invert(100%);
+  filter: invert(50%);
 }
 .video {
   position: relative;
@@ -61,8 +64,8 @@
   width: 8vw;
   height: 10vh;
   position: absolute;
-  left:78%;
-  bottom:80%;
+  left: 78%;
+  bottom: 80%;
 }
 
 fieldset {
@@ -70,14 +73,13 @@ fieldset {
 }
 
 .radio {
-  position: absolute; 
-  top: 50px; 
-  right: 0px; 
-  z-index: 2; 
+  position: absolute;
+  top: 2.8%;
+  right: 2%;
+  z-index: 2;
 }
 /* Hide default radio */
 .radio input[type="radio"] {
-  position: absolute;
   visibility: hidden;
   display: none;
   opacity: 0;
@@ -90,15 +92,16 @@ fieldset {
   padding: 10px 20px 10px 25px;
   cursor: pointer;
   border-radius: 20px;
-  color: #561c24;
+  color: #fff;
   margin: 0px 5px;
-  font-weight: 600;
+  font-size: 13px;
   text-transform: uppercase;
 }
 
-.radio label, .radio label::before {
-  -webkit-transition: .25s all ease;
-  transition: .25s all ease;
+.radio label,
+.radio label::before {
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
 }
 
 .radio label::before {
@@ -110,18 +113,17 @@ fieldset {
   left: 0;
   width: 1em;
   height: 1em;
-  border: 2px solid #561c24;
+  border: 2px solid white;
 }
 
 .radio input[type="radio"] + label::before {
   border-radius: 1em;
 }
 
-
 /* Checked toggle */
 .radio input[type="radio"]:checked + label {
   color: #fff;
-  background: #561c24;
+  background: #f8a407;
   z-index: 1;
 }
 

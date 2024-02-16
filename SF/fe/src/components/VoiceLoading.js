@@ -11,7 +11,7 @@ function VoiceLoading() {
     useEffect(() => {
         const filename = sessionStorage.getItem("filename");
         if (filename != null) {
-            axios.post("http://localhost/loading", filename)
+            axios.post("http://10.10.21.89/loading", filename)
                 .then(res => {
                     sessionStorage.setItem("result", res.data);
                     window.location.href = "/emoresult";

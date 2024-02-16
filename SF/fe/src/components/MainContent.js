@@ -7,11 +7,9 @@ import item4 from "../img/밥.png";
 import item5 from "../img/디저트.png";
 import item6 from "../img/dish.png";
 
-import refrigerator from "../img/냉장고내부.png";
-
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./css/MainContent.css";
 import Content2 from "./MainChatbot";
 
@@ -88,65 +86,6 @@ function MainContent() {
   const goToExpirationdate = () => {
     navigate("/main/expirationdate"); // 여기서 '/expirationdate'는 Expirationdate.js 페이지의 경로입니다.
   };
-
-  //  ---------------------------------------------위에는 슬라이드 이미지와 버튼 부분-----------------------------------------------
-
-  const columns = [
-    {
-      name: "재료",
-      selector: (row) => row.ingredient,
-      sortable: true,
-      width: "130px",
-      center: true
-    },
-
-    {
-      name: "소비기한",
-      selector: (row) => row.date,
-      sortable: true,
-      width: "150px",
-      // center: true
-      right: true
-    }
-  ];
-
-  const conditionalRowStyles = [
-    {
-      when: (row) => row,
-      style: {
-        "&:hover": {
-          color: "orange",
-          cursor: "pointer"
-        }
-      }
-    }
-  ];
-
-  const customStyles = {
-    headCells: {
-      style: {}
-    },
-    cells: {}
-  };
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://10.10.21.89/expiration");
-      const jsonData = await response.json();
-      setData(jsonData["재료순"]);
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    sessionStorage.clear();
-    fetchData();
-  }, []);
-
-  const [data, setData] = useState([]);
-
-  //   ---------------------------------------------------이 위 코드는 유통기한 임박 알림 텍스트------------------------------------------
 
   return (
     <div className="Mainsection">

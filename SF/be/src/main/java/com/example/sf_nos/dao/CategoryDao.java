@@ -21,6 +21,7 @@ public class CategoryDao {
         addCondition(query, "요리종류", cousinetype);
         addCondition(query, "조리방법", waytocook);
         addConditionforIngredient(query, "재료", ingredients);
+        System.out.println(query);
         return jt.queryForList(query.toString());
     }
 
