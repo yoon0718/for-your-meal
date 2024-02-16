@@ -32,8 +32,10 @@ const MainChatbot = () => {
   useEffect(() => {
     const container = document.querySelector('.rsc-container')
     const selectinput = document.querySelector('.rsc-input')
+    const content = document.querySelector(".rsc-content")
     container.style.width = '100%';
     container.style.height = '100%';
+    content.style.height = '75%';
     selectinput.style.fontSize = '2vh';
   })
 

@@ -3,8 +3,14 @@
   height: 100%;
   overflow: auto;
 }
+.rsc-header {
+  height:15%
+}
+.rsc-content {
+  height:70%;
+}
 .rsc-footer {
-  height: 10%;
+  height: 15%;
 }
 
 .rsc-submit-button {

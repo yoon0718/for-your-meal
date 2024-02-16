@@ -63,8 +63,6 @@ export default function Atable(props) {
 
     headCells: {
         style: {
-            backgroundColor: '#ffffff', 
-            color: '#000000', 
             fontSize: '16px', 
             fontWeight: 'bold', 
             fontFamily: 'EASTARJET-Medium', 
@@ -72,11 +70,18 @@ export default function Atable(props) {
     },
     cells: {
         style: {
-            backgroundColor: '#ffffff', // 일반 셀의 배경색
-            color: '#333333', // 일반 셀의 폰트 색상
             fontSize: '14px', // 일반 셀의 폰트 크기
             fontFamily: 'EASTARJET-Medium', // 폰트 종류
      },
+    rows: {
+    style: {
+      "&:hover": {
+        backgroundColor: "lightgrey !important", // !important를 사용하여 스타일을 강제 적용
+        color: "orange !important",
+        cursor: "pointer"
+      }
+    }
+    }
     }
   };
   
@@ -127,6 +132,8 @@ export default function Atable(props) {
         columns={columns}
         data={data}
         defaultSortFieldId
+        pagination
+        paginationPerPage={8}
         highlightOnHover
         customStyles={customStyles}
         conditionalRowStyles={conditionalRowStyles}

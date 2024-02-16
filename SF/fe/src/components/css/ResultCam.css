@@ -5,7 +5,7 @@
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  font-size: 25px;
+  font-size: 3.2vh;
   background-color: rgba(255, 255, 255, 1);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -32,16 +32,15 @@
 }
 
 .result_box p {
-  margin-bottom:10px;
+  margin-bottom:1.25vh;
 }
 .result_box_button button {
-  height:50px;
-  width:50px;
-  border-radius: 25px;
+  height:6vh;
+  width:6vw;
+  border-radius: 10px;
   border:none;
-  margin: 0 5px 5px 5px;
-  font-family: omyu_pretty;
-  font-size:20px;
+  margin: 0 0.5vw 1vh 0.5vw;
+  font-size:3vh;
   cursor: pointer;
   background-color: lightblue;
 }
@@ -52,16 +51,14 @@
 
 .result_box_input {
   width:80%;
-  height:30px;
-  font-family: omyu_pretty;
-  font-size:25px;
+  height:4.5vh;
+  font-size:3vh;
   margin-bottom: 10px;
   border-radius: 8px;
 }
 .result_box_cal {
   width:80%;
-  font-family: omyu_pretty;
-  font-size:25px;
+  font-size:3vh;
   margin-bottom: 10px;
   border-radius: 8px;
 }

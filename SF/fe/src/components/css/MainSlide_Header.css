@@ -44,12 +44,15 @@
   align-items: center;
   position: relative;
   width: 96.4vw;
-  background-color: #ffffff;
+  background-color: #c7b7a3;
   border-radius: 10px;
+  margin-top: 1.5vh;
 }
 .logotitle {
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .logo {
   display: flex;
@@ -57,19 +60,22 @@
   align-items: center;
   width: 10%;
   height: 10%;
-  font-size: medium;
 }
 
 .logoMain {
-  font-size: 3.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
   font-weight: bold;
-  font-family: "SOYOMapleBoldTTF";
+  margin-top: 1.5vh;
 }
 
 .logoSub {
-  font-size: 2.3vh;
+  font-size: 2vh;
   white-space: nowrap;
   font-family: "SOYOMapleBoldTTF";
+  margin-bottom: 1vh;
 }
 
 .mainLogo {
@@ -86,7 +92,7 @@
 .selectButton {
   width: 10vw;
   padding: 1vw 0;
-  background-color: #ff4f42;
+  background-color: #561c24;
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -105,6 +111,7 @@
   align-items: center;
   width: 96.4vw;
   height:100%;
+  margin-top:1%;
 }
 .main_main {
   width:70%;

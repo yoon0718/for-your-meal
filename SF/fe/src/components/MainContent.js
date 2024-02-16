@@ -170,11 +170,8 @@ function MainContent() {
           {!rouletteActive && !selectedMenu ? (
             <div className="Randomview">
               뭘 먹어야 할까? 랜덤 메뉴 추천기가 정해드려요!
-              <br />
-              <br />
-              '메뉴를 추천해줘!'를 눌러보세요.
               <button className="Menubar" onClick={startRoulette}>
-                메뉴를 추천해줘!
+                음식 추천
               </button>
             </div>
           ) : rouletteActive ? (
@@ -190,9 +187,9 @@ function MainContent() {
           )}
         </section>
 
-        <section className="contentsection3">
+        <section className="contentsection3" onClick={goToExpirationdate}>
           <div>
-            냉장고에 있는 오래된 음식 알림 받으러 가기
+            보관된 식재료 & 유통기한 확인하기
           </div>
         </section>
       </main>

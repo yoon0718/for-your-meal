@@ -41,7 +41,7 @@
   z-index: 9;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #c5c1bbcc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@
 .image-label {
   margin-top: 2vh; /* 이미지와 레이블 사이의 간격 */
   color: #000; /* 텍스트 색상 */
-  font-size: 3vh; /* 텍스트 크기 */
+  font-size: 2.5vh; /* 텍스트 크기 */
 }
 
 .contents .contentsection2 {
@@ -95,7 +95,7 @@
   text-align: center;
   padding: 0 1vw;
   overflow: hidden;
-  font-size: 1.5vw;
+  font-size: 1.75vw;
   border-radius: 10px;
   background-image: linear-gradient(
     to right,
@@ -136,20 +136,20 @@
   align-items: center;
   width: 75%;
   padding: 0.5vw 0;
-  background-color: #ff4f42;
+  background-color: #561c24;
   color: #ffffff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 1.4vw;
+  font-size: 1.75vw;
   opacity: 100%;
   margin-top: 2.4vh; /* 버튼과 텍스트 사이의 간격 조정 */
   transition: transform 0.5s ease;
 }
 
 .Menubar:active {
-  background-color: #f87c7c; /* 버튼 클릭 시 배경색 변경 */
+  background-color: #c7b7a3; /* 버튼 클릭 시 배경색 변경 */
 }
 
 .contents .contentsection3 {

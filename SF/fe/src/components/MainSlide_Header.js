@@ -37,7 +37,7 @@ import bg30 from "../img/food/30.jpg";
 import bg31 from "../img/food/31.jpg";
 import bg32 from "../img/food/32.jpg";
 
-import logo from "../img/logo2.png";
+import logo from "../img/logo.png";
 
 import Commit1 from "./MainCommit1";
 import ResultCook from "./ResultCook";
@@ -111,7 +111,6 @@ function MainSlide_Header() {
               />
               <div className="logotitle" onClick={() => navigate("/main")}>
                 <span className="logoMain">M:ILK</span>
-                <br />
                 <span className="logoSub">for your meal</span>
               </div>
             </h1>
