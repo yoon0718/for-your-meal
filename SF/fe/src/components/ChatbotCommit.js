@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../components/css/MainCommit.css";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-js-pagination";
@@ -26,11 +26,17 @@ function ChatbotCommit() {
     sessionStorage.setItem("메뉴명", label);
     navigate("/main/ResultCook");
   };
-  axios.post("http://10.10.21.89/category", postingdata).then((res) => {
+  const backhome = () => {
+    navigate("/main");
+  }
+  useEffect(() => {
+    axios.post("http://10.10.21.89/category", postingdata).then((res) => {
     setData(res.data);
-  });
+    });
+  },[])
+  
 
-  if (data != null) {
+  if (data && data.length >= 1) {
     return (
       <div className="CategoryFood">
         <div className="food-container">
@@ -66,13 +72,21 @@ function ChatbotCommit() {
       )}
       </div>
     );
+  } else if (data && data.length === 0) { 
+    return (
+      <div className="CategoryFood">
+        <div className="no-data">
+          검색된 결과가 없습니다. <br/>다른 카테고리를 선택해보시는게 어떤가요?
+          <button className="no-data-btn" onClick={backhome}>뒤로가기</button>
+        </div>
+        
+      </div>
+    );
   } else {
     return (
-      <main className="contents">
-        <div className="CategoryFood">
-          <div className="food-container">결과를 가져오는 중이에요!</div>
-        </div>
-      </main>
+      <div className="CategoryFood">
+        <div className="food-container">결과를 가져오는 중이에요!</div>
+      </div>
     );
   }
 }

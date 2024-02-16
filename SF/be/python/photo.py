@@ -13,7 +13,43 @@ from IPython.display import display, Image
 
 model = load_model('C:/SprintF/SF/be/python/Image_classify.h5')
 
-
+data_class_name_e = ['apple',
+ 'asparagus',
+ 'banana',
+ 'beans',
+ 'beansprouts',
+ 'beetroot',
+ 'broccoli',
+ 'cabbage',
+ 'capsicum',
+ 'carrot',
+ 'cauliflower',
+ 'chicken',
+ 'corn',
+ 'cucumber',
+ 'egg',
+ 'eggplant',
+ 'ginger',
+ 'grapes',
+ 'kiwi',
+ 'lemon',
+ 'lettuce',
+ 'mango',
+ 'onion',
+ 'orange',
+ 'paprika',
+ 'pineapple',
+ 'pomegranate',
+ 'pork',
+ 'potato',
+ 'pumpkin',
+ 'raddish',
+ 'salmon',
+ 'spinach',
+ 'sweetpotato',
+ 'tofu',
+ 'tomato',
+ 'watermelon']
 data_class_name = [
     '사과',
     '아스파라거스',
@@ -24,20 +60,16 @@ data_class_name = [
     '피망',
     '브로콜리',
     '양배추',
-    '피망',
+    '고추',
     '당근',
     '콜리플라워',
     '닭',
-    '닭날개',
-    '고추',
     '옥수수',
     '오이',
     '달걀',
     '가지',
-    '마늘',
     '생강',
     '포도',
-    '할라피뇨',
     '키위',
     '레몬',
     '상추',
@@ -45,8 +77,6 @@ data_class_name = [
     '양파',
     '오렌지',
     '파프리카',
-    '배',
-    '완두콩',
     '파인애플',
     '석류',
     '돼지고기',
@@ -55,11 +85,9 @@ data_class_name = [
     '무',
     '연어',
     '시금치',
-    '옥수수',
     '고구마',
     '두부',
     '토마토',
-    '순무',
     '수박'
 ]
 
@@ -82,7 +110,7 @@ predict = model.predict(img_bat)
 score = tf.nn.softmax(predict)
 
 # Display the result
-print(data_class_name[np.argmax(score)])
+print(data_class_name_e[np.argmax(score)])
 
 
 

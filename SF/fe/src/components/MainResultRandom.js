@@ -10,13 +10,19 @@ import axios from 'axios';
 
 function MainResultRandom() {
   const [food, setFood] = useState(null);
+  const [myingre, setMyIngre] = useState(null);
   
   useEffect(() => {
     axios.post("http://10.10.21.89/randommenu")
     .then(res => {
       setFood(res.data)
     })
+    axios.post("http://10.10.21.89/myfrige")
+    .then(res => {
+      setMyIngre(res.data)
+    })
   },[])
+
   if (food === '') {
     return (
       <div className='RandomFoodresult'>
@@ -28,7 +34,7 @@ function MainResultRandom() {
   }
   else if (food !== null) {
     const contentImages = [
-      { src: food['이미지경로'], label: food['메뉴명'], ingredients: food['재료정보'], way: food['만드는법'], tip: food['저감조리법tip']},
+      { src: food['이미지경로'], label: food['메뉴명'], ingredients: food['재료정보'], way: food['만드는법'], tip: food['저감조리법tip'], allingre: food['재료']},
     ];
     return (
       <div className='RandomFoodresult'>

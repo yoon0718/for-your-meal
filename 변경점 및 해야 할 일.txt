@@ -125,3 +125,5 @@ MainExpirationDate.js - 변경
 Atable.js - 변경
 Btable.js - 변경
 MainExpirationDate.css - 변경
+
+voiceResult 바뀐 버튼 살펴보기

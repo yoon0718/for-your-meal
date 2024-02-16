@@ -17,6 +17,10 @@ public class ExpirationDao {
         String query = "SELECT * FROM frige";
         return jt.queryForList(query);
     }
+    public List<Map<String,Object>> my_ingre() {
+        String query = "SELECT ingredient FROM frige";
+        return jt.queryForList(query);
+    }
     public List<Map<String,Object>> expiration_date() {
         String query = "SELECT * FROM frige ORDER BY date";
         return jt.queryForList(query);

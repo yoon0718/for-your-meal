@@ -51,6 +51,9 @@ const rouletteImages = [
 ];
 
 function MainContent() {
+  useEffect(() => {
+    sessionStorage.clear();
+  },[])
   const navigate = useNavigate();
   const [selectedMenu, setSelectedMenu] = useState("");
   const [rouletteActive, setRouletteActive] = useState(false);

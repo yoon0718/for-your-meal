@@ -1,5 +1,6 @@
 package com.example.sf_nos.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.sf_nos.dao.ExpirationDao;
 import com.example.sf_nos.dao.RandomMenuDao;
 
 @Controller
@@ -15,6 +17,8 @@ import com.example.sf_nos.dao.RandomMenuDao;
 public class RandomMenuController {
     @Autowired
     RandomMenuDao randomMenuDao;
+    @Autowired
+    ExpirationDao expirationDao;
 
     @PostMapping("/randommenu")
     public ResponseEntity<Map<String,Object>> get_random_menu() {
@@ -33,5 +37,15 @@ public class RandomMenuController {
         } else {
             return ResponseEntity.noContent().build();
         }
+    }
+    @PostMapping("/myfrige")
+    public ResponseEntity<List<Map<String,Object>>> my_ingre() {
+        List<Map<String,Object>> myfrige = expirationDao.my_ingre();
+        if (myfrige.size() >= 1) {
+            return ResponseEntity.ok(myfrige);
+        } else {
+            return ResponseEntity.noContent().build();
+        }
+        
     }
 }

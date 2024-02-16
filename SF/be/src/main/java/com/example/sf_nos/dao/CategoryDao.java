@@ -21,7 +21,6 @@ public class CategoryDao {
         addCondition(query, "요리종류", cousinetype);
         addCondition(query, "조리방법", waytocook);
         addConditionforIngredient(query, "재료", ingredients);
-        System.out.println(query);
         return jt.queryForList(query.toString());
     }
 
@@ -32,8 +31,57 @@ public class CategoryDao {
     }
     private void addConditionforIngredient(StringBuilder query, String column, String value) {
         if (value != null) {
-            if(value == "그 외의 재료") {
-                        System.out.println("그 외의 재료를 선택중입니다.");
+            if(value.equals("모든 면")) {
+                query.append("AND (").append(column+" LIKE ").append("'%"+"당면"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"파스타면"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"라면"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"메밀면"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"소면"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"우동"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"쌀국수"+"%')");
+            } else if (value.equals("모든 고기")) {
+                query.append("AND (").append(column+" LIKE ").append("'%"+"소고기"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"돼지고기"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"닭고기"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"오리고기"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"양고기"+"%')");
+            } else if (value.equals("모든 생선")) {
+                query.append(" AND (").append(column+" LIKE ").append("'%"+"새우"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"오징어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"조개"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"고등어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"황태"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"북어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"대구"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"백태"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"삼치"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"광어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"연어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"민어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"조기"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"코다리"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"생선살"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"장어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"아귀"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"가자미"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"꽁치"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"명태"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"병어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"갈치"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"금태"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"도미"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"흰살생선"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"주꾸미"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"낙지"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"문어"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"홍합"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"전복"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"굴"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"꼬막"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"바지락"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"소라"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"멍게"+"%'");
+                query.append(" OR ").append(column+" LIKE ").append("'%"+"꽃게"+"%')");
             } else if (value.equals("다른 면")) {
                 query.append(" AND (").append(column+" LIKE ").append("'%"+"메밀면"+"%'");
                 query.append(" OR ").append(column+" LIKE ").append("'%"+"소면"+"%'");

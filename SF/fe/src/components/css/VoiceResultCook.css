@@ -53,6 +53,7 @@
 
 .VoiceText {
   width:95%;
+  height:90%;
   display: flex;
   flex-direction: column;
   padding: 2vh;
@@ -91,6 +92,7 @@
   justify-content: center;
   align-items: center;
   width:100%;
+  height:10%;
 }
 
 .Voicebtn {
@@ -103,7 +105,6 @@
   cursor: pointer;
   font-size: 2.2vh;
   opacity: 100%;
-  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
   margin-right: 4.5vw;
   transition: transform 0.3s ease
@@ -123,7 +124,6 @@
   cursor: pointer;
   font-size: 2.2vh;
   opacity: 100%;
-  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
   margin-right: 4.5vw;
   transition: transform 0.3s ease
@@ -143,10 +143,13 @@
 .resulthomebtn {
   height: 0vh;
 }
-
-.resulthomebtn:hover {
+.homebtn {
+  height: 9.5vh;
+  filter: invert(100%);
+}
+.homebtn:hover {
   cursor: pointer;
-  filter: brightness(0) saturate(100%);
+  filter: invert(0%);
 }
 
 .color-change-5x {
