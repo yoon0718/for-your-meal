@@ -74,12 +74,8 @@ const codeOptions = [
     label: "레몬"
   },
   {
-    value: "골드키위",
-    label: "골드키위"
-  },
-  {
-    value: "그린키위",
-    label: "그린키위"
+    value: "키위",
+    label: "키위"
   },
   {
     value: "시금치",
@@ -96,10 +92,6 @@ const codeOptions = [
   {
     value: "참깨",
     label: "참깨"
-  },
-  {
-    value: "구운 참깨",
-    label: "구운 참깨"
   },
   {
     value: "고춧가루",
@@ -159,24 +151,30 @@ const colourStyles = {
   control: (style, { isFocused }) => ({
     ...style,
 
-    outline: "black",
+    backgroundColor: "#C7B7A3",
+    outline: "none",
     color: "black",
     width: "100%",
-    height: "20px",
-    fontSize: "30px"
+    fontSize: "4vh",
+    border: isFocused ? "none" : "none",
+    boxShadow: isFocused ? "none" : "none"
   }),
   option: (style, { isFocused }) => {
     return {
       ...style,
-      backgroundColor: isFocused ? "#a77979" : null,
+      backgroundColor: isFocused ? "#FAEED1" : null,
       color: "#333333",
-      width: "100%",
-      height: "25px"
+      width: "100%"
     };
   },
   singleValue: (base) => ({
     ...base,
     color: "black"
+  }),
+  menu: (provided) => ({
+    ...provided,
+    maxHeight: "15vh",
+    overflowY: "scroll"
   })
 };
 
@@ -212,9 +210,7 @@ const SelectBox = () => {
 
   return (
     <div className="Select_box">
-      <div className="Select_box_header">
-        <p>유통기한을 못찾겠나요?</p>
-      </div>
+      <div className="Select_box_header">유통기한을 못찾겠나요?</div>
       <div className="Select_box_content">
         <Creatable
           defaultValue={codeOptions[0]}

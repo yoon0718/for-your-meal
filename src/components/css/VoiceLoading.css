@@ -15,7 +15,7 @@
 
 .loadingtext{
     margin-top: 300px;
-    font-size: 200%;
+    font-size: 4.6vh;
     font-family: 'omyu_pretty';
     transition: color 1.5s ease;
 }

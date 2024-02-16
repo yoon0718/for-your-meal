@@ -4,69 +4,114 @@
   display: none;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 /* -------------------- 카테고리 음식 영역 -------------------- */
 .CategoryFood {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-family: "yg-jalnan", sans-serif;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 5px;
 }
 
 .food-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 40%);
-  gap: 10px 30px;
-  padding: 0px;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(2, 48%);
+  gap: 4% 2%;
+  padding:1% 0 1% 0;
+  height: 90%;
+  width: 97%;
   overflow: auto;
+  flex-wrap: wrap;
 }
 
 .food-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.food-item img {
-  width: 280px;
-  height: 220px;
-  object-fit: cover;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
   transition: transform 0.5s ease;
-  margin-bottom: -23px !important;
+  width:100%;
+  height:100%;
+}
+.food-item-img {
+  width:95%;
+  height:90%;
+  padding:5%;
+}
+.food-item-img img {
+  width:100%;
+  height:100%;
   cursor: pointer;
-  padding: 15px;
 }
 
-.food-item img:hover {
+.food-item:hover {
   transform: scale(1.1);
 }
 
-.food-label {
-  text-align: center;
+.commit-food-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:5%;
+  font-size: 1.2vw;
+  white-space: nowrap;
 }
 
-/* ------------------------------------------------아래쪽 ChatbotCommit입니다------------------------------------------------ */
-
-.commit_contents {
-  width: 65%;
-  height: 85vh;
-  text-align: center;
-  overflow: hidden;
-  margin-right: 15px;
-  margin-top: 42px;
+/* 페이지네이션 */
+.pagination-container {
+  width:100%;
+  height:5%;
+  display: flex;
   justify-content: center;
-  align-items: start;
-  flex-wrap: wrap;
-  z-index: 0;
-  position: relative;
-  bottom: 3.6vh;
+  align-items: center;
+  flex-wrap: wrap; /* 필요시 여러 줄로 나누어 표시 */
+}
+
+.pagination {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  width:auto;
+  height:100%;
+}
+
+.pagination-container li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  margin: 0.2vw; /* 버튼 사이의 간격 */
+}
+
+.pagination-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  font-size: 1.1vw;
+  padding: 0.5vh 0.8vw; /* 버튼 내부 패딩 */
+  background-color: #f0f0f0; /* 배경색 */
+  color: #333; /* 글자색 */
+  border-radius: 5px; /* 버튼 모서리 둥글게 */
+  text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.pagination-container a:hover {
+  background-color: #ddd; /* 호버 시 배경색 변경 */
+}
+
+.active a {
+  background-color: lightblue;
 }

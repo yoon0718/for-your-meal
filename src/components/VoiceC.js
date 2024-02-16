@@ -19,6 +19,9 @@ function VoiceC() {
 
   return (
     <div className={`Vbody`}>
+      <div className='homebtndiv'>
+        <img src={homebtn} className="homebtn" onClick={gohome}></img>
+      </div>
       <div className={`color-change-5x ${isRecording ? 'hidden' : ''}`}>
         <div className="loadingio-spinner-ripple-y05os7hhvii">
           <div className="ldio-fi0u2squulj">
@@ -29,10 +32,7 @@ function VoiceC() {
           </div>
         </div>
       </div>
-      <img src={homebtn} className="homebtn" onClick={gohome}></img>
-      <div className="audiobox">
-        <AudioRecorder onRecordingChange={handleRecordingChange} isRecording={isRecording} />
-      </div>
+      <AudioRecorder onRecordingChange={handleRecordingChange} isRecording={isRecording} />
     </div>
   );
 }

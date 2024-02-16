@@ -1,9 +1,8 @@
-// --------메인레시피컨텐츠 중 레시피의 맨 위 컨텐츠 결과 부분입니다.--------
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../components/css/MainCommit.css";
 import axios from "axios";
+import ImageResizer from "react-image-resizer";
 
 function MainCommit1() {
   const navigate = useNavigate();
@@ -27,12 +26,30 @@ function MainCommit1() {
   }, []);
 
   const contentImages = [
-    { src: food1["이미지경로"], label: food1["메뉴명"] },
-    { src: food2["이미지경로"], label: food2["메뉴명"] },
-    { src: food3["이미지경로"], label: food3["메뉴명"] },
-    { src: food4["이미지경로"], label: food4["메뉴명"] },
-    { src: food5["이미지경로"], label: food5["메뉴명"] },
-    { src: food6["이미지경로"], label: food6["메뉴명"] }
+    {
+      src: food1["이미지경로"],
+      label: food1["메뉴명"]
+    },
+    {
+      src: food2["이미지경로"],
+      label: food2["메뉴명"]
+    },
+    {
+      src: food3["이미지경로"],
+      label: food3["메뉴명"]
+    },
+    {
+      src: food4["이미지경로"],
+      label: food4["메뉴명"]
+    },
+    {
+      src: food5["이미지경로"],
+      label: food5["메뉴명"]
+    },
+    {
+      src: food6["이미지경로"],
+      label: food6["메뉴명"]
+    }
   ];
 
   const setName = (label) => {
@@ -41,22 +58,27 @@ function MainCommit1() {
   };
 
   return (
-    <main className="contents">
-      <div className="CategoryFood">
-        <div className="food-container">
-          {contentImages.map((image, index) => (
-            <div
-              key={index}
-              className="food-item"
-              onClick={() => setName(image.label)}
-            >
-              <img src={image.src} alt={`Food ${index + 1}`} />
-              <div className="food-label">{image.label}</div>
+    <div className="CategoryFood">
+      <div className="food-container">
+        {contentImages.map((image, index) => (
+          <div
+            className="food-item"
+            key={index}
+            onClick={() => setName(image.label)}
+          >
+            <div className="food-item-img">
+              <ImageResizer
+                src={image.src}
+                width={250}
+                height={200}
+                alt={`Food ${index + 1}`}
+              />
             </div>
-          ))}
-        </div>
+            <div className="commit-food-label">{image.label}</div>
+          </div>
+        ))}
       </div>
-    </main>
+    </div>
   );
 }
 

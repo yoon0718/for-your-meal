@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import "../components/css/MainCommit2.css";
+import "../components/css/MainCommit.css";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-js-pagination";
 
@@ -29,24 +29,23 @@ function ChatbotCommit() {
   axios.post("http://localhost/category", postingdata).then((res) => {
     setData(res.data);
   });
+
   if (data != null) {
     return (
-      <main className="commit_contents">
-        <div className="CategoryFood">
-          <div className="food-container">
-            {currentItems?.map((menu, index) => (
-              <div
-                key={index}
-                className="food-item"
-                onClick={() => setName(menu.메뉴명)}
-              >
+      <div className="CategoryFood">
+        <div className="food-container">
+          {currentItems?.map((menu, index) => (
+            <div
+              key={index}
+              className="food-item"
+              onClick={() => setName(menu.메뉴명)}
+            >
+              <div className="food-item-img">
                 <img src={menu.이미지경로} alt={`Food ${index + 1}`} />
-                <div className="food-label">
-                  <div>{menu.메뉴명}</div>
-                </div>
               </div>
-            ))}
-          </div>
+              <div className="commit-food-label">{menu.메뉴명}</div>
+            </div>
+          ))}
         </div>
         {data && (
           <div className="pagination-container">
@@ -57,13 +56,13 @@ function ChatbotCommit() {
               itemsCountPerPage={itemsPerPage}
               totalItemsCount={data.length}
               pageRangeDisplayed={5}
-              prevPageText="‹"
-              nextPageText="›"
+              prevPageText="<"
+              nextPageText=">"
               onChange={handlePageChange}
             />
           </div>
         )}
-      </main>
+      </div>
     );
   } else {
     return (

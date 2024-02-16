@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import recbtn from '../img/rec.png';
-import './css/VoiceC.css';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import recbtn from "../img/rec.png";
+import "./css/VoiceC.css";
+import axios from "axios";
 
 export default function VoiceAudioRecorder() {
   const [recording, setRecording] = useState(false);
   const chunksRef = React.useRef([]);
   const canvasRef = React.useRef(null);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [textVisible, setTextVisible] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     const width = canvas.width;
     const height = canvas.height;
 
@@ -25,7 +25,7 @@ export default function VoiceAudioRecorder() {
       const sliceWidth = (width * 2.0) / bufferLength;
       let x = 0;
 
-      context.strokeStyle = '#ffff'; // 파동의 색상
+      context.strokeStyle = "#ffff"; // 파동의 색상
       context.lineWidth = 10;
 
       for (let i = 0; i < bufferLength; i++) {
@@ -59,7 +59,7 @@ export default function VoiceAudioRecorder() {
           visualize();
         })
         .catch((error) => {
-          console.error('Error accessing microphone:', error);
+          console.error("Error accessing microphone:", error);
         });
     }
 
@@ -72,57 +72,60 @@ export default function VoiceAudioRecorder() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream);
-  
+
       recorder.ondataavailable = (event) => {
         chunksRef.current.push(event.data);
       };
-  
+
       recorder.onstop = async () => {
-        const mp3Blob = new Blob(chunksRef.current, { type: 'audio/mp3' });
+        const mp3Blob = new Blob(chunksRef.current, { type: "audio/mp3" });
         const wavBlob = await convertToWav(mp3Blob);
         const formData = new FormData();
-        formData.append('audioFile', wavBlob);
+        formData.append("audioFile", wavBlob);
         try {
-          axios.post('http://localhost/recording', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          })
-          .then(response => {
-            sessionStorage.setItem("filename",response.data)
-            window.location.href = "/loading"
-          });
+          axios
+            .post("http://localhost/recording", formData, {
+              headers: {
+                "Content-Type": "multipart/form-data"
+              }
+            })
+            .then((response) => {
+              sessionStorage.setItem("filename", response.data);
+              window.location.href = "/loading";
+            });
         } catch (error) {
-          console.error('Error uploading audio:', error);
+          console.error("Error uploading audio:", error);
         }
         setRecording(false);
       };
-  
 
-      recorder.start();      
+      recorder.start();
       setRecording(true);
 
       setRecording(true);
-      setDisplayText('');
+      setDisplayText("");
       setTextVisible(true);
 
       setTimeout(() => {
         recorder.stop();
-        setDisplayText('');
+        setDisplayText("");
         setTextVisible(false);
       }, 5000);
     } catch (error) {
-      console.error('Error accessing microphone:', error);
+      console.error("Error accessing microphone:", error);
     }
   };
   const convertToWav = async (mp3Blob) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onloadend = async () => {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const audioContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
         const audioBuffer = await audioContext.decodeAudioData(reader.result);
         const wavBuffer = audioBufferToWav(audioBuffer);
-        const wavBlob = new Blob([new Uint8Array(wavBuffer)], { type: 'audio/wav' });
+        const wavBlob = new Blob([new Uint8Array(wavBuffer)], {
+          type: "audio/wav"
+        });
         resolve(wavBlob);
       };
       reader.onerror = reject;
@@ -134,16 +137,16 @@ export default function VoiceAudioRecorder() {
     const numOfChannels = buffer.numberOfChannels;
     const sampleRate = buffer.sampleRate;
     const bitDepth = 16;
-  
+
     const length = buffer.length * numOfChannels * (bitDepth / 8);
     const wavBuffer = new ArrayBuffer(44 + length);
     const view = new DataView(wavBuffer);
-  
+
     // WAV 헤더 작성
-    writeString(view, 0, 'RIFF'); // ChunkID
+    writeString(view, 0, "RIFF"); // ChunkID
     view.setUint32(4, 36 + length, true); // ChunkSize
-    writeString(view, 8, 'WAVE'); // Format
-    writeString(view, 12, 'fmt '); // Subchunk1ID
+    writeString(view, 8, "WAVE"); // Format
+    writeString(view, 12, "fmt "); // Subchunk1ID
     view.setUint32(16, 16, true); // Subchunk1Size
     view.setUint16(20, 1, true); // AudioFormat (PCM)
     view.setUint16(22, numOfChannels, true); // NumChannels
@@ -151,9 +154,9 @@ export default function VoiceAudioRecorder() {
     view.setUint32(28, sampleRate * numOfChannels * (bitDepth / 8), true); // ByteRate
     view.setUint16(32, numOfChannels * (bitDepth / 8), true); // BlockAlign
     view.setUint16(34, bitDepth, true); // BitsPerSample
-    writeString(view, 36, 'data'); // Subchunk2ID
+    writeString(view, 36, "data"); // Subchunk2ID
     view.setUint32(40, length, true); // Subchunk2Size
-  
+
     // 오디오 데이터 작성
     const dataView = new DataView(wavBuffer, 44);
     const channelData = [];
@@ -169,7 +172,7 @@ export default function VoiceAudioRecorder() {
         offset += 2;
       }
     }
-  
+
     return wavBuffer;
   };
 
@@ -180,17 +183,23 @@ export default function VoiceAudioRecorder() {
   };
 
   return (
-    <div>
+    <div className="audiobox">
+      <img
+        src={recbtn}
+        className="recbtn"
+        alt="Record"
+        onClick={handleStartRecording}
+        disabled={recording}
+      />
       <canvas ref={canvasRef} className="waveform"></canvas>
-      <button onClick={handleStartRecording} disabled={recording}>
-        <img src={recbtn} className="recbtn" alt="Record" />
-      </button>
       {textVisible && (
-      <p
-        className={`ptag ${textVisible ? 'fade-in' : 'fade-out'}`} // 클래스 이름을 fade, fade-in, fade-out으로 설정
-        style={{ transform: textVisible ? 'translateX(0)' : 'translateX(-100px)' }}
-      >
-        <span class="back">
+        <p
+          className={`ptag ${textVisible ? "fade-in" : "fade-out"}`} // 클래스 이름을 fade, fade-in, fade-out으로 설정
+          style={{
+            transform: textVisible ? "translateX(0)" : "translateX(-100px)"
+          }}
+        >
+          <span class="back">
             <span>"오</span>
             <span>늘</span>
             <span></span>
@@ -207,8 +216,8 @@ export default function VoiceAudioRecorder() {
             <span>봐</span>
             <span>요</span>
           </span>
-        {displayText}
-      </p>
+          {displayText}
+        </p>
       )}
     </div>
   );

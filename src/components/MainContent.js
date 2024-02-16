@@ -9,7 +9,7 @@ import item6 from "../img/dish.png";
 
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./css/MainContent.css";
 import Content2 from "./MainChatbot";
 
@@ -87,65 +87,6 @@ function MainContent() {
     navigate("/main/expirationdate"); // 여기서 '/expirationdate'는 Expirationdate.js 페이지의 경로입니다.
   };
 
-  //  ---------------------------------------------위에는 슬라이드 이미지와 버튼 부분-----------------------------------------------
-
-  const columns = [
-    {
-      name: "재료",
-      selector: (row) => row.ingredient,
-      sortable: true,
-      width: "130px",
-      center: true
-    },
-
-    {
-      name: "소비기한",
-      selector: (row) => row.date,
-      sortable: true,
-      width: "150px",
-      // center: true
-      right: true
-    }
-  ];
-
-  const conditionalRowStyles = [
-    {
-      when: (row) => row,
-      style: {
-        "&:hover": {
-          color: "orange",
-          cursor: "pointer"
-        }
-      }
-    }
-  ];
-
-  const customStyles = {
-    headCells: {
-      style: {}
-    },
-    cells: {}
-  };
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://10.10.21.89/expiration");
-      const jsonData = await response.json();
-      setData(jsonData["재료순"]);
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    sessionStorage.clear();
-    fetchData();
-  }, []);
-
-  const [data, setData] = useState([]);
-
-  //   ---------------------------------------------------이 위 코드는 유통기한 임박 알림 텍스트------------------------------------------
-
   return (
     <div className="Mainsection">
       <main className="contents">
@@ -167,18 +108,10 @@ function MainContent() {
         <section className="contentsection2">
           {!rouletteActive && !selectedMenu ? (
             <div className="Randomview">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center"
-                }}
-              >
-                오늘 뭘 먹을까? 랜덤 메뉴 추천기가 정해드려요!
-                <button className="Menubar" onClick={startRoulette}>
-                  음식 추천
-                </button>
-              </div>
+              뭘 먹어야 할까? 랜덤 메뉴 추천기가 정해드려요!
+              <button className="Menubar" onClick={startRoulette}>
+                음식 추천
+              </button>
             </div>
           ) : rouletteActive ? (
             <div className="Randomview-2">
@@ -194,7 +127,9 @@ function MainContent() {
         </section>
 
         <section className="contentsection3" onClick={goToExpirationdate}>
-          <p>보관된 식재료 & 유통기한 확인하기</p>
+          <div>
+            보관된 식재료 & 유통기한 확인하기
+          </div>
         </section>
       </main>
       <div className="slider2-right">
@@ -202,7 +137,7 @@ function MainContent() {
           <Content2 />
         </div>
         <div className="slider-right2" onClick={AddBtn}>
-          <p>냉장고에 식재료 넣기</p>
+          냉장고에 식재료 넣기
         </div>
       </div>
     </div>

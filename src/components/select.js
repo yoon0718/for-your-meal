@@ -32,7 +32,9 @@ function Select() {
               <span className="highlight">요</span>리사
               <br />
             </h2>
-            <p className="social-text">냉장고 속 남는 재료 털기 어떠세요?</p>
+            <p className="social-text">
+              냉장고 식재료를 사용해서 요리한번 어떠세요?
+            </p>
             <button className="btn plz" onClick={PlzClick}>
               시작
             </button>

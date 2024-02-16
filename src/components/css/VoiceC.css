@@ -2,57 +2,61 @@
   display: flex;
   width: 100%;
   height: 100%;
-  /* flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  align-content: center; */
   margin: 0;
 }
 
 .color-change-5x {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   -webkit-animation: color-change-5x 8s linear infinite alternate both;
   animation: color-change-5x 8s linear infinite alternate both;
 }
 
 @keyframes color-change-5x {
   0% {
-    background: #eea2a2;
+    background: #1b2430;
   }
   25% {
-    background: #bbc1bf;
+    background: #5f4c79;
   }
   50% {
-    background: #57c6e1;
+    background: #444e81;
   }
   75% {
-    background: #b49fda;
+    background: #445069;
   }
   100% {
-    background: #7ac5d8;
+    background: #262a56;
   }
 }
 
 @keyframes ldio-fi0u2squulj {
   0% {
-    top: 96px;
-    left: 96px;
+    top: 0px;
+    left: 0px;
     width: 0;
     height: 0;
     opacity: 1;
   }
   100% {
-    top: 18px;
-    left: 18px;
-    width: 156px;
-    height: 156px;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 150px;
     opacity: 0;
   }
 }
 
 .ldio-fi0u2squulj div:nth-child(1) {
-  border-color: #ffff;
-  animation-delay: 4s;
+  border-color: rgb(219, 210, 210);
+  animation-delay: 2s;
+  display: none;
 }
 .ldio-fi0u2squulj div:nth-child(2) {
   border-color: rgb(219, 210, 210);
@@ -61,12 +65,18 @@
 .loadingio-spinner-ripple-y05os7hhvii {
   width: 100vw;
   height: 100vh;
-  /* display: inline-block; */
   overflow: hidden;
   background: rgba(NaN, NaN, NaN, 0);
+  position: relative;
 }
 .ldio-fi0u2squulj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transform: translateZ(0) scale(1);
   backface-visibility: hidden;
   transform-origin: 0 0;
@@ -75,145 +85,138 @@
 .ldio-fi0u2squulj div {
   box-sizing: content-box;
   border-color: lightgray;
-  margin: 15%;
-  margin-left: 43.5%;
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-width: 20px;
   border-style: solid;
   opacity: 1;
   border-radius: 50%;
   animation: ldio-fi0u2squulj 2s cubic-bezier(0, 0.1, 0.5, 1) infinite;
 }
-
+.homebtndiv {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin: 10.5vh 8.5vw 0 0;
+}
 .homebtn {
-  position: absolute;
-  height: 70px;
-  bottom: 80vh;
-  left: 90vw;
+  height: 9.5vh;
+  filter: invert(0%);
 }
 
 .homebtn:hover {
   cursor: pointer;
-  filter: invert(100%);
+  filter: invert(50%);
 }
+
 .recbtn {
   position: absolute;
-  height: 90px;
-  bottom: 16vh;
-  left: 48.5vw;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 12.25vh;
 }
 
 .recbtn:hover {
   cursor: pointer;
-  filter: invert(100%);
+  filter: invert(50%);
 }
 
 .audiobox {
-  height: 0;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 65vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .waveform {
-  position: absolute;
-  height: 70px;
-  width: 400px;
-  bottom: 2vh;
-  left: 38vw;
+  height: 9.5vh;
+  width: 32vw;
 }
 
 .ptag {
   position: absolute;
-  width: 850px;
-  height: 100px;
-  top: 40vh;
-  right: 20vw;
+  bottom: 40%;
   color: black;
   text-align: center;
-  
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-    html {
-      height:90%;
+.back {
+  font-family: "Roboto";
+}
+.back span {
+  font-size: 6.5vh;
+  color: #74553e;
+  background: #ececec;
+  display: table-cell;
+  box-shadow: 0 0 0.5vh rgba(0, 0, 0, 0.3), 0 5px 0 #ccc;
+  padding: 0 2.05vh;
+  line-height: 14vh;
+  animation: jumb 2s infinite;
+}
+@keyframes jumb {
+  0% {
+    transform: translateY(0vh);
   }
+  50% {
+    transform: translateY(-5vh);
+    box-shadow: 0 2.05vh 0 rgb(242, 198, 64);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+.back span:nth-child(1) {
+  animation-delay: 0s;
+}
+.back span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.back span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.back span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.back span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.back span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.back span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.back span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.back span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.back span:nth-child(10) {
+  animation-delay: 0.9s;
+}
+.back span:nth-child(11) {
+  animation-delay: 1s;
+}
+.back span:nth-child(12) {
+  animation-delay: 1.1s;
+}
+.back span:nth-child(13) {
+  animation-delay: 1.2s;
+}
+.back span:nth-child(14) {
+  animation-delay: 1.3s;
+}
+.back span:nth-child(15) {
+  animation-delay: 1.4s;
+}
 
-  .back {
-    font-family:"Roboto";
-    transform: translateX(-50%); 
-   text-align: center; 
-   margin-left: -10%; 
-   align-items: center;  
-    
-  }
-  .back span {
-    font-size:3em;
-    color:#74553e;
-    background:#ececec;
-    display:table-cell;
-    box-shadow:inset 0 0 5px rgba(0,0,0,0.3), 0 5px 0 #ccc;
-    padding: 0 15px;
-    line-height: 100px;
-    animation:jumb 2s infinite;
-    margin: 0; /* span 사이의 마진을 제거합니다. */
-  }
-  @keyframes jumb {
-    0% {
-      transform:translateY(0px)
-    }
-    50% {
-      transform:translateY(-30px);
-      box-shadow:0 15px 0 rgb(242, 198, 64);
-    }
-    100% {
-      transform:translateY(0px) 
-    }
-  }
-  .back span:nth-child(1) {
-    animation-delay:0s;
-  }
-  .back span:nth-child(2) {
-    animation-delay:.1s;  
-  }
-  .back span:nth-child(3) {
-    animation-delay:.2s;
-  }
-  .back span:nth-child(4) {
-    animation-delay:.3s;  
-  }
-  .back span:nth-child(5) {
-    animation-delay:.4s;
-  }
-  .back span:nth-child(6) {
-    animation-delay:.5s;  
-  }
-  .back span:nth-child(7) {
-    animation-delay:.6s;
-  }
-  .back span:nth-child(8) {
-    animation-delay:.7s;
-  }
-  .back span:nth-child(9) {
-    animation-delay:.8s;
-  }
-  .back span:nth-child(10) {
-    animation-delay:.9s;
-  }
-  .back span:nth-child(11) {
-    animation-delay:.10s;
-  }
-  .back span:nth-child(12) {
-    animation-delay:.1s;
-  }
-  .back span:nth-child(13) {
-    animation-delay:.2s;
-  }
-  .back span:nth-child(14) {
-    animation-delay:.3s;
-  }
-  .back span:nth-child(15) {
-    animation-delay:.4s;
-  }
-
-.hidden{
+.hidden {
   display: none;
 }

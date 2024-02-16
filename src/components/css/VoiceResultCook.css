@@ -4,155 +4,162 @@
   display: none;
 }
 
-* {
-  /* border: solid 1px black; */
-  margin: 0;
-  padding: 0;
-}
-
 /* -------------------- 카테고리 음식 영역 -------------------- */
 
 .Voicecontents {
-  width: 90vw;
-  height: 94vh;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   overflow: hidden;
-  margin-right: 40px;
-  margin-left: 80px;
-  margin-top: 60px;
-  justify-content: center;
-  align-items: start;
-  flex-wrap: wrap;
-}
-
-.VoiceRandomFoodresult {
   display: flex;
-  flex-direction: row;
-  width: 100%; /* 부모 컨테이너의 너비 */
-  height: auto; /* 필요한 경우 높이 설정 */
-}
-
-
-.Voicefoodrecipe,
-.VoicerecipeDetails {
-  flex: 1; /* 두 컨테이너가 동일한 너비를 가지도록 설정 */
-}
-
-.VoicerecipeDetails {
-  background-color: rgba(250, 250, 250, 0.85);
-  margin-left: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .Voicefoodresipe {
   background-color: rgba(250, 250, 250, 0.85);
-  padding: 15px;
-  width: 32vw;
-  height: 80vh;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-.Voiceresultfood {
-  width: 450px; /* 예시로 200px의 너비를 설정 */
-  height: 450px; /* 예시로 200px의 높이를 설정 */
+  width: 30%;
+  height: 70%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-right: 40px;
-  font-family: "yg-jalnan", sans-serif;
-  font-size: 25px;
-  object-fit: cover;
+  padding: 1%;
+  border-radius: 10px;
+  margin-right: 1%;
 }
 
-.Voiceresultfood img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative;
-  margin-left: 15px;
+.Voicefoodresipe img {
+  width: 90%;
+  height: 90%;
 }
 
 .Voicefood-label {
-  text-align: center;
-  margin-top: 20px;
-  margin-left: 2vw;
-  font-size: 22px;
+  margin-top: 5%;
+  font-size: 3vh;
+}
+
+.VoicerecipeDetails {
+  width: 55%;
+  height: 70%;
+  padding: 1%;
+  background-color: rgba(250, 250, 250, 0.85);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.VoiceText {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  padding: 2vh;
+  margin: 1.5vh;
+  border: 0.2vh solid #fdaf6f;
+  background-color: #fdffe3;
+  border-radius: 10px;
+  box-shadow: 0px 0.4vw 0.8vh rgba(0, 0, 0, 0.1);
+  opacity: 80%;
 }
 
 .Voiceingredient1 {
-  font-weight: bold;
-  text-align: right;
-  margin-bottom: 10px;
-  align-self: flex-start;
-  flex: 1;
   text-align: left;
-  font-family: "GmarketSansMedium";
-  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 1.2vh;
+  font-size: 2.9vh;
 }
 
 .VoiceCookBold {
   font-weight: bold;
-  text-align: right;
   text-align: left;
-  font-family: "GmarketSansMedium";
-  font-size: 17px;
-  margin-bottom: -10px;
+  font-size: 2.7vh;
+  margin-bottom: -1.2vh;
 }
 
 .Voiceingredient2,
 .VoiceCookResipe1 {
   text-align: right;
-  margin-bottom: 10px;
-  align-self: flex-start;
-  flex: 1;
+  margin-bottom: 1.2vh;
   text-align: left;
-  font-family: "GmarketSansMedium";
-  font-size: 15px;
+  font-size: 2.1vh;
+}
+
+.VoiceButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .Voicebtn {
   width: 20%;
-  padding: 10px 0;
-  background-color: #f7bdb9;
+  padding: 1.5% 0;
+  background-color: #c84b31;
   color: #ffffff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: "yg-jalnan";
-  font-size: medium;
+  font-size: 2.2vh;
   opacity: 100%;
-  margin-top: 20px; /* 버튼과 텍스트 사이의 간격 조정 */
+  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
-  margin-right: 50px;
+  margin-right: 4.5vw;
+  transition: transform 0.3s ease;
+  bottom: 20%;
+  position: relative;
 }
 
-.Voicehome {
+.Voicebtn:hover {
+  transform: scale(1.1);
+}
+
+.VoiceLoadingbtn {
   width: 20%;
-  padding: 10px 0;
-  background-color: #fffcd6;
+  padding: 1.5% 0;
+  background-color: #ecb365;
   color: #000000;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: "yg-jalnan";
-  font-size: medium;
+  font-size: 2.2vh;
   opacity: 100%;
-  margin-top: 20px; /* 버튼과 텍스트 사이의 간격 조정 */
+  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
+  margin-right: 4.5vw;
+  transition: transform 0.3s ease;
+  bottom: 20%;
+  position: relative;
 }
 
-.VoiceText {
-  padding: 20px;
-  margin: 10px;
-  border: 2px solid #fdaf6f;
-  background-color: #fdffe3;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  opacity: 80%;
+.VoiceLoadingbtn:hover {
+  transform: scale(1.1);
+}
+
+.go_homebtn {
+  position: absolute;
+  top: 2%;
+  right: 7%;
+  filter: invert(100%);
+  height: 10vh;
+}
+
+.go_homebtn:hover {
+  cursor: pointer;
+  filter: invert(60%);
+}
+.go_homebtn2 {
+  position: absolute;
+  top: 2%;
+  right: 12%;
+  filter: invert(100%);
+  height: 10vh;
+}
+
+.go_homebtn2:hover {
+  cursor: pointer;
+  filter: invert(60%);
 }
 
 .color-change-5x {
@@ -164,22 +171,4 @@
   z-index: -1;
   -webkit-animation: color-change-5x 8s linear infinite alternate both;
   animation: color-change-5x 8s linear infinite alternate both;
-}
-
-@keyframes color-change-5x {
-  0% {
-    background: #ff8080;
-  }
-  25% {
-    background: #f6fdc3;
-  }
-  50% {
-    background: #f4f27e;
-  }
-  75% {
-    background: #cdfad5;
-  }
-  100% {
-    background: #ffcf96;
-  }
 }

@@ -5,6 +5,18 @@ import axios from "axios";
 
 function Camera() {
   const [streamActive, setStreamActive] = useState(false); // 스트림 상태 관리를 위한 state 추가
+  const [modalOpen, setModalOpen] = useState({
+    modal1: false
+  });
+
+  const openModal = (modalName) => {
+    setModalOpen({ ...modalOpen, [modalName]: true });
+  };
+
+  // 모달을 닫는 함수
+  const closeModal = (modalName) => {
+    setModalOpen({ ...modalOpen, [modalName]: false });
+  };
 
   useEffect(() => {
     const video = document.querySelector(".video");
@@ -29,11 +41,15 @@ function Camera() {
     const video = document.querySelector(".video");
     const canvas = document.querySelector(".canvas");
     const captureButton = document.querySelector(".captureButton");
+    const camimgElement = document.querySelector(".camimg");
+
     if (sessionStorage.getItem("선택된재료") == null) {
       captureButton.onclick = function() {
         sessionStorage.setItem("리셋", "X");
-        canvas.width = video.width;
-        canvas.height = video.height;
+        camimgElement.style.display = "none";
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.style.objectFit = "contain";
         canvas.style.display = "flex";
         video.style.display = "none";
         canvas
@@ -42,42 +58,59 @@ function Camera() {
         canvas.toBlob(function(blob) {
           const formData = new FormData();
           formData.append("photo", blob);
-          // axios.post("http://localhost/camera",formData)
-          // .then(res => {
-          sessionStorage.setItem("선택된재료", "가지");
-          // })
+          axios.post("http://localhost/camera", formData).then((res) => {
+            sessionStorage.setItem("선택된재료", res.data);
+          });
         });
       };
     }
     if (sessionStorage.getItem("리셋") === "O") {
       canvas.style.display = "none";
       video.style.display = "flex";
+      camimgElement.style.display = "flex";
     }
   });
 
   return (
     <div className="cam_box_result">
-      <div className="camera_header">
-        <p>식재료를 찍어보세요!</p>
+      <div className="camera_header" onMouseEnter={() => openModal("modal1")}>
+        식재료를 찍어보세요!
+      </div>
+
+      <div className="camerabtn">
+        <fieldset id="switch" className="radio">
+          <input
+            name="switch"
+            id="on"
+            type="radio"
+            onChange={() => setStreamActive(true)}
+            checked={streamActive === true}
+          />
+          <label htmlFor="on">ON</label>
+          <input
+            name="switch"
+            id="off"
+            type="radio"
+            onChange={() => setStreamActive(false)}
+            checked={streamActive === false}
+          />
+          <label htmlFor="off">OFF</label>
+        </fieldset>
       </div>
       <div className="camera_content">
         <video
           autoplay="true"
           className="video"
-          width="640px"
-          height="480px"
+          width="100%"
+          height="100%"
         ></video>
         <canvas className="canvas"></canvas>
-        <div className="captureButton">
+        <div
+          className="captureButton"
+          style={{ display: streamActive ? "flex" : "none" }}
+        >
           <img src={camimg} alt="camera" className="camimg"></img>
         </div>
-        <button
-          onClick={() => setStreamActive(!streamActive)}
-          className="toggleCameraButton"
-        >
-          {" "}
-          {streamActive ? "Drop the camera" : "Turn the camera"}
-        </button>
       </div>
     </div>
   );

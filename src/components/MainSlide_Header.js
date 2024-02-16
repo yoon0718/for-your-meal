@@ -6,7 +6,6 @@ import "./css/MainSlide_Header.css";
 
 import bg1 from "../img/food/1.jpg";
 import bg2 from "../img/food/2.jpg";
-import bg3 from "../img/food/3.jpg";
 import bg4 from "../img/food/4.jpg";
 import bg5 from "../img/food/5.jpg";
 import bg6 from "../img/food/6.jpg";
@@ -38,6 +37,8 @@ import bg31 from "../img/food/31.jpg";
 import bg32 from "../img/food/32.jpg";
 
 import logo from "../img/logo.png";
+import Mic from "../img/mic.png";
+import fridge from "../img/fridge.png";
 
 import Commit1 from "./MainCommit1";
 import ResultCook from "./ResultCook";
@@ -50,7 +51,6 @@ import ChatbotCommit from "./ChatbotCommit";
 const bgImages = [
   bg1,
   bg2,
-  bg3,
   bg4,
   bg5,
   bg6,
@@ -96,6 +96,9 @@ function MainSlide_Header() {
   const goToSelect = () => {
     navigate("/select"); // 여기서 '/select'는 select 페이지의 경로입니다. 실제 경로에 맞게 조정해주세요.
   };
+  const goToAi = () => {
+    navigate("/Ai"); // 여기서 '/select'는 select 페이지의 경로입니다. 실제 경로에 맞게 조정해주세요.
+  };
 
   return (
     <div className="backgroundwrap">
@@ -103,6 +106,9 @@ function MainSlide_Header() {
         <header className="header">
           <div className="header_container">
             <h1 className="logo">
+              <button className="Ai_Button" onClick={goToAi}>
+                <img src={Mic} alt="aigogo" />
+              </button>
               <img
                 className="mainLogo"
                 src={logo}
@@ -111,44 +117,42 @@ function MainSlide_Header() {
               />
               <div className="logotitle" onClick={() => navigate("/main")}>
                 <span className="logoMain">M:ILK</span>
-                <br />
                 <span className="logoSub">for your meal</span>
               </div>
             </h1>
             {/* 새로운 버튼 추가 */}
-            <button
-              className="selectButton"
-              onClick={goToSelect}
-              style={{ position: "absolute", left: "20px", top: "16px" }}
-            >
-              홈으로 이동하기
+            <button className="selectButton" onClick={goToSelect}>
+              <img src={fridge} alt="Select" />
             </button>
           </div>
         </header>
-
-        <div className="slider">
-          <div className="slider1">
-            {bgImages.map((image, index) => (
-              <img
-                key={image}
-                className={`imgslide ${
-                  currentBgSlide === index ? "active" : ""
-                }`}
-                src={image}
-                alt={`Background ${index + 1}`}
-              />
-            ))}
+        <content className="main_content">
+          <div className="slider">
+            <div className="slider1">
+              {bgImages.map((image, index) => (
+                <img
+                  key={image}
+                  className={`imgslide ${
+                    currentBgSlide === index ? "active" : ""
+                  }`}
+                  src={image}
+                  alt={`Background ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="commit1" element={<Commit1 />} />
-          <Route path="ResultCook" element={<ResultCook />} />
-          <Route path="ResultRandom" element={<ResultRandom />} />
-          <Route path="Expirationdate" element={<Expirationdate />} />
-          <Route path="add" element={<Add />} />
-          <Route path="Commit2" element={<ChatbotCommit />} />
-        </Routes>
+          <div className="main_main">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="commit1" element={<Commit1 />} />
+              <Route path="ResultCook" element={<ResultCook />} />
+              <Route path="ResultRandom" element={<ResultRandom />} />
+              <Route path="Expirationdate" element={<Expirationdate />} />
+              <Route path="add" element={<Add />} />
+              <Route path="Commit2" element={<ChatbotCommit />} />
+            </Routes>
+          </div>
+        </content>
       </div>
     </div>
   );
