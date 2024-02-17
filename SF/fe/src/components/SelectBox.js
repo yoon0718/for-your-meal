@@ -201,7 +201,7 @@ const SelectBox = () => {
     
     if (selectedOption) {
       const data = {"ingredient":selectedOption.value}
-        axios.post("http://10.10.21.89/ingredient",data)
+        axios.post("http://localhost/ingredient",data)
         .then(res => {
           alert("식재료가 냉장고에 넣어졌습니다")
           setSelectedOption(null);

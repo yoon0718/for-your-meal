@@ -4,8 +4,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width:100vw;
-  height:100vh;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 ::-webkit-scrollbar {
@@ -90,18 +90,45 @@
 }
 
 .selectButton {
-  width: 10vw;
+  width: 4vw;
   padding: 1vw 0;
-  background-color: #561c24;
+  background-color: #561c24d0;
   color: #ffffff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-family: "yg-jalnan";
-  font-size: 1.05vw;
   opacity: 80%;
   position: absolute;
-  left:88%;
+  left: 94%;
+}
+
+.selectButton img {
+  height: 4vh;
+  filter: invert(100%);
+}
+.selectButton img:hover {
+  filter: invert(0%);
+}
+
+.Ai_Button {
+  width: 4vw;
+  padding: 1vw 0;
+  background-color: #561c24d0;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 80%;
+  position: absolute;
+  left: 89%;
+}
+
+.Ai_Button img {
+  height: 4vh;
+  filter: invert(100%);
+}
+.Ai_Button img:hover {
+  filter: invert(0%);
 }
 
 /* 메인섹션 스타일 */
@@ -110,11 +137,11 @@
   justify-content: space-between;
   align-items: center;
   width: 96.4vw;
-  height:100%;
-  margin-top:1%;
+  height: 100%;
+  margin-top: 1%;
 }
 .main_main {
-  width:70%;
+  width: 70%;
   height: 85vh;
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -125,7 +152,7 @@
   display: flex;
   overflow: hidden;
   text-align: center;
-  width:30%;
+  width: 30%;
   margin-right: 2vw; /* 오른쪽 여백 추가 */
   height: 85vh;
   margin-top: 2vh;
@@ -138,7 +165,6 @@
   background-color: #c7c7c7;
   overflow: hidden;
   border-radius: 7px;
-  
 }
 
 .slider1 .imgslide {

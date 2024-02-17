@@ -10,19 +10,13 @@ import axios from 'axios';
 
 function MainResultRandom() {
   const [food, setFood] = useState(null);
-  const [myingre, setMyIngre] = useState(null);
   
   useEffect(() => {
-    axios.post("http://10.10.21.89/randommenu")
+    axios.post("http://localhost/randommenu")
     .then(res => {
       setFood(res.data)
     })
-    axios.post("http://10.10.21.89/myfrige")
-    .then(res => {
-      setMyIngre(res.data)
-    })
   },[])
-
   if (food === '') {
     return (
       <div className='RandomFoodresult'>
@@ -34,8 +28,26 @@ function MainResultRandom() {
   }
   else if (food !== null) {
     const contentImages = [
-      { src: food['이미지경로'], label: food['메뉴명'], ingredients: food['재료정보'], way: food['만드는법'], tip: food['저감조리법tip'], allingre: food['재료']},
+      { src: food['이미지경로'], label: food['메뉴명'], ingredients: food['재료정보'], way: food['만드는법'], tip: food['저감조리법tip'], owningre: food['보유한재료']},
     ];
+
+    var a = contentImages[0]['owningre']
+    var b = contentImages[0]['ingredients']
+
+    // for (var i = 0; i < a.length; i++) {
+    //   if (a[i] === '새송이버섯') {
+    //     a.push("새송이");
+    //   }
+    // }
+    
+    if (a.length >= 1) {
+      for (var i = 0; i < a.length; i++) {
+        if (b.includes(a[i])) {
+          b = b.replace(new RegExp(a[i], 'gi'), `<span style=color:red>${a[i]}</span>`)
+        }
+      }
+    }
+
     return (
       <div className='RandomFoodresult'>
         <div className="foodresipe">
@@ -50,7 +62,11 @@ function MainResultRandom() {
           {contentImages.map((image, index) => (
           <div>
             <div className='ingredient'>선택된 재료는 <span className='ingredientTitle'>{food["선택된재료"]}</span> 입니다.</div>
-            <div className='ingredient'><span className='ingredientTitle'>요리 재료</span> <br/> {image.ingredients}</div>
+            {image.owningre.length !== 0 ?
+            <div className='ingredient'>현재 보유한 재료는 {image.owningre.join(', ')} 입니다.</div>
+            :null}
+            <div><span className='ingredientTitle'>요리 재료</span></div>
+            <div className='ingredient' dangerouslySetInnerHTML={{__html: b }}></div>
             <div className='CookResipe'><span className='ingredientTitle'>조리 방법 및 레시피</span><br/>{image.way.split('||').map((line, index) => <p key={index}>{line}</p>)}<br/>저감조리법 tip : {image.tip}</div>
           </div>
           ))}

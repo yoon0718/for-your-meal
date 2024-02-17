@@ -98,60 +98,99 @@
 .Voicebtn {
   width: 20%;
   padding: 1.5% 0;
-  background-color: #f7bdb9;
+  background-color: #c84b31;
   color: #ffffff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 2.2vh;
   opacity: 100%;
+  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
   margin-right: 4.5vw;
-  transition: transform 0.3s ease
+  transition: transform 0.3s ease;
+  bottom: 20%;
+  position: relative;
 }
 
-.Voicebtn:hover{
+.Voicebtn:hover {
   transform: scale(1.1);
 }
 
-.VoiceLoadingbtn{
+.VoiceLoadingbtn {
   width: 20%;
   padding: 1.5% 0;
-  background-color: #d3f1d0;
+  background-color: #ecb365;
   color: #000000;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 2.2vh;
   opacity: 100%;
+  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
   text-align: center;
   margin-right: 4.5vw;
-  transition: transform 0.3s ease
+  transition: transform 0.3s ease;
+  bottom: 20%;
+  position: relative;
 }
 
-.VoiceLoadingbtn:hover{
+.VoiceLoadingbtn:hover {
   transform: scale(1.1);
 }
 
-.resulthomebtn {
-  width:100%;
-  display: flex;
-  justify-content: right;
-  margin:3vh 13.5vw 0 0;
-  z-index: 1000;
-}
-.resulthomebtn {
-  height: 0vh;
-}
-.homebtn {
-  height: 9.5vh;
+.go_homebtn {
+  position: absolute;
+  top: 2%;
+  right: 7%;
   filter: invert(100%);
-}
-.homebtn:hover {
-  cursor: pointer;
-  filter: invert(0%);
+  height: 10vh;
+  
 }
 
+.go_homebtn:hover {
+  cursor: pointer;
+  filter: invert(60%);
+}
+.go_homebtn2 {
+  position: absolute;
+  top: 2%;
+  right: 12%;
+  filter: invert(100%);
+  height: 10vh;
+  
+}
+
+.go_homebtn2:hover {
+  cursor: pointer;
+  filter: invert(60%);
+}
+
+.go_homebtn3 {
+  position: absolute;
+  top: 2%;
+  right: 20%;
+  cursor: pointer;
+  height: 10vh;  
+  transition: transform 0.3s ease;
+  border-radius: 45px;
+}
+
+.go_homebtn3:hover {
+  transform: scale(1.1);
+}
+.go_homebtn4 {
+  position: absolute;
+  top: 2%;
+  right: 28%;
+  cursor: pointer;
+  height: 10vh;  
+  transition: transform 0.3s ease;
+  border-radius: 45px;
+}
+.go_homebtn4:hover {
+  transform: scale(1.1);
+}
 .color-change-5x {
   position: fixed;
   top: 0;
@@ -161,22 +200,4 @@
   z-index: -1;
   -webkit-animation: color-change-5x 8s linear infinite alternate both;
   animation: color-change-5x 8s linear infinite alternate both;
-}
-
-@keyframes color-change-5x {
-  0% {
-    background: #ff8080;
-  }
-  25% {
-    background: #f6fdc3;
-  }
-  50% {
-    background: #f4f27e;
-  }
-  75% {
-    background: #cdfad5;
-  }
-  100% {
-    background: #ffcf96;
-  }
 }

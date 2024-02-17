@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
 import numpy as np
 import sys
@@ -13,7 +13,8 @@ from IPython.display import display, Image
 
 model = load_model('C:/SprintF/SF/be/python/Image_classify.h5')
 
-data_class_name_e = ['apple',
+data_class_name_e = [
+ 'apple',
  'asparagus',
  'banana',
  'beans',
@@ -50,52 +51,10 @@ data_class_name_e = ['apple',
  'tofu',
  'tomato',
  'watermelon']
-data_class_name = [
-    '사과',
-    '아스파라거스',
-    '바나나',
-    '콩',
-    '숙주',
-    '비트',
-    '피망',
-    '브로콜리',
-    '양배추',
-    '고추',
-    '당근',
-    '콜리플라워',
-    '닭',
-    '옥수수',
-    '오이',
-    '달걀',
-    '가지',
-    '생강',
-    '포도',
-    '키위',
-    '레몬',
-    '상추',
-    '망고',
-    '양파',
-    '오렌지',
-    '파프리카',
-    '파인애플',
-    '석류',
-    '돼지고기',
-    '감자',
-    '호박',
-    '무',
-    '연어',
-    '시금치',
-    '고구마',
-    '두부',
-    '토마토',
-    '수박'
-]
-
 
 img_height = 180
 img_width = 180
 
-# image = input('Enter Image name: ')
 image_path = sys.argv[1]
 
 display(Image(filename=image_path, width=200))
@@ -111,10 +70,3 @@ score = tf.nn.softmax(predict)
 
 # Display the result
 print(data_class_name_e[np.argmax(score)])
-
-
-
-
-
-
-

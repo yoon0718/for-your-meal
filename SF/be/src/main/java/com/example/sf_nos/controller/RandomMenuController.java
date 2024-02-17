@@ -1,5 +1,7 @@
 package com.example.sf_nos.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,19 +35,31 @@ public class RandomMenuController {
             // 선택 된 메뉴
             Map<String,Object> selected_menu = randomMenuDao.selected_menu(ingredient, random_menu_num);
             selected_menu.put("선택된재료",ingredient);
+            
+            
+            List<String> own_ingre = new ArrayList<String>();
+            List<Map<String,Object>> myingre = expirationDao.my_ingre();
+            String ingredients = selected_menu.get("재료").toString();
+            for (Map<String, Object> index : myingre) {
+                String ingre = index.get("ingredient").toString();
+                if (isInString(ingre, ingredients) && !own_ingre.contains(ingre)) {
+                    own_ingre.add(ingre);
+                }
+            }
+            selected_menu.put("보유한재료",own_ingre);
             return ResponseEntity.ok(selected_menu);
         } else {
             return ResponseEntity.noContent().build();
         }
     }
-    @PostMapping("/myfrige")
-    public ResponseEntity<List<Map<String,Object>>> my_ingre() {
-        List<Map<String,Object>> myfrige = expirationDao.my_ingre();
-        if (myfrige.size() >= 1) {
-            return ResponseEntity.ok(myfrige);
-        } else {
-            return ResponseEntity.noContent().build();
+    
+    private static boolean isInString(String value, String str) {
+        String[] strArray = str.split(" ");
+        for (String element : strArray) {
+            if (element.equals(value)) {
+                return true;
+            }
         }
-        
+        return false;
     }
 }

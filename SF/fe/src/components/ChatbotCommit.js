@@ -30,7 +30,7 @@ function ChatbotCommit() {
     navigate("/main");
   }
   useEffect(() => {
-    axios.post("http://10.10.21.89/category", postingdata).then((res) => {
+    axios.post("http://localhost/category", postingdata).then((res) => {
     setData(res.data);
     });
   },[])

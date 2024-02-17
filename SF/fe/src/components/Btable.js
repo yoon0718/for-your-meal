@@ -80,7 +80,7 @@ export default function Btable(props) {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://10.10.21.89/expiration");
+      const response = await axios.get("http://localhost/expiration");
       const jsonData = response.data;
       setData(jsonData["임박순"]);
     } catch (error) {
