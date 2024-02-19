@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../components/css/MainCommit.css";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-js-pagination";
@@ -26,11 +26,17 @@ function ChatbotCommit() {
     sessionStorage.setItem("메뉴명", label);
     navigate("/main/ResultCook");
   };
-  axios.post("http://localhost/category", postingdata).then((res) => {
+  const backhome = () => {
+    navigate("/main");
+  }
+  useEffect(() => {
+    axios.post("http://localhost/category", postingdata).then((res) => {
     setData(res.data);
-  });
+    });
+  },[])
+  
 
-  if (data != null) {
+  if (data && data.length >= 1) {
     return (
       <div className="CategoryFood">
         <div className="food-container">
@@ -41,36 +47,46 @@ function ChatbotCommit() {
               onClick={() => setName(menu.메뉴명)}
             >
               <div className="food-item-img">
-                <img src={menu.이미지경로} alt={`Food ${index + 1}`} />
+                <img src={process.env.PUBLIC_URL + "/images/" + menu.이미지경로} alt={`Food ${index + 1}`} />
               </div>
-              <div className="commit-food-label">{menu.메뉴명}</div>
+              <div className="commit-food-label">
+                {menu.메뉴명}
+              </div>
             </div>
           ))}
         </div>
         {data && (
-          <div className="pagination-container">
-            {" "}
-            {/* 클래스 추가 */}
-            <Pagination
-              activePage={currentPage}
-              itemsCountPerPage={itemsPerPage}
-              totalItemsCount={data.length}
-              pageRangeDisplayed={5}
-              prevPageText="<"
-              nextPageText=">"
-              onChange={handlePageChange}
-            />
-          </div>
-        )}
+        <div className="pagination-container">
+          {" "}
+          {/* 클래스 추가 */}
+          <Pagination
+            activePage={currentPage}
+            itemsCountPerPage={itemsPerPage}
+            totalItemsCount={data.length}
+            pageRangeDisplayed={5}
+            prevPageText="<"
+            nextPageText=">"
+            onChange={handlePageChange}
+          />
+        </div>
+      )}
+      </div>
+    );
+  } else if (data && data.length === 0) { 
+    return (
+      <div className="CategoryFood">
+        <div className="no-data">
+          검색된 결과가 없습니다. <br/>다른 카테고리를 선택해보시는게 어떤가요?
+          <button className="no-data-btn" onClick={backhome}>뒤로가기</button>
+        </div>
+        
       </div>
     );
   } else {
     return (
-      <main className="contents">
-        <div className="CategoryFood">
-          <div className="food-container">결과를 가져오는 중이에요!</div>
-        </div>
-      </main>
+      <div className="CategoryFood">
+        <div className="food-container">결과를 가져오는 중이에요!</div>
+      </div>
     );
   }
 }

@@ -104,10 +104,9 @@
 
 .selectButton img {
   height: 4vh;
-  filter: invert(100%);
 }
 .selectButton img:hover {
-  filter: invert(0%);
+  filter: invert(100%);
 }
 
 .Ai_Button {

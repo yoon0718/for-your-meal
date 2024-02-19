@@ -58,6 +58,13 @@ const MainChatbot = () => {
     return value;
   };
   const saveresult = () => {
+    if (result.재료 === '면 랜덤선택') {
+      result.재료 = '모든 면';
+    } else if (result.재료 === '육류 랜덤선택') {
+      result.재료 = '모든 고기';
+    } else if (result.재료 === '해산물 랜덤선택') {
+      result.재료 = '모든 생선';
+    } 
     if (result.요리종류 === '선택안함' | result.요리종류.includes('랜덤')) {
       result.요리종류 = '';
     }

@@ -5,17 +5,45 @@ import axios from "axios";
 
 function Camera() {
   const [streamActive, setStreamActive] = useState(false); // 스트림 상태 관리를 위한 state 추가
-  const [modalOpen, setModalOpen] = useState({
-    modal1: false
-  });
 
-  const openModal = (modalName) => {
-    setModalOpen({ ...modalOpen, [modalName]: true });
-  };
-
-  // 모달을 닫는 함수
-  const closeModal = (modalName) => {
-    setModalOpen({ ...modalOpen, [modalName]: false });
+  const data_class_name = {
+    apple: "사과",
+    asparagus: "아스파라거스",
+    banana: "바나나",
+    beans: "콩",
+    beansprouts: "숙주",
+    beetroot: "비트",
+    broccoli: "브로콜리",
+    cabbage: "양배추",
+    capsicum: "고추",
+    carrot: "당근",
+    cauliflower: "콜리플라워",
+    chicken: "닭",
+    corn: "옥수수",
+    cucumber: "오이",
+    egg: "달걀",
+    eggplant: "가지",
+    ginger: "생강",
+    grapes: "포도",
+    kiwi: "키위",
+    lemon: "레몬",
+    lettuce: "상추",
+    mango: "망고",
+    onion: "양파",
+    orange: "오렌지",
+    paprika: "파프리카",
+    pineapple: "파인애플",
+    pomegranate: "석류",
+    pork: "돼지고기",
+    potato: "당근",
+    pumpkin: "호박",
+    raddish: "무",
+    salmon: "당근",
+    spinach: "시금치",
+    sweetpotato: "고구마",
+    tofu: "두부",
+    tomato: "토마토",
+    watermelon: "수박"
   };
 
   useEffect(() => {
@@ -59,7 +87,7 @@ function Camera() {
           const formData = new FormData();
           formData.append("photo", blob);
           axios.post("http://localhost/camera", formData).then((res) => {
-            sessionStorage.setItem("선택된재료", res.data);
+            sessionStorage.setItem("선택된재료", data_class_name[res.data]);
           });
         });
       };
@@ -73,9 +101,7 @@ function Camera() {
 
   return (
     <div className="cam_box_result">
-      <div className="camera_header" onMouseEnter={() => openModal("modal1")}>
-        식재료를 찍어보세요!
-      </div>
+      <div className="camera_header">식재료를 찍어보세요!</div>
 
       <div className="camerabtn">
         <fieldset id="switch" className="radio">

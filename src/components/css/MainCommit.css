@@ -51,6 +51,31 @@
   height:100%;
   cursor: pointer;
 }
+.no-data {
+  width:70%;
+  height:fit-content;
+  padding:5%;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5vh;
+}
+.no-data-btn {
+  margin-top: 3%;
+  cursor: pointer;
+  background-color: #c7b7a3;
+  font-size:3vh;
+  border-radius: 10px;
+  border:none;
+  padding:2%;
+}
+
+.no-data-btn:hover {
+  background-color:#e8d8c4;
+}
 
 .food-item:hover {
   transform: scale(1.1);

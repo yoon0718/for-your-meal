@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
+
 export default function Btable(props) {
   const columns = [
     {
@@ -55,26 +56,27 @@ export default function Btable(props) {
 
   const customStyles = {
     headCells: {
-      style: {
-        fontSize: "2.5vh",
-        fontWeight: "bold"
-      }
+        style: {
+            fontSize: '2.5vh', 
+            fontWeight: 'bold', 
+          },
     },
     cells: {
-      style: {
-        fontSize: "2vh"
-      },
-      rows: {
         style: {
-          "&:hover": {
-            backgroundColor: "lightgrey !important", // !important를 사용하여 스타일을 강제 적용
-            color: "orange !important",
-            cursor: "pointer"
-          }
-        }
+            fontSize: '2vh',
+     },
+    rows: {
+    style: {
+      "&:hover": {
+        backgroundColor: "lightgrey !important", // !important를 사용하여 스타일을 강제 적용
+        color: "orange !important",
+        cursor: "pointer"
       }
     }
+    }
+    }
   };
+  
 
   const fetchData = async () => {
     try {
@@ -97,22 +99,21 @@ export default function Btable(props) {
   const [data, setData] = useState([]);
 
   const NoDataComponent = () => (
-    <div
-      style={{
-        width: "100%",
-        textAlign: "center",
-        padding: "5%",
-        fontSize: "1.7vw",
-        backgroundColor: "#ffffff"
-      }}
-    >
+    <div style={{
+      width: '100%',
+      textAlign: 'center',
+      padding: '5%',
+      fontSize: '1.7vw',
+      backgroundColor: '#ffffff'
+    }}>
       아직 유통기한이 임박한 재료가 없습니다.
     </div>
   );
+  
 
   return (
     <div className="Btable" style={{ textAlign: "center" }}>
-      <p className="Btablefont">유통기한 임박 재료</p>
+        <p className="Btablefont">유통기한 임박 재료</p>
       <DataTable
         columns={columns}
         data={data}
