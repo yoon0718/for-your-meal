@@ -225,7 +225,7 @@ const SelectBox = () => {
             onChange={handleSelectChange}
           />
         {selectedOption && (
-          <p className="Select_box_msg">식재료 {selectedOption.value} 이(가) 선택되었습니다.</p>
+          <p className="Select_box_msg">선택된 식재료 : {selectedOption.value}</p>
         )}
         <button className="Select_box_btn" onClick={handleInsertClick}>냉장고에 넣기</button>
       </div>

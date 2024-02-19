@@ -65,7 +65,7 @@ function MainResultRandom() {
           <div>
             <div className='ingredient'>선택된 재료는 <span className='ingredientTitle'>{food["선택된재료"]}</span> 입니다.</div>
             {image.owningre.length !== 0 ?
-            <div className='ingredient'>현재 보유한 재료는 {image.owningre.join(', ')} 입니다.</div>
+            <div className='ingredient'>냉장고에 있는 재료 : {image.owningre.join(', ')}</div>
             :null}
             <div><span className='ingredientTitle'>요리 재료</span></div>
             <div className='ingredient' dangerouslySetInnerHTML={{__html: b }}></div>
