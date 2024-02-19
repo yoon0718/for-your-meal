@@ -47,9 +47,7 @@ function MainResultRandom() {
         }
       }
     }
-    console.log(a)
-    console.log(b)
-
+    
     return (
       <div className='RandomFoodresult'>
         <div className="foodresipe">
