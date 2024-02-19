@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./css/VoiceResultCook.css";
 import axios from "axios";
 import Modal from 'react-modal';
-import Mic from "../img/mic.png";
+import Mic from "../img/home.png";
 import fridge from "../img/fridge.png";
 import yogiyo from "../img/yogiyo.png"
 import dadam from "../img/dadam.png"
@@ -144,17 +144,23 @@ function VoiceResultCook() {
   if (food_recipe !== false) {
     return (
       <div className={`color-change-5x`}>
-        <div className="resulthomebtn">
-          <img src={fridge} className="go_homebtn" onClick={goToMain}></img>
-        </div>
-        <div className="resulthomebtn2">
-          <img src={Mic} className="go_homebtn2" onClick={gohome}></img>
-        </div>
-        <div className="resulthomebtn3">
-          <img src={yogiyo} className="go_homebtn3" onClick={goToyogiyo}></img>
-        </div>
-        <div className="resulthomebtn4">
-          <img src={dadam} className="go_homebtn4" onClick={godadam}></img>
+        <div className="voice_buttons">
+          <div className="voice_btn">
+            <div className="resulthomebtn">
+              <img src={dadam} className="go_homebtn4" onClick={godadam}></img>
+            </div>
+            <div className="resulthomebtn">
+              <img src={yogiyo} className="go_homebtn3" onClick={goToyogiyo}></img>
+            </div>
+            <div className="resulthomebtn">
+              <img src={fridge} className="go_homebtn" onClick={goToMain}></img>
+            </div>
+            <div className="resulthomebtn">
+              <img src={Mic} className="go_homebtn2" onClick={gohome}></img>
+            </div>
+          </div>
+          
+          
         </div>
         <main className="Voicecontents">
           <div className="Voicefoodresipe">
@@ -179,7 +185,7 @@ function VoiceResultCook() {
               <div className="Voiceingredient2">
                 {my_ingre.length !== 0 ?
                 <div>
-                <div>현재 보유한 재료는 {my_ingre.join(', ')} 입니다.</div>
+                <div>냉장고에 있는 식재료 : {my_ingre.join(', ')}</div>
                 <br/>
                 </div>:null
                 }

@@ -38,7 +38,7 @@ import bg32 from "../img/food/32.jpg";
 
 import logo from "../img/logo.png";
 import Mic from "../img/mic.png";
-import fridge from "../img/fridge.png";
+import fridge from "../img/home2.png";
 
 import Commit1 from "./MainCommit1";
 import ResultCook from "./ResultCook";

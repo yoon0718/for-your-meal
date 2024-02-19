@@ -20,19 +20,19 @@
 
 @keyframes color-change-5x {
   0% {
-    background: #eea2a2;
+    background: #1b2430;
   }
   25% {
-    background: #bbc1bf;
+    background: #5f4c79;
   }
   50% {
-    background: #57c6e1;
+    background: #444e81;
   }
   75% {
-    background: #b49fda;
+    background: #445069;
   }
   100% {
-    background: #7ac5d8;
+    background: #262a56;
   }
 }
 
@@ -103,12 +103,11 @@
 }
 .homebtn {
   height: 9.5vh;
-  filter: invert(100%);
 }
 
 .homebtn:hover {
   cursor: pointer;
-  filter: invert(0%);
+  filter: invert(100%);
 }
 
 .recbtn {
