@@ -27,12 +27,12 @@ import roulette11 from "../img/11/thai-food.png";
 import roulette12 from "../img/11/vegetable.png";
 
 const contentImages = [
+  { src: item4, path: "/main/commit1", label: "밥", name: "0" },
   { src: item1, path: "/main/commit1", label: "국&찌개", name: "2" },
   { src: item2, path: "/main/commit1", label: "반찬", name: "1" },
-  { src: item3, path: "/main/commit1", label: "기타", name: "5" },
-  { src: item4, path: "/main/commit1", label: "밥", name: "0" },
+  { src: item6, path: "/main/commit1", label: "일품", name: "3" },
   { src: item5, path: "/main/commit1", label: "디저트", name: "4" },
-  { src: item6, path: "/main/commit1", label: "일품", name: "3" }
+  { src: item3, path: "/main/commit1", label: "기타", name: "5" }
 ];
 
 const rouletteImages = [
