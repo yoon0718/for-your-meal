@@ -50,7 +50,7 @@ function MainCommit1() {
             onClick={() => setName(image.label)}
           >
             <div className="food-item-img">
-              <img src={image.src} alt={`Food ${index + 1}`} />
+              <img src={process.env.PUBLIC_URL + "/images/" + image.src} alt={`Food ${index + 1}`} />
             </div>
             <div className="commit-food-label">{image.label}</div>
           </div>

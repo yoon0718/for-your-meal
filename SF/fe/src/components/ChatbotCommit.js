@@ -47,7 +47,7 @@ function ChatbotCommit() {
               onClick={() => setName(menu.메뉴명)}
             >
               <div className="food-item-img">
-                <img src={menu.이미지경로} alt={`Food ${index + 1}`} />
+                <img src={process.env.PUBLIC_URL + "/images/" + menu.이미지경로} alt={`Food ${index + 1}`} />
               </div>
               <div className="commit-food-label">
                 {menu.메뉴명}

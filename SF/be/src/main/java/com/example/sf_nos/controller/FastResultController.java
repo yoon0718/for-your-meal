@@ -43,7 +43,7 @@ public class FastResultController {
     }
 
     private static boolean isInString(String value, String str) {
-        String[] strArray = str.split(" ");
+        String[] strArray = str.split(",");
         for (String element : strArray) {
             if (element.equals(value)) {
                 return true;

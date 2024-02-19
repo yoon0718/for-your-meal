@@ -164,7 +164,7 @@ function VoiceResultCook() {
         </div>
         <main className="Voicecontents">
           <div className="Voicefoodresipe">
-            <img src={food_image} alt={`Food ${food_name}`} />
+            <img src={process.env.PUBLIC_URL + "/images/"+food_image} alt={`Food ${food_name}`} />
             <div className="Voicefood-label">{food_name}</div>
           </div>
           <div className="VoicerecipeDetails">

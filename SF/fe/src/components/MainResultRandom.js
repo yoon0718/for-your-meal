@@ -47,13 +47,15 @@ function MainResultRandom() {
         }
       }
     }
+    console.log(a)
+    console.log(b)
 
     return (
       <div className='RandomFoodresult'>
         <div className="foodresipe">
           {contentImages.map((image, index) => (
             <div key={index} className="resultfood">
-              <img src={image.src} alt={`Food ${index + 1}`} />
+              <img src={process.env.PUBLIC_URL + "/images/" + image.src} alt={`Food ${index + 1}`} />
               <div className="food-label">{image.label}</div>
             </div>
           ))}
