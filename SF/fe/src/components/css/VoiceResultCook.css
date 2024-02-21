@@ -1,0 +1,221 @@
+/* 전역 스타일 초기화 */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* -------------------- 카테고리 음식 영역 -------------------- */
+
+.Voicecontents {
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Voicefoodresipe {
+  background-color: rgba(250, 250, 250, 0.85);
+  width: 30%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:1%;
+  border-radius: 10px;
+  margin-right:1%;
+}
+
+.Voicefoodresipe img {
+  width: 90%;
+  height: 90%;
+}
+
+.Voicefood-label {
+  margin-top:5%;
+  font-size: 3vh;
+}
+
+.VoicerecipeDetails {
+  width:55%;
+  height:70%;
+  padding:1%;
+  background-color: rgba(250, 250, 250, 0.85);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.VoiceText {
+  width:95%;
+  height:90%;
+  display: flex;
+  flex-direction: column;
+  padding: 2vh;
+  margin: 1.5vh;
+  border: 0.2vh solid #fdaf6f;
+  background-color: #fdffe3;
+  border-radius: 10px;
+  box-shadow: 0px 0.4vw 0.8vh rgba(0, 0, 0, 0.1);
+  opacity: 80%;
+  overflow:auto;
+}
+
+.Voiceingredient1 {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 1.2vh;
+  font-size: 2.9vh;
+}
+
+.VoiceCookBold {
+  font-weight: bold;
+  text-align: left;
+  font-size: 2.7vh;
+  margin-bottom: -1.2vh;
+}
+
+.Voiceingredient2,
+.VoiceCookResipe1 {
+  text-align: right;
+  margin-bottom: 1.2vh;
+  text-align: left;
+  font-size: 2.1vh;
+}
+
+.VoiceButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:10%;
+}
+
+.Voicebtn {
+  width: 20%;
+  padding: 1.5% 0;
+  background-color: #c84b31;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 2.2vh;
+  opacity: 100%;
+  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
+  text-align: center;
+  margin-right: 4.5vw;
+  transition: transform 0.3s ease;
+  bottom: 20%;
+  position: relative;
+}
+
+.Voicebtn:hover {
+  transform: scale(1.1);
+}
+
+.VoiceLoadingbtn {
+  width: 20%;
+  padding: 1.5% 0;
+  background-color: #ecb365;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 2.2vh;
+  opacity: 100%;
+  margin-top: 3.3vh; /* 버튼과 텍스트 사이의 간격 조정 */
+  text-align: center;
+  margin-right: 4.5vw;
+  transition: transform 0.3s ease;
+  bottom: 20%;
+  position: relative;
+}
+
+.VoiceLoadingbtn:hover {
+  transform: scale(1.1);
+}
+
+.voice_buttons {
+  width:100%;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+.voice_btn {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width:fit-content;
+  height: auto;
+  position: absolute;
+  right:7vw;
+  top: 1vh;
+}
+.resulthomebtn {
+  width:4.5%;
+  height:100%;
+  margin:0 0.8% 0 0.8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.go_homebtn {
+  filter: invert(100%);
+  width:100%;
+  height:100%;
+}
+
+.go_homebtn:hover {
+  cursor: pointer;
+  filter: invert(60%);
+}
+.go_homebtn2 {
+  width:100%;
+  height:100%;
+}
+
+.go_homebtn2:hover {
+  cursor: pointer;
+  filter: invert(60%);
+}
+
+.go_homebtn3 {
+  cursor: pointer; 
+  transition: transform 0.3s ease;
+  border-radius: 45px;
+  width:100%;
+  height:100%;
+}
+
+.go_homebtn3:hover {
+  transform: scale(1.1);
+}
+.go_homebtn4 {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 45px;
+  width:100%;
+  height:100%;
+}
+.go_homebtn4:hover {
+  transform: scale(1.1);
+}
+.color-change-5x {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  -webkit-animation: color-change-5x 8s linear infinite alternate both;
+  animation: color-change-5x 8s linear infinite alternate both;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

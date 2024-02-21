@@ -1,0 +1,202 @@
+.Mainsection {
+  display: flex;
+  justify-content: space-between;
+  height:100%;
+  width:100%;
+}
+
+.slider2-right {
+  width:40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slider2-right .slider-right1 {
+  width: 100%;
+  height: 66%;
+}
+
+.slider2-right .slider-right2 {
+  margin-top: 2%;
+  width: 100%;
+  height: 32%;
+}
+
+/* 컨텐츠 영역 스타일 */
+.contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 57%;
+  height: 85vh;
+  text-align: center;
+  z-index: 0;
+  position: relative;
+  border-radius: 10px;
+}
+
+.contents .contentsection {
+  z-index: 9;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #c5c1bbcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr); /* 가로로 3개의 열 생성 */
+  height:31%;
+  font-family: "yg-jalnan", sans-serif;
+  margin-bottom: 2%;
+}
+
+.contents .contentsection img {
+  width: 100%;
+  height: 13.5vh;
+  transition: transform 0.3s ease
+}
+
+.contents .contentsection img:hover {
+  transform: scale(1.1); /* 이미지를 약간 확대 */
+}
+
+.image-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 이미지와 텍스트를 중앙 정렬 */
+  text-decoration: none; /* 링크의 밑줄 등 스타일 제거 */
+}
+
+.image-label {
+  margin-top: 2vh; /* 이미지와 레이블 사이의 간격 */
+  color: #000; /* 텍스트 색상 */
+  font-size: 2.5vh; /* 텍스트 크기 */
+}
+
+.contents .contentsection2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 모든 요소를 가운데 정렬 */
+  width: 100%; /* 전체 너비 사용 */
+  justify-content: center;
+  align-items: center;
+  height: 33%;
+  margin-bottom: 2%;
+}
+
+.Randomview {
+  width: 100%; 
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1vw;
+  overflow: hidden;
+  font-size: 1.75vw;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgba(182, 177, 177, 0.7),
+    rgba(146, 144, 144, 0.9)
+  ), url('/src/img/Random.png');
+  background-size: cover;
+}
+
+.Randomview-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1vw;
+  overflow: hidden;
+  font-size: 2.5vw;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgba(182, 177, 177, 0.7),
+    rgba(146, 144, 144, 0.9)
+  ), url('/src/img/Random.png');
+  background-size: cover;
+}
+
+.selected-roulette-image {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+
+.Menubar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  padding: 0.5vw 0;
+  background-color: #561c24;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.75vw;
+  opacity: 100%;
+  margin-top: 2.4vh; /* 버튼과 텍스트 사이의 간격 조정 */
+  transition: transform 0.5s ease;
+}
+
+.Menubar:active {
+  background-color: #c7b7a3; /* 버튼 클릭 시 배경색 변경 */
+}
+
+.contents .contentsection3 {
+  background-image: linear-gradient(
+      to right,
+      rgba(58, 52, 52, 0.7),
+      rgba(119, 115, 115, 0.9)
+    ),
+    url("../../img/냉장고내부.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 1vw;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  font-size: 2vw;
+  width: 100%;
+  height: 32%;
+}
+
+.slider-right2 {
+  background-image: linear-gradient(
+      to right,
+      rgba(58, 52, 52, 0.7),
+      rgba(119, 115, 115, 0.9)
+    ),
+    url("../../img/fooood.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+.slider-right2:hover {
+  transform: scale(0.96);
+}
+
+.contentsection3:hover {
+  transform: scale(0.98);
+}
+.Menubar:hover {
+  transform: scale(0.95);
+}

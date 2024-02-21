@@ -1,0 +1,75 @@
+.Select_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* 유통기한  */
+.Select_box_header {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #c7b7a3;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: 3.5vh;
+}
+.Select_box_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.css-b62m3t-container {
+  width: 80%;
+  margin: 5%;
+}
+.css-1qrxvr1-singleValue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.Select_box_msg {
+  font-size: 3vh;
+  position: absolute;
+  top: 12%;
+}
+.Select_box_btn {
+  font-size: 3.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7b7a3;
+  border: none;
+  width: 81%;
+  height: 20%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Select_box_btn:hover {
+  background-color: #e8d8c4;
+}
+
+.css-1fyac02-control {
+  border-color: white;
+  /* box-shadow: 0 0 0 1px black; */
+}
+
+/* 모달 */
+.Select_modal {
+  background-color: white;
+  position: absolute;
+  bottom: -25%;
+  width: 100%;
+}

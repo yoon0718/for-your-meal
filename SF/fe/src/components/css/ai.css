@@ -1,0 +1,23 @@
+.rsc {
+  width:100%;
+  height: 100%;
+  overflow: auto;
+}
+.rsc-header {
+  height:15%
+}
+.rsc-content {
+  height:70%;
+}
+.rsc-footer {
+  height: 15%;
+}
+
+.rsc-submit-button {
+  display: none;
+}
+
+.rsc-os-option-element,
+.rsc-input {
+  cursor: pointer;
+}

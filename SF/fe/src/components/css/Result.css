@@ -1,0 +1,73 @@
+/* 전역 스타일 초기화 */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------- 카테고리 음식 영역 -------------------- */
+.RandomFoodresult {
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+}
+.foodresipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+  height:100%;
+
+}
+
+.resultfood {
+  width: 100%;
+  height: 100%;
+  padding:3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.resultfood img {
+  width: 95%;
+  height: 80%;
+}
+
+.food-label {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.recipeDetails{
+  width:50%;
+  height:100%;
+  margin-left: 2vw;
+  background-color: white;
+  padding:5%;
+  border-radius: 8px;
+  font-size: 2.5vh;
+  overflow: auto;
+}
+.ingredient {
+  margin-bottom: 3vh;
+}
+.ingredientTitle {
+  font-size: 3.5vh;
+}
