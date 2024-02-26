@@ -5,11 +5,11 @@
 장성호(Jssong-ho, PL), 임태환(lth0813, APL), 강다솜(sosomm20141212), 윤여록(yoon0718), 김동일(SSunkist), 명하영
 
 ### 프로젝트 소개
-KepcoA final project 1조 / 냉장고 디스플레이에 탑재할 레시피 추천 기능 프로그램 Web 구현
-- Topic1 : 오늘은 내가 요리사
-  : 식재료 인식 모델을 통한 냉장고 내 재료 관리 및 재료에 따른 음식 레시피 추천
-- Topic2 : 지금 이런 음식 어떠신가요?
-  : 음성인식을 통한 사용자의 감정 분류 후 감정에 따른 음식 레시피 추천
+KepcoA final project 1조 / 냉장고 디스플레이에 탑재할 레시피 추천 기능 프로그램 Web 구현  <br/> 
+- Topic1 : 오늘은 내가 요리사  <br/> 
+  : 식재료 인식 모델을 통한 냉장고 내 재료 관리 및 재료에 따른 음식 레시피 추천  <br/> 
+- Topic2 : 지금 이런 음식 어떠신가요?  <br/> 
+  : 음성인식을 통한 사용자의 감정 분류 후 감정에 따른 음식 레시피 추천  <br/> 
 
 ### 주요 기능
 - 식재료 인식 모델  <br/> 
@@ -22,15 +22,15 @@ KepcoA final project 1조 / 냉장고 디스플레이에 탑재할 레시피 추
   : 냉장고 내 식재료의 유통기한 관리 기능 
 
 ### 사용 DataSet
-🔎 식품의약품안전처 OpenAPI “조리식품의 레시피 DB” 
-(https://www.foodsafetykorea.go.kr/api/openApiInfo.do?menu_grp=MENU_GRP31&menu_no=661&show_cnt=10&start_idx=1&svc_no=COOKRCP01)
-🔎 Kaggle “Fruits and Vegetables Image Recognition Dataset” + google image search
-(https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition)
-🔎 음성 데이터셋
-(https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=263)
+🔎 식품의약품안전처 OpenAPI “조리식품의 레시피 DB”   <br/> 
+(https://www.foodsafetykorea.go.kr/api/openApiInfo.do?menu_grp=MENU_GRP31&menu_no=661&show_cnt=10&start_idx=1&svc_no=COOKRCP01)  <br/> 
+🔎 Kaggle “Fruits and Vegetables Image Recognition Dataset” + google image search  <br/> 
+(https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition)  <br/> 
+🔎 음성 데이터셋  <br/> 
+(https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=263)  <br/> 
 
 ### 실행 시 주의사항
-해당 Git 안에 있는 SF폴더를 C:/SprintF 폴더에 넣어주세요.
+해당 Git 안에 있는 SF폴더를 C:/SprintF 폴더에 넣어주세요.  <br/> 
 본인 데이터베이스에 SprintF라는 DB를 생성해주시거나 혹은 application.properties 파일의 DB 정보를 본인 것에 맞춰 입력해주세요.
 
 ### 라이센스
