@@ -12,17 +12,17 @@ KepcoA final project 1조 / 냉장고 디스플레이에 탑재할 레시피 추
   : 음성인식을 통한 사용자의 감정 분류 후 감정에 따른 음식 레시피 추천
 
 ### 주요 기능
-- 식재료 인식 모델
-  : 카메라로 식재료 촬영 gn 촬영된 이미지를 인식하여 인식한 식재료 값 출력
-- 음정 감정 인식 모델
-  : 사용자의 음성을 녹음하여 이를 통한 감정 인식 기능
-- 레시피 추천 기능
-  : 냉장고에 들어있는 식재료 기준 또는 사용자의 감정을 기준으로 음식 레시피 추천
-- 음식 유통기한 관리 기능
-  : 냉장고 내 식재료의 유통기한 관리 기능
+- 식재료 인식 모델  <br/> 
+  : 카메라로 식재료 촬영 gn 촬영된 이미지를 인식하여 인식한 식재료 값 출력  <br/> 
+- 음정 감정 인식 모델  <br/> 
+  : 사용자의 음성을 녹음하여 이를 통한 감정 인식 기능  <br/> 
+- 레시피 추천 기능  <br/> 
+  : 냉장고에 들어있는 식재료 기준 또는 사용자의 감정을 기준으로 음식 레시피 추천  <br/> 
+- 음식 유통기한 관리 기능  <br/> 
+  : 냉장고 내 식재료의 유통기한 관리 기능 
 
 ### 사용 DataSet
-🔎 식품의약품안전처 OpenAPI “조리식품의 레시피 DB”
+🔎 식품의약품안전처 OpenAPI “조리식품의 레시피 DB” 
 (https://www.foodsafetykorea.go.kr/api/openApiInfo.do?menu_grp=MENU_GRP31&menu_no=661&show_cnt=10&start_idx=1&svc_no=COOKRCP01)
 🔎 Kaggle “Fruits and Vegetables Image Recognition Dataset” + google image search
 (https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition)
