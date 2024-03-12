@@ -1,0 +1,47 @@
+
+
+model_MFCC_MelSpectogram_44100
+version 1 - loss: 0.1929 - accuracy: 0.9375 - val_loss: 2.5998 - val_accuracy: 0.5308 - lr: 0.0010
+version 2 - loss: 0.7202 - accuracy: 0.7184 - val_loss: 1.4646 - val_accuracy: 0.5265 - lr: 0.0010
+version 3 - loss: 0.7838 - accuracy: 0.6727 - val_loss: 1.4829 - val_accuracy: 0.5468 - lr: 0.0010
+version 4 - loss: 0.1296 - accuracy: 0.9608 - val_loss: 1.5828 - val_accuracy: 0.6834 - lr: 0.0010
+version 5 - loss: 1.7917 - accuracy: 0.1684 - val_loss: 1.7921 - val_accuracy: 0.1615 - lr: 1.0000e-07
+version 6 - loss: 1.7917 - accuracy: 0.1684 - val_loss: 1.7921 - val_accuracy: 0.1615 - lr: 1.0000e-07
+version 7 - loss: 0.4762 - accuracy: 0.8436 - val_loss: 1.3134 - val_accuracy: 0.6386 - lr: 0.0010
+version 8 - loss: 0.4450 - accuracy: 0.8523 - val_loss: 1.3281 - val_accuracy: 0.6262 - lr: 0.0010
+version 9 - loss: 0.4611 - accuracy: 0.8454 - val_loss: 1.3712 - val_accuracy: 0.6355 - lr: 0.0010
+version 10 - loss: 0.0132 - accuracy: 0.9963 - val_loss: 3.5567 - val_accuracy: 0.6886 - lr: 4.0000e-04
+version 11 - loss: 0.2610 - accuracy: 0.9116 - val_loss: 2.2365 - val_accuracy: 0.6041 - lr: 0.0010
+version 12 - loss: 0.1862 - accuracy: 0.9430 - val_loss: 1.9283 - val_accuracy: 0.6729 - lr: 1.6000e-04
+version 13 - loss: 0.1702 - accuracy: 0.9471 - val_loss: 2.1889 - val_accuracy: 0.6785 - lr: 6.4000e-05
+version 14 - loss: 0.4227 - accuracy: 0.8509 - val_loss: 1.6683 - val_accuracy: 0.6068 - lr: 4.0000e-04
+version 15 - loss: 0.2073 - accuracy: 0.9304 - val_loss: 2.2865 - val_accuracy: 0.6010 - lr: 4.0000e-04
+version 16 - loss: 0.0856 - accuracy: 0.9762 - val_loss: 1.8540 - val_accuracy: 0.6773 - lr: 0.0010
+version 17 - loss: 0.1141 - accuracy: 0.9641 - val_loss: 1.3122 - val_accuracy: 0.6908 - lr: 0.0010
+
+
+model_ZCR_SCFT_MFCC_RMS_MEL
+version 1 - loss: 1.0683 - accuracy: 0.5606 - val_loss: 1.5208 - val_accuracy: 0.4344 - lr: 0.0010
+version 2 - loss: 0.6351 - accuracy: 0.7591 - val_loss: 1.7586 - val_accuracy: 0.4887 - lr: 0.0010
+version 3 - loss: 0.4277 - accuracy: 0.8411 - val_loss: 2.5540 - val_accuracy: 0.4337 - lr: 0.0010
+version 4 - loss: 0.6191 - accuracy: 0.7630 - val_loss: 1.7978 - val_accuracy: 0.4913 - lr: 0.0010
+version 5 - loss: 0.2137 - accuracy: 0.9290 - val_loss: 3.8081 - val_accuracy: 0.4205 - lr: 0.0010
+version 6 - loss: 0.1456 - accuracy: 0.9532 - val_loss: 3.1291 - val_accuracy: 0.4836 - lr: 0.0010
+version 7 - loss: 0.1078 - accuracy: 0.9690 - val_loss: 1.7197 - val_accuracy: 0.6629 - lr: 0.0010
+version 8 - loss: 0.3803 - accuracy: 0.8810 - val_loss: 1.2989 - val_accuracy: 0.6291 - lr: 0.0010
+version 9 - loss: 0.3894 - accuracy: 0.8836 - val_loss: 1.4353 - val_accuracy: 0.6242 - lr: 0.0010
+ 
+model_MFCC_MelSpectogram
+version 1 - loss: 1.0725 - accuracy: 0.5635 - val_loss: 1.5111 - val_accuracy: 0.4276 - lr: 0.0010
+version 2 - loss: 0.6380 - accuracy: 0.7571 - val_loss: 1.7472 - val_accuracy: 0.4925 - lr: 0.0010
+version 3 - loss: 0.6380 - accuracy: 0.7571 - val_loss: 1.7472 - val_accuracy: 0.4925 - lr: 0.0010
+version 4 - loss: 0.8214 - accuracy: 0.6723 - val_loss: 1.7176 - val_accuracy: 0.4564 - lr: 0.0010
+version 5 - loss: 0.5905 - accuracy: 0.7773 - val_loss: 1.7939 - val_accuracy: 0.5006 - lr: 0.0010
+version 6 - loss: 0.5183 - accuracy: 0.8042 - val_loss: 2.3034 - val_accuracy: 0.4687 - lr: 0.0010
+version 7 - loss: 0.6379 - accuracy: 0.7575 - val_loss: 1.7023 - val_accuracy: 0.4940 - lr: 0.0010
+
+model_MelSpectogram
+version 1 - loss: 1.2602 - accuracy: 0.4806 - val_loss: 1.4799 - val_accuracy: 0.4331 - lr: 0.0010
+version 2 - loss: 1.7917 - accuracy: 0.1684 - val_loss: 1.7921 - val_accuracy: 0.1615 - lr: 1.0000e-07
+version 3
+version 4 - loss: 0.8331 - accuracy: 0.6631 - val_loss: 1.7211 - val_accuracy: 0.4918 - lr: 0.0010
